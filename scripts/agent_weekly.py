@@ -6,6 +6,7 @@ import html.parser
 import json
 import os
 import re
+import signal
 import subprocess
 from pathlib import Path
 
@@ -88,6 +89,23 @@ def prepare(bootstrap=False):
     return True
 
 
+def execute_review(command, **options):
+    prompt = options.pop("input")
+    timeout = options.pop("timeout")
+    # The npm launcher spawns a native CLI. Kill the entire process group on timeout.
+    process = subprocess.Popen(command, stdin=subprocess.PIPE, start_new_session=os.name != "nt", **options)
+    try:
+        stdout, stderr = process.communicate(prompt, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        if os.name != "nt":
+            os.killpg(process.pid, signal.SIGKILL)
+        else:
+            process.kill()
+        process.communicate(timeout=10)
+        raise RuntimeError("Codex analysis exceeded the 12-minute limit; no email sent") from None
+    return subprocess.CompletedProcess(command, process.returncode, stdout, stderr)
+
+
 def run_review(packet, model, auth_home, output):
     # Run the model with only the packet, schema and prompt in an isolated working directory.
     isolated = w.ROOT / "work/agent/reviewer"
@@ -102,9 +120,11 @@ def run_review(packet, model, auth_home, output):
     command = [cli, "exec", "--json", "--ignore-user-config", "--ephemeral", "--skip-git-repo-check", "--sandbox", "read-only", "--disable", "shell_tool", "--disable", "plugins", "--disable", "unbounded_connection_retries", "--model", model,
                "-c", 'model_reasoning_effort="high"', "-c", 'web_search="live"', "-c", 'shell_environment_policy.inherit="none"',
                "-c", 'agents.enabled=false', "-c", 'apps._default.enabled=false',
+               "-c", 'model_providers.openai.stream_max_retries=2', "-c", 'model_providers.openai.request_max_retries=2',
+               "-c", 'model_providers.openai.stream_idle_timeout_ms=90000',
                "--output-schema", str(schema), "--output-last-message", str(output), "-"]
-    result = subprocess.run(command, input=prompt, text=True, encoding="utf-8", env=task_environment, cwd=isolated,
-                            stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=1500)
+    result = execute_review(command, input=prompt, text=True, encoding="utf-8", env=task_environment, cwd=isolated,
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=720)
     # Publish only counters, never raw tool text, model execution logs or credentials.
     counters = {"model": model, "web_searches": 0, "usage": {}}
     for line in getattr(result, "stdout", "").splitlines():
@@ -131,6 +151,16 @@ def run_review(packet, model, auth_home, output):
             ("network", ["connection", "timeout", "stream disconnected"])
         ] if any(marker in log for marker in markers)), "unclassified")
         print("Codex failure category: " + reason)
+        # Show only a bounded error line, with current session token values removed.
+        error_lines = [line for line in (result.stderr + result.stdout).splitlines() if re.match(r"(?i)^error:", line.strip())]
+        if error_lines:
+            detail = error_lines[-1]
+            cache = w.load(auth_home / "auth.json", {})
+            for value in cache.get("tokens", {}).values():
+                if isinstance(value, str) and len(value) > 16:
+                    detail = detail.replace(value, "[REDACTED]")
+            detail = re.sub(r"eyJ[\w.-]+|Bearer\s+\S+", "[REDACTED]", detail)
+            print("Codex error summary: " + detail[:350])
         raise RuntimeError("Codex analysis failed (exit %s); no rule-only email will be sent" % result.returncode)
     return w.load(output, {})
 

@@ -92,7 +92,7 @@ class AgentSafeguards(unittest.TestCase):
                 output.write_text(json.dumps(result()), encoding="utf-8")
                 return type("Completed", (), {"returncode": 0})()
             secret_env = {key: "test-value" for key in ["GITHUB_TOKEN", "QQ_SMTP_PASS", "VSR_AUTH_KEY", "PUBLIC_DEPLOY_KEY"]}
-            with patch.dict(a.os.environ, secret_env), patch.object(a.subprocess, "run", side_effect=run):
+            with patch.dict(a.os.environ, secret_env), patch.object(a, "execute_review", side_effect=run):
                 a.run_review(packet(), "model", Path(folder), output)
 
     def test_partial_search_failure_remains_visible(self):
