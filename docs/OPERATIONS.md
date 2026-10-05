@@ -1,35 +1,37 @@
 # 云端运行与维护
 
-## 部署
+## 运行位置与时间
 
-Python 3.11 标准库即可运行，没有 pip 依赖、LLM API 或持续在线服务器。GitHub 托管 Ubuntu runner 每周三 01:17 UTC（北京时间 09:17）启动，最长运行 30 分钟。
+私有仓库 `0Seven-Deadly-Sins/vsr-paper-agent` 的 GitHub 托管 Ubuntu Actions 每周三 01:17 UTC（北京时间 09:17）运行，最长 60 分钟。公开仓库保存研究代码和结果，私有仓库保存编排与加密登录缓存。电脑关机或 Codex 应用关闭不影响运行。
 
-仓库 Actions Secrets：`QQ_SMTP_USER`、`QQ_SMTP_PASS`（QQ SMTP 授权码）、`QQ_MAIL_TO`。邮件地址和授权码不写进公开文件或日志。Secrets 在 GitHub 加密保存；仅 schedule/workflow_dispatch 会发信，PR 检查不读取邮箱 Secrets。
+默认 Codex CLI `0.160.0`，模型 `gpt-6.1-sol`、high reasoning、live web search，使用 ChatGPT/Codex 订阅额度。可用模型与用量受账户权限限制，不保证永久免费或永久免维护。私有 Actions 的分钟数也受 GitHub 账户计划限制。模型可通过私有仓库变量 `VSR_MODEL` 调整。
 
-首次上线后通过 Actions → Weekly VSR digest → Run workflow 验证。`dry_run=true` 只检索和生成预览 artifact，不发邮件或提交数据。`bootstrap=true` 发初始阅读列表，正常周报只发未发送的近期论文和重要资源变化。人工运行同一周的任务默认不重复发信。
+## 模型与证据
 
-## 检索与证据
+流程：21 天重叠窗口的 arXiv/作者仓库检索 → 作者来源与实际实现核验 → Codex 联网补查、分析论文 → 对新增发现独立核验，必要时再分析一次 → 结构化结果校验 → SMTP 发信 → 公开仓库更新。
 
-检索 arXiv 新提交与近期更新论文，保留 21 天重叠窗口以覆盖延迟索引；跟踪已有论文、未确认开源候选与 GitHub 新建/更新的相关研究仓库，回补首次检索遗漏。正式 proceedings-only 论文可人工在 seeds 中添加，自动检索不保证覆盖所有会议或中文来源。
+候选收集规则用于发现与证据约束，最终研究价值和阅读优先级由 Codex 判断。模型分析核心贡献、与 StableVSR/MGLD-VSR/PS-SR 的关系、实验支持程度、局限、复现条件、4K 证据与阅读建议。提示词在 `prompts/reviewer.md`，输出规范在 `schemas/review.json`。模型没有人工复现实验；正文不可访问时标明依据范围，正文节选不等于完整阅读。
 
-项目网页只从论文元数据的链接展开。自动关联仓库必须有论文直接链接，或非 fork 仓库 README 的标题与论文完全匹配并声明官方实现；只匹配关键词或 stars 不能确认为官方。搜索发现的候选需回到 arXiv 核验元数据。实现文件、权重链接、许可证、来源地址、核验时间、仓库 stars 与一周增量分别记录。
+项目网页从论文元数据的链接展开。仓库关联须有论文/作者来源，或非 fork 仓库的论文标题与官方实现声明。空仓库、项目页或泛称 coming soon 不等于代码已发布。公开代码、许可证、权重和实测 4K 能力分别判断。`4×` 不是 `4K`，stars 不等于论文质量。模型不能绕过这些约束推送未确认开源或明确闭源论文。
 
-排序优先 4K/UHD、生成式/扩散 VSR、已发布代码、有可识别开放许可证、作者仓库明确列出的顶会信息与关注度；其分数仅为可解释排序启发式。预印本不会因 stars 被标成已录用。新论文不设硬性 stars 下限，作者明确承诺但未发布的候选最多 2 篇。
+每期最多 8 篇，明确承诺开源但尚未发布的最多 2 篇。已发送论文仅在代码、权重、许可证等实质变化时再推送；已读论文同样处理。初始 AI 周报可以重评历史基础论文并标明发布日期。模型可发现标题规则遗漏的 arXiv 论文；仅有会议论文而没有 arXiv 的工作目前需手动添加到 seeds，不保证完整覆盖。
 
-周报使用中文解释推荐依据和复现边界，并附作者摘要摘录（英文，截断），不生成未经支持的实验数值。代码、许可证与权重是独立状态；链接存在不表示权重已验证可下载。不下载模型或执行 GPU 实验。
+## 登录与凭据
 
-## 一致性与故障
+使用为本任务独立登录的 ChatGPT 会话，避免与桌面 Codex 共用刷新状态。私有仓库 Secrets 包含 `VSR_AUTH_KEY`、`PUBLIC_DEPLOY_KEY`、`QQ_SMTP_USER`、`QQ_SMTP_PASS`、`QQ_MAIL_TO`。
 
-顺序：检索 → 验证 → 生成周报 → SMTP 接受邮件 → 写入发送状态 → Git 提交与 push。SMTP 失败就停止，公开索引不先于邮件更新。全体新论文检索失败会使任务失败，不能伪装为“本周无新论文”；部分来源失败在周报显示降级说明。没有合格候选时仍发送清晰的空周报并更新运行状态。
+CLI 登录缓存通过 Fernet 认证加密保存于私有仓库 `.auth/codex.enc`；密钥单独存于 Actions Secret。每次在 runner 临时目录解密，CLI 自行刷新，随后将变化重新加密保存。刷新保存步骤在分析失败时也执行。并发组将同一会话串行运行。认证流程依据 [OpenAI 的 CI/CD 登录说明](https://learn.chatgpt.com/docs/auth/ci-cd-auth)。
 
-按论文 ID 去重，重要变化指首次代码发布、开源状态/许可证/权重变化，不因 stars 数量改变重复推论文。周报最多 8 篇，未推送候选保留到后续期次；发送状态在 Git 中持久化。每周状态提交也避免公开仓库 60 天无活动导致定时停用。
+模型子进程不接收 SMTP 密码、GitHub Token、加密密钥或发布私钥；候选代码不会被执行。公开仓库写入使用只对该仓库有效的 deploy key。登录明文、原始执行日志和论文完整节选不会上传到 artifact 或公开仓库。Artifact 仅保留分析 JSON 与周报预览。
 
-SMTP 接受不等于收件箱到达。若邮件已接受但 Git push 随后失败，重跑可能重复一封；同一周固定 Message-ID 有助识别，但不承诺严格 exactly-once。失败时 GitHub Actions 标红并按账户通知设置提醒；可查看 artifact 中的周报后手动重跑。分支保护若禁止机器人直接写入，会导致 push 失败，需要允许 `github-actions[bot]` 写入或改为 PR 更新。
+## 失败与维护
 
-## 修改
+模型登录失效、订阅额度不足、分析失败或 JSON 不合格会使 Actions 失败，不静默退回规则周报。所有新论文检索失败同样报错；部分失败在邮件显示覆盖降级。可查看私有仓库 Actions 的报错分类与预览。若登录被撤销或无法刷新，需要重新完成独立登录并更新加密缓存。
 
-筛选与查询在 `config.json`。新增人工核验的基础论文可添加 `{ "id": "arXiv ID", "repo": "owner/name" }`，其关联仍会重新核验，不能仅靠 seed 强行声称代码已发布。观察清单会每周复查，包括有明确开源承诺但未发代码的论文。人工修改 README 的自动区块以外内容会保留。
+SMTP 失败不会写入公开发送状态。SMTP 接受不等于邮件已进收件箱。邮件接受后若发布失败，重跑可能重复；固定期次和 Message-ID 便于识别，但不保证严格 exactly-once。没有合格的新候选时发送有模型判断的简短空周报，不凑数。
 
-本地无发信检查：`python scripts/weekly.py --dry-run --bootstrap`。单元测试：`python -m unittest discover -s tests -v`。
+公开旧规则任务应停用；正常发送只由私有 `Codex VSR research digest` 工作流执行。人工 Run workflow：`dry_run=true` 执行真实模型但不发邮件/发布；`bootstrap=true` 生成初始 AI 阅读列表。已投递的同一期不会重复运行。
 
-停止：Actions 中 Disable workflow。更换邮箱：修改 Secrets 后手动 dry run/正常测试。无需重新打开 Codex。
+GitHub 可能对长期无活动的定时任务停用。公开仓库每次周报会提交运行状态；私有 runner 若长时间未刷新凭据或修改代码，应检查 schedule 是否仍启用。
+
+调整检索、已读记录与数量上限使用 `config.json`。模型研究标准使用提示词。验证：`python -m unittest discover -s tests -v`；本地收集预览：`python scripts/agent_weekly.py prepare --bootstrap`。停止运行在私有仓库 Actions 中 Disable workflow。更换邮箱修改私有 Secrets。

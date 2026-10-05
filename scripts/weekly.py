@@ -339,15 +339,15 @@ def digest(selected, date, warnings, bootstrap, repo, stats):
     return text
 
 
-def send_mail(body, date, bootstrap, repo):
+def send_mail(body, date, bootstrap, repo, edition=""):
     user, password, recipient = [os.environ.get(x, "") for x in ["QQ_SMTP_USER", "QQ_SMTP_PASS", "QQ_MAIL_TO"]]
     if not all([user, password, recipient]):
         raise RuntimeError("Missing QQ_SMTP_USER / QQ_SMTP_PASS / QQ_MAIL_TO secrets")
     message = EmailMessage()
     message["From"] = user
     message["To"] = recipient
-    message["Subject"] = "4K 视频超分论文周报 · " + date + (" · 首次部署" if bootstrap else "")
-    key = hashlib.sha256((repo + date + str(bootstrap)).encode()).hexdigest()[:24]
+    message["Subject"] = "4K 视频超分论文周报 · " + date + (" · " + edition if edition else "") + (" · 首次部署" if bootstrap else "")
+    key = hashlib.sha256((repo + date + str(bootstrap) + edition).encode()).hexdigest()[:24]
     message["Message-ID"] = "<vsr-" + key + "@qq.com>"
     message.set_content(body)
     # Readable HTML without a markdown dependency; links remain clickable.
@@ -469,6 +469,7 @@ def main():
     if args.dry_run:
         save(ROOT / "work/preview-papers.json", papers)
         save(ROOT / "work/preview-watchlist.json", watchlist)
+        save(ROOT / "work/preview-status.json", {"warnings": warnings, **stats})
         print("Dry run: %d recommendations; no email or persistent state mutation" % len(selected))
         return
     if not args.initialize:

@@ -2,7 +2,9 @@
 
 面向真实视频、影视素材与生成视频的超分辨率/修复，重点跟踪 4K/UHD、生成式 VSR、时序一致性、单步与流式推理。高分辨率直接生成作为邻近方向单列。
 
-每周三北京时间 **09:17**，GitHub 托管的 Actions 检索与核验论文，向配置的 QQ 邮箱发送中文周报，发信成功后更新本仓库。运行不需要本地电脑、Codex 或付费大模型 API。定时任务可能受 GitHub 排队影响而延迟。
+每周三北京时间 **09:17**，GitHub 托管的 Actions 运行 Codex CLI，使用 ChatGPT/Codex 订阅额度联网检索和分析论文，向配置的 QQ 邮箱发送中文研究周报，发信成功后更新本仓库。无需本地电脑在线或打开 Codex 应用，不使用按量计费的 OpenAI API 密钥。任务可能受 GitHub 排队或订阅额度影响。
+
+Codex 判断贡献、实验支持、与已读工作的增量、局限、复现可行性与 4K 证据，并决定阅读顺序；程序独立核验作者来源、开源状态和去重。模型可补充规则检索遗漏的候选。模型分析失败会停止发信，不退回规则周报。运行编排与加密登录凭据放在私有仓库，本仓库公开分析代码、提示词及研究结果。
 
 ## 收录规则
 
@@ -47,7 +49,9 @@
 - [机器可读论文数据](data/papers.json)
 - [观察清单](data/watchlist.json)
 - [最近运行状态](data/status.json)
+- [最近一次模型分析](data/ai-review.json)
+- [研究分析提示词](prompts/reviewer.md)
 - [部署、筛选与维护说明](docs/OPERATIONS.md)
-- [Actions](https://github.com/0Seven-Deadly-Sins/awesome-video-super-resolution-4k/actions)
+- [公开代码检查](https://github.com/0Seven-Deadly-Sins/awesome-video-super-resolution-4k/actions)
 
 欢迎通过 Issue/PR 补充论文和官方开源证据。自动脚本不会执行候选仓库中的代码。

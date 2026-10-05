@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["weekly_summary", "selected_ids", "reviews", "discoveries"],
+  "properties": {
+    "weekly_summary": {"type": "string"},
+    "selected_ids": {"type": "array", "items": {"type": "string"}},
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "decision", "priority", "contribution", "why_read", "comparison", "evidence_quality", "limitations", "reproduction", "four_k", "reading_plan", "confidence", "reading_basis", "sources"],
+        "properties": {
+          "id": {"type": "string"},
+          "decision": {"type": "string", "enum": ["recommend", "watch", "skip"]},
+          "priority": {"type": "string", "enum": ["必读", "建议阅读", "观察", "跳过"]},
+          "contribution": {"type": "string"},
+          "why_read": {"type": "string"},
+          "comparison": {"type": "string"},
+          "evidence_quality": {"type": "string"},
+          "limitations": {"type": "string"},
+          "reproduction": {"type": "string"},
+          "four_k": {"type": "string"},
+          "reading_plan": {"type": "string"},
+          "confidence": {"type": "string", "enum": ["高", "中", "低"]},
+          "reading_basis": {"type": "string", "enum": ["正文与资源", "正文节选与资源", "仅摘要与资源"]},
+          "sources": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "discoveries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "repo", "source_url", "why"],
+        "properties": {
+          "id": {"type": "string"},
+          "repo": {"type": "string"},
+          "source_url": {"type": "string"},
+          "why": {"type": "string"}
+        }
+      }
+    }
+  }
+}
