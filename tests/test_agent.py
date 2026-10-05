@@ -2,6 +2,7 @@ import importlib.util
 import json
 from pathlib import Path
 import sys
+import time
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -29,6 +30,14 @@ def packet(p=None):
 
 
 class AgentSafeguards(unittest.TestCase):
+    @unittest.skipIf(a.os.name == "nt", "Linux cloud process-group test")
+    def test_timeout_terminates_native_cli_children_too(self):
+        command = [sys.executable, "-c", "import subprocess,sys,time; subprocess.Popen([sys.executable,'-c','import time; time.sleep(30)']); time.sleep(30)"]
+        start = time.monotonic()
+        with self.assertRaisesRegex(RuntimeError, "limit"):
+            a.execute_review(command, input="", timeout=0.2, text=True, stdout=a.subprocess.PIPE, stderr=a.subprocess.PIPE)
+        self.assertLess(time.monotonic() - start, 5)
+
     def test_model_cannot_override_open_source_check(self):
         for status in ["closed", "unconfirmed"]:
             with self.assertRaisesRegex(ValueError, "open-source"):

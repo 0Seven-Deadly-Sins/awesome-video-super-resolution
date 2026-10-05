@@ -84,6 +84,10 @@ def prepare(bootstrap=False):
               "candidates": candidates, "catalog": papers,
               "baseline_context": [{k: p.get(k) for k in ["id", "title", "paper_url", "abstract", "repo_url"]} for p in papers if p["id"] in cfg["already_read"]],
               "collector_status": w.load(w.ROOT / "work/preview-status.json", {})}
+    # Model discoveries beyond this issue's bounded second pass are not forgotten.
+    pending = w.load(w.ROOT / "data/ai-review.json", {}).get("discoveries", [])
+    if pending:
+        discover({"discoveries": pending}, packet)
     w.save(packet_path(), packet)
     print("Prepared %d candidates for Codex analysis" % len(candidates))
     return True
@@ -102,7 +106,7 @@ def execute_review(command, **options):
         else:
             process.kill()
         process.communicate(timeout=10)
-        raise RuntimeError("Codex analysis exceeded the 12-minute limit; no email sent") from None
+        raise RuntimeError("Codex analysis exceeded the 20-minute limit; no email sent") from None
     return subprocess.CompletedProcess(command, process.returncode, stdout, stderr)
 
 
@@ -125,7 +129,7 @@ def run_review(packet, model, auth_home, output):
                "-c", 'agents.enabled=false', "-c", 'apps._default.enabled=false',
                "--output-schema", str(schema), "--output-last-message", str(output), "-"]
     result = execute_review(command, input=prompt, text=True, encoding="utf-8", env=task_environment, cwd=isolated,
-                            stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=720)
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=1200)
     # Publish only counters, never raw tool text, model execution logs or credentials.
     counters = {"model": model, "reasoning_effort": effort, "web_searches": 0, "usage": {}}
     for line in getattr(result, "stdout", "").splitlines():
