@@ -4,7 +4,7 @@
 
 私有仓库 `0Seven-Deadly-Sins/vsr-paper-agent` 的 GitHub 托管 Ubuntu Actions 每周三 01:17 UTC（北京时间 09:17）运行，最长 60 分钟。公开仓库保存研究代码和结果，私有仓库保存编排与加密登录缓存。电脑关机或 Codex 应用关闭不影响运行。
 
-默认 Codex CLI `0.160.0`，模型 `gpt-6.1-sol`、high reasoning、live web search，使用 ChatGPT/Codex 订阅额度。可用模型与用量受账户权限限制，不保证永久免费或永久免维护。私有 Actions 的分钟数也受 GitHub 账户计划限制。模型可通过私有仓库变量 `VSR_MODEL` 调整。
+默认 Codex CLI `0.160.0`，模型 `gpt-6-luna`、极高 `xhigh` reasoning、live web search，使用 ChatGPT/Codex 订阅额度。可用模型与用量受账户权限限制，不保证永久免费或永久免维护。私有 Actions 的分钟数也受 GitHub 账户计划限制。模型与推理强度可通过私有仓库变量 `VSR_MODEL`、`VSR_REASONING_EFFORT` 调整。历史周报保留其实际使用的模型记录。
 
 ## 模型与证据
 

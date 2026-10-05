@@ -335,7 +335,7 @@ def main():
     parser.add_argument("phase", choices=["prepare", "analyze", "finish"])
     parser.add_argument("--bootstrap", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--model", default=os.environ.get("VSR_MODEL", "gpt-6.1-sol"))
+    parser.add_argument("--model", default=os.environ.get("VSR_MODEL", "gpt-6-luna"))
     parser.add_argument("--auth-home", type=Path)
     args = parser.parse_args()
     if args.phase == "prepare":
