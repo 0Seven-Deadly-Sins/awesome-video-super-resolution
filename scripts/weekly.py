@@ -260,6 +260,10 @@ def verify(p, now, repo_hint="", old=None):
     venue = re.search(r"\b(CVPR|ICCV|ECCV|ICLR|NeurIPS|ICML|AAAI)\s*['’]?\s*(20\d{2}|\d{2})\b", (info.get("venue_text", "") + " " + info["readme"][:4000] if info else "") + " " + p.get("comment", ""), re.I)
     p["venue"] = (venue.group(1) + " " + venue.group(2) + "（作者来源标注）") if venue else "预印本/录用未核验"
     p["confidence"] = "来源关联与实现文件已核验" if state == "released" else "仅作者开源承诺，尚未发布" if state == "promised" else "证据不足"
+    if old and fingerprint(p) == fingerprint(old):
+        for key in ["pending_digest", "ai_review", "ai_review_model", "ai_review_generated_at"]:
+            if key in old:
+                p[key] = old[key]
     return p
 
 
@@ -372,7 +376,7 @@ def update_readme(papers):
         for p in subset:
             safe_title = p["title"].replace("|", "/")
             review = p.get("ai_review", {})
-            judgment = "[%s · %s](data/ai-review.json)" % (review["priority"], review["confidence"]) if review else "待分析"
+            judgment = "[%s · %s](data/papers.json)" % (review["priority"], review["confidence"]) if review else "待分析"
             sections.append("| [%s](%s) | %s / %s | %s | [代码](%s) / %s | %d ★ | %s |\n" % (safe_title, p["paper_url"], p["published"][:10], p["venue"], p["resolution"], p.get("repo_url", p["paper_url"]), p["license"], p["stars"], judgment))
         sections.append("\n")
     path = ROOT / "README.md"

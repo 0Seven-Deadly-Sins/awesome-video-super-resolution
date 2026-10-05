@@ -267,6 +267,7 @@ def finish(model, dry_run=False):
         if p["id"] in records:
             p["ai_review"] = records[p["id"]]
             p["ai_review_model"] = model
+            p["ai_review_generated_at"] = packet["collected_at"]
         if p["id"] in state["sent"]:
             p["pending_digest"] = False
     approved = [p for p in catalog if p["open_status"] in {"released", "promised"}]
