@@ -22,7 +22,7 @@
 
 CLI 登录缓存通过 Fernet 认证加密保存于私有仓库 `.auth/codex.enc`；密钥单独存于 Actions Secret。每次在 runner 临时目录解密，CLI 自行刷新，随后将变化重新加密保存。刷新保存步骤在分析失败时也执行。并发组将同一会话串行运行。认证流程依据 [OpenAI 的 CI/CD 登录说明](https://learn.chatgpt.com/docs/auth/ci-cd-auth)。
 
-模型子进程不接收 SMTP 密码、GitHub Token、加密密钥或发布私钥；候选代码不会被执行。公开仓库写入使用只对该仓库有效的 deploy key。登录明文、原始执行日志和论文完整节选不会上传到 artifact 或公开仓库。Artifact 仅保留分析 JSON 与周报预览。
+模型子进程不接收 SMTP 密码、GitHub Token、加密密钥或发布私钥；分析器关闭 shell、插件、连接器和子代理，只使用提供的材料与联网检索。公开仓库写入使用只对该仓库有效的 deploy key。登录明文、原始执行日志和论文完整节选不会上传到 artifact 或公开仓库。Artifact 仅保留分析 JSON 与周报预览。
 
 ## 失败与维护
 
@@ -32,6 +32,6 @@ SMTP 失败不会写入公开发送状态。SMTP 接受不等于邮件已进收�
 
 公开旧规则任务应停用；正常发送只由私有 `Codex VSR research digest` 工作流执行。人工 Run workflow：`dry_run=true` 执行真实模型但不发邮件/发布；`bootstrap=true` 生成初始 AI 阅读列表。已投递的同一期不会重复运行。
 
-GitHub 可能对长期无活动的定时任务停用。公开仓库每次周报会提交运行状态；私有 runner 若长时间未刷新凭据或修改代码，应检查 schedule 是否仍启用。
+定时任务可能因 GitHub 排队而延迟。私有 runner 避免了公开仓库 60 天无活动自动停用 schedule 的规则，参见 [GitHub 的 schedule 文档](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)。仍应通过失败通知发现登录、订阅额度或发信异常。
 
 调整检索、已读记录与数量上限使用 `config.json`。模型研究标准使用提示词。验证：`python -m unittest discover -s tests -v`；本地收集预览：`python scripts/agent_weekly.py prepare --bootstrap`。停止运行在私有仓库 Actions 中 Disable workflow。更换邮箱修改私有 Secrets。

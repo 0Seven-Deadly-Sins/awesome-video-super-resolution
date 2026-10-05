@@ -99,8 +99,9 @@ def run_review(packet, model, auth_home, output):
     task_environment = {k: v for k, v in os.environ.items() if k in {"PATH", "SystemRoot", "WINDIR", "TEMP", "TMP", "HOME", "USERPROFILE", "SSL_CERT_FILE", "SSL_CERT_DIR", "HTTPS_PROXY", "HTTP_PROXY", "NO_PROXY"}}
     task_environment["CODEX_HOME"] = str(auth_home.resolve())
     cli = os.environ.get("CODEX_EXECUTABLE", "codex")
-    command = [cli, "exec", "--ignore-user-config", "--ephemeral", "--skip-git-repo-check", "--sandbox", "read-only", "--model", model,
+    command = [cli, "exec", "--ignore-user-config", "--ephemeral", "--skip-git-repo-check", "--sandbox", "read-only", "--disable", "shell_tool", "--disable", "plugins", "--model", model,
                "-c", 'model_reasoning_effort="high"', "-c", 'web_search="live"', "-c", 'shell_environment_policy.inherit="none"',
+               "-c", 'agents.enabled=false', "-c", 'apps._default.enabled=false',
                "--output-schema", str(schema), "--output-last-message", str(output), "-"]
     result = subprocess.run(command, input=prompt, text=True, encoding="utf-8", env=task_environment, cwd=isolated,
                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=1500)

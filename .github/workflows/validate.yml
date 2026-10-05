@@ -6,6 +6,8 @@ on:
       - 'scripts/**'
       - 'tests/**'
       - 'config.json'
+      - 'prompts/**'
+      - 'schemas/**'
       - '.github/workflows/**'
 permissions:
   contents: read
