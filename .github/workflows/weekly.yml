@@ -1,0 +1,63 @@
+name: Weekly VSR digest
+on:
+  schedule:
+    - cron: '17 1 * * 3'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Preview only: no email or repository update'
+        type: boolean
+        default: false
+      bootstrap:
+        description: 'First deployment reading list'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: weekly-vsr-digest
+  cancel-in-progress: false
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate filtering and delivery safeguards
+        run: python -m unittest discover -s tests -v
+      - name: Discover, verify, email, and prepare index
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          QQ_SMTP_USER: ${{ secrets.QQ_SMTP_USER }}
+          QQ_SMTP_PASS: ${{ secrets.QQ_SMTP_PASS }}
+          QQ_MAIL_TO: ${{ secrets.QQ_MAIL_TO }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+          BOOTSTRAP: ${{ inputs.bootstrap || false }}
+        shell: bash
+        run: |
+          args=()
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          if [ "$BOOTSTRAP" = "true" ]; then args+=(--bootstrap); fi
+          python scripts/weekly.py "${args[@]}"
+      - name: Publish after successful delivery
+        if: inputs.dry_run != true
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md data digests
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "docs: update weekly VSR digest and verified resources"
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Preserve digest preview for diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: digest-preview-${{ github.run_id }}
+          path: work/preview*
+          if-no-files-found: ignore
+          retention-days: 14

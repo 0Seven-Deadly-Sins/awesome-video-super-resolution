@@ -1,0 +1,37 @@
+{
+  "repository": "0Seven-Deadly-Sins/awesome-video-super-resolution-4k",
+  "lookback_days": 21,
+  "max_recommendations": 8,
+  "max_promised": 2,
+  "queries": [
+    "(ti:\"video super-resolution\" OR ti:\"video super resolution\" OR ti:\"video restoration\" OR ti:VSR) AND (cat:cs.CV OR cat:cs.LG OR cat:eess.IV)",
+    "(all:4K OR all:UHD OR all:\"ultra-high resolution\" OR all:\"high-resolution\") AND (ti:\"video generation\" OR ti:\"video synthesis\" OR ti:\"video upscaling\")"
+  ],
+  "already_read": ["2311.15908", "2312.00853", "ps-sr"],
+  "manual_papers": [
+    {
+      "id": "ps-sr",
+      "title": "PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_PS-SR_Pseudo-Single-Step_Video_Super-Resolution_via_Speculative_Diffusion_CVPR_2026_paper.pdf",
+      "published": "2026-06-01",
+      "updated": "2026-06-01",
+      "date_note": "会议月份，未确认首次预印本日期",
+      "authors": ["Aiqiu Wu", "Zhaofan Qiu", "Ting Yao", "Tao Mei"],
+      "comment": "CVPR 2026. Manually verified official proceedings and author repository.",
+      "abstract": "PS-SR uses a base model for a comprehensive denoising step and a lightweight draft model for subsequent speculative refinement. A frequency-domain update preserves low-frequency content consistency while injecting high-frequency details.",
+      "source_text": "Official implementation https://github.com/HiDream-ai/PS-SR",
+      "repo": "HiDream-ai/PS-SR"
+    }
+  ],
+  "seed_papers": [
+    {"id": "2609.37831", "repo": "kopperx/ReCaVSR"},
+    {"id": "2603.16864", "repo": "taco-group/SparkVSR"},
+    {"id": "2510.12747", "repo": "OpenImagingLab/FlashVSR"},
+    {"id": "2506.05301", "repo": "IceClear/SeedVR2"},
+    {"id": "2501.01320", "repo": "ByteDance-Seed/SeedVR"},
+    {"id": "2505.16239", "repo": "zhengchen1999/DOVE"},
+    {"id": "2311.15908", "repo": "claudiom4sir/StableVSR"},
+    {"id": "2312.00853", "repo": "IanYeung/MGLD-VSR"},
+    {"id": "2507.19138", "repo": ""}
+  ]
+}
