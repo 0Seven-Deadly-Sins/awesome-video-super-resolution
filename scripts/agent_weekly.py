@@ -117,16 +117,17 @@ def run_review(packet, model, auth_home, output):
     task_environment = {k: v for k, v in os.environ.items() if k in {"PATH", "SystemRoot", "WINDIR", "TEMP", "TMP", "HOME", "USERPROFILE", "SSL_CERT_FILE", "SSL_CERT_DIR", "HTTPS_PROXY", "HTTP_PROXY", "NO_PROXY"}}
     task_environment["CODEX_HOME"] = str(auth_home.resolve())
     cli = os.environ.get("CODEX_EXECUTABLE", "codex")
+    effort = os.environ.get("VSR_REASONING_EFFORT", "xhigh")
+    if effort not in {"low", "medium", "high", "xhigh", "max", "ultra"}:
+        raise ValueError("Unsupported reasoning effort configuration")
     command = [cli, "exec", "--json", "--ignore-user-config", "--ephemeral", "--skip-git-repo-check", "--sandbox", "read-only", "--disable", "shell_tool", "--disable", "plugins", "--disable", "unbounded_connection_retries", "--model", model,
-               "-c", 'model_reasoning_effort="high"', "-c", 'web_search="live"', "-c", 'shell_environment_policy.inherit="none"',
+               "-c", 'model_reasoning_effort="' + effort + '"', "-c", 'web_search="live"', "-c", 'shell_environment_policy.inherit="none"',
                "-c", 'agents.enabled=false', "-c", 'apps._default.enabled=false',
-               "-c", 'model_providers.openai.stream_max_retries=2', "-c", 'model_providers.openai.request_max_retries=2',
-               "-c", 'model_providers.openai.stream_idle_timeout_ms=90000',
                "--output-schema", str(schema), "--output-last-message", str(output), "-"]
     result = execute_review(command, input=prompt, text=True, encoding="utf-8", env=task_environment, cwd=isolated,
                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=720)
     # Publish only counters, never raw tool text, model execution logs or credentials.
-    counters = {"model": model, "web_searches": 0, "usage": {}}
+    counters = {"model": model, "reasoning_effort": effort, "web_searches": 0, "usage": {}}
     for line in getattr(result, "stdout", "").splitlines():
         try:
             event = json.loads(line)
@@ -147,12 +148,12 @@ def run_review(packet, model, auth_home, output):
         reason = next((name for name, markers in [
             ("authentication", ["unauthorized", "token expired", "refresh token", "401"]),
             ("quota", ["usage limit", "quota", "rate limit", "429"]),
-            ("invalid configuration", ["unexpected argument", "invalid schema", "not supported", "model not found"]),
+            ("invalid configuration", ["unexpected argument", "invalid schema", "not supported", "model not found", "error loading config", "reserved built-in", "unknown feature"]),
             ("network", ["connection", "timeout", "stream disconnected"])
         ] if any(marker in log for marker in markers)), "unclassified")
         print("Codex failure category: " + reason)
         # Show only a bounded error line, with current session token values removed.
-        error_lines = [line for line in (result.stderr + result.stdout).splitlines() if re.match(r"(?i)^error:", line.strip())]
+        error_lines = [line for line in (result.stderr + result.stdout).splitlines() if re.match(r"(?i)^error(?: loading config\.toml)?:", line.strip())]
         if error_lines:
             detail = error_lines[-1]
             cache = w.load(auth_home / "auth.json", {})
