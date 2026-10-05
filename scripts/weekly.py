@@ -368,10 +368,12 @@ def update_readme(papers):
         subset = [p for p in papers if p["open_status"] == status]
         subset.sort(key=lambda p: p.get("published", ""), reverse=True)
         sections.append("### " + ("已发布代码" if status == "released" else "作者明确承诺，待开源") + "\n\n")
-        sections.append("| 论文 | 日期 / 会议 | 4K 证据 | 代码 / 许可证 | 关注度 |\n| --- | --- | --- | --- | --- |\n")
+        sections.append("| 论文 | 日期 / 会议 | 4K 证据 | 代码 / 许可证 | 关注度 | 模型研究判断 |\n| --- | --- | --- | --- | --- | --- |\n")
         for p in subset:
             safe_title = p["title"].replace("|", "/")
-            sections.append("| [%s](%s) | %s / %s | %s | [代码](%s) / %s | %d ★ |\n" % (safe_title, p["paper_url"], p["published"][:10], p["venue"], p["resolution"], p.get("repo_url", p["paper_url"]), p["license"], p["stars"]))
+            review = p.get("ai_review", {})
+            judgment = "[%s · %s](data/ai-review.json)" % (review["priority"], review["confidence"]) if review else "待分析"
+            sections.append("| [%s](%s) | %s / %s | %s | [代码](%s) / %s | %d ★ | %s |\n" % (safe_title, p["paper_url"], p["published"][:10], p["venue"], p["resolution"], p.get("repo_url", p["paper_url"]), p["license"], p["stars"], judgment))
         sections.append("\n")
     path = ROOT / "README.md"
     content = path.read_text(encoding="utf-8")
