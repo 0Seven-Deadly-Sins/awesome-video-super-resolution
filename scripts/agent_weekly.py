@@ -257,19 +257,22 @@ def analyze(model, auth_home):
         print("No prepared issue; nothing to analyze")
         return
     output = w.ROOT / "work/agent/review.json"
+    packet["analysis_model"] = model
+    packet["analysis_reasoning_effort"] = os.environ.get("VSR_REASONING_EFFORT", "xhigh")
     review = run_review(packet, model, auth_home, output)
     # A second pass only occurs when the model discovers candidates absent from the packet.
     if discover(review, packet):
         w.save(packet_path(), packet)
         review = run_review(packet, model, auth_home, output)
     validate_review(review, packet)
+    w.save(packet_path(), packet)
     w.save(output, review)
     print("Codex review validated: %d selected papers" % len(review["selected_ids"]))
 
 
 def render(selected, records, review, packet, model):
     text = "# 4K 视频超分论文周报 · " + packet["date"] + " · Codex 研究分析\n\n"
-    text += "分析模型：" + model + "；联网检索与论文/资源分析。以下研究判断由模型生成，尚未人工复现实验。\n\n"
+    text += "分析模型：" + model + "；" + ("推理强度：" + packet["analysis_reasoning_effort"] + "；" if packet.get("analysis_reasoning_effort") else "") + "联网检索与论文/资源分析。以下研究判断由模型生成，尚未人工复现实验。\n\n"
     text += review["weekly_summary"] + "\n\n"
     warnings = packet.get("collector_status", {}).get("warnings", [])
     if warnings:
@@ -295,6 +298,7 @@ def finish(model, dry_run=False):
         print("No new prepared issue")
         return
     review = w.load(w.ROOT / "work/agent/review.json", {})
+    model = packet.get("analysis_model", model)
     selected, records = validate_review(review, packet)
     body = render(selected, records, review, packet, model)
     preview = w.ROOT / "work/agent/preview.md"
@@ -326,7 +330,7 @@ def finish(model, dry_run=False):
     w.save(w.ROOT / "data/papers.json", approved)
     w.save(w.ROOT / "data/watchlist.json", watch)
     w.save(w.ROOT / "data/ai-review.json", {"model": model, "period": packet["period"], "generated_at": w.stamp(), **review})
-    w.save(w.ROOT / "data/status.json", {"checked_at": w.stamp(), "smtp_accepted": True, "period": packet["period"], "analysis_backend": "codex_subscription", "model": model, "warnings": packet.get("collector_status", {}).get("warnings", []), "executions": w.load(w.ROOT / "work/agent/execution-meta.json", [])})
+    w.save(w.ROOT / "data/status.json", {"checked_at": w.stamp(), "smtp_accepted": True, "period": packet["period"], "analysis_backend": "codex_subscription", "model": model, "reasoning_effort": packet.get("analysis_reasoning_effort"), "warnings": packet.get("collector_status", {}).get("warnings", []), "executions": w.load(w.ROOT / "work/agent/execution-meta.json", [])})
     target = w.ROOT / "digests" / (packet["date"] + ("-bootstrap" if packet["bootstrap"] else "") + "-codex.md")
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(body, encoding="utf-8")
