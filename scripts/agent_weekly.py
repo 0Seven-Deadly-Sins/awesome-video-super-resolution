@@ -99,12 +99,27 @@ def run_review(packet, model, auth_home, output):
     task_environment = {k: v for k, v in os.environ.items() if k in {"PATH", "SystemRoot", "WINDIR", "TEMP", "TMP", "HOME", "USERPROFILE", "SSL_CERT_FILE", "SSL_CERT_DIR", "HTTPS_PROXY", "HTTP_PROXY", "NO_PROXY"}}
     task_environment["CODEX_HOME"] = str(auth_home.resolve())
     cli = os.environ.get("CODEX_EXECUTABLE", "codex")
-    command = [cli, "exec", "--ignore-user-config", "--ephemeral", "--skip-git-repo-check", "--sandbox", "read-only", "--disable", "shell_tool", "--disable", "plugins", "--model", model,
+    command = [cli, "exec", "--json", "--ignore-user-config", "--ephemeral", "--skip-git-repo-check", "--sandbox", "read-only", "--disable", "shell_tool", "--disable", "plugins", "--disable", "unbounded_connection_retries", "--model", model,
                "-c", 'model_reasoning_effort="high"', "-c", 'web_search="live"', "-c", 'shell_environment_policy.inherit="none"',
                "-c", 'agents.enabled=false', "-c", 'apps._default.enabled=false',
                "--output-schema", str(schema), "--output-last-message", str(output), "-"]
     result = subprocess.run(command, input=prompt, text=True, encoding="utf-8", env=task_environment, cwd=isolated,
                             stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=1500)
+    # Publish only counters, never raw tool text, model execution logs or credentials.
+    counters = {"model": model, "web_searches": 0, "usage": {}}
+    for line in getattr(result, "stdout", "").splitlines():
+        try:
+            event = json.loads(line)
+        except ValueError:
+            continue
+        if event.get("type") == "turn.completed":
+            counters["usage"] = {k: v for k, v in event.get("usage", {}).items() if isinstance(v, int)}
+        if event.get("type") == "item.completed" and event.get("item", {}).get("type") == "web_search":
+            counters["web_searches"] += 1
+    metadata = w.load(w.ROOT / "work/agent/execution-meta.json", [])
+    metadata.append(counters)
+    w.save(w.ROOT / "work/agent/execution-meta.json", metadata)
+    print("Codex execution counters: " + json.dumps(counters))
     # Do not put raw model/tool execution logs into public artifacts or CI logs.
     if result.returncode or not output.exists():
         # Classify failures without exposing raw logs, tokens, tool input or env values.
@@ -276,7 +291,7 @@ def finish(model, dry_run=False):
     w.save(w.ROOT / "data/papers.json", approved)
     w.save(w.ROOT / "data/watchlist.json", watch)
     w.save(w.ROOT / "data/ai-review.json", {"model": model, "period": packet["period"], "generated_at": w.stamp(), **review})
-    w.save(w.ROOT / "data/status.json", {"checked_at": w.stamp(), "smtp_accepted": True, "period": packet["period"], "analysis_backend": "codex_subscription", "model": model, "warnings": packet.get("collector_status", {}).get("warnings", [])})
+    w.save(w.ROOT / "data/status.json", {"checked_at": w.stamp(), "smtp_accepted": True, "period": packet["period"], "analysis_backend": "codex_subscription", "model": model, "warnings": packet.get("collector_status", {}).get("warnings", []), "executions": w.load(w.ROOT / "work/agent/execution-meta.json", [])})
     target = w.ROOT / "digests" / (packet["date"] + ("-bootstrap" if packet["bootstrap"] else "") + "-codex.md")
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(body, encoding="utf-8")
