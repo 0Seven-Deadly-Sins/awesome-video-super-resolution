@@ -1,0 +1,286 @@
+[
+  {
+    "id": "2610.00812",
+    "title": "Video Generation Models: A Survey of Post-Training and Alignment",
+    "abstract": "Video generation has rapidly progressed from short, low-quality clips to high-resolution, long-duration sequences with complex spatiotemporal dynamics. Despite strong generative priors learned through large-scale pretraining, pretrained video models often fail to reliably follow human intent, maintain temporal coherence, or satisfy physical and safety constraints. Compared with image and text generation, alignment in video generation presents unique challenges, including error accumulation over time, motion-appearance coupling, multi-objective trade-offs, and limited supervision for temporal properties. These challenges motivate systematic post-training strategies that adapt pretrained models without retraining them from scratch. In this survey, we present the first comprehensive review of post-training and alignment in video generation models. We frame post-training as a unifying framework and distinguish between implicit alignment and explicit alignment based on how alignment signals are enforced. From this perspective, we organize existing approaches into four broad categories: supervised fine-tuning methods, self-training and distillation methods, preference- and reward-based m",
+    "authors": [
+      "Chaoyu Li",
+      "Xiaoyi Gu",
+      "Yogesh Kulkarni",
+      "Eun Woo Im",
+      "Mohammadmahdi Honarmand",
+      "Zeyu Wang",
+      "Juntong Song",
+      "Fei Du",
+      "Xilin Jiang",
+      "Kexin Zheng",
+      "Tianzhi Li",
+      "Fei Tao",
+      "Pooyan Fazli"
+    ],
+    "published": "2026-09-30T23:13:08Z",
+    "updated": "2026-09-30T23:13:08Z",
+    "paper_url": "https://arxiv.org/abs/2610.00812",
+    "comment": "Published in Transactions on Machine Learning Research (TMLR), 2026. Project page: https://github.com/people-robots/Awesome-Video-Generation-Post-Training",
+    "open_status": "unconfirmed",
+    "checked_at": "2026-10-05T21:45:24+08:00",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2610.00812",
+        "kind": "paper"
+      },
+      {
+        "url": "https://github.com/people-robots/Awesome-Video-Generation-Post-Training/blob/main/README.md",
+        "kind": "author_repository"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "作者明确提及 4K/UHD（未实测）",
+    "category": "直接高分辨率视频生成",
+    "repo": "people-robots/Awesome-Video-Generation-Post-Training",
+    "repo_url": "https://github.com/people-robots/Awesome-Video-Generation-Post-Training",
+    "stars": 207,
+    "archived": false,
+    "license": "MIT",
+    "code_files": [],
+    "code_count": 0,
+    "weights": [
+      "https://drive.google.com/drive/folders/1on66fnZ8atRoLDimcAXMxSwRxqN8_0yS",
+      "https://drive.google.com/drive/u/0/folders/1fpvSOmPMQ0jcYyZJ0G6rweKKe-2fbATn",
+      "https://huggingface.co/GD-ML/VMBench",
+      "https://huggingface.co/HiDream-ai/MotionPro/tree/main",
+      "https://huggingface.co/datasets/AIGeeksGroup/Doc2Present",
+      "https://huggingface.co/datasets/AcmmmVideobench/Acmmm2025_video_benchmark"
+    ],
+    "weights_note": "作者页面列有模型/权重链接，未验证下载",
+    "venue_text": "🔥🔥🔥 [TMLR] Video Generation Models: A Survey of Post-Training and Alignment | A continuously updated collection of papers, datasets, and benchmarks on post-training and alignment for video generation.",
+    "evidence_url": "https://github.com/people-robots/Awesome-Video-Generation-Post-Training/blob/main/README.md",
+    "association": "论文/作者项目直接链接仓库",
+    "stars_delta": 0,
+    "venue": "ICML 2026（作者来源标注）",
+    "confidence": "证据不足",
+    "resource_news": false
+  },
+  {
+    "id": "2609.39649",
+    "title": "FANVIDv2: Evaluating Video Super-Resolution by Face and Licence-Plate Recognition Under Compound Degradation",
+    "abstract": "Video super-resolution (VSR) is normally judged by PSNR and SSIM on clips that were downsampled bicubically, although in surveillance its purpose is to make faces and licence plates \\emph{recognisable}. We present FANVIDv2, a benchmark that scores VSR by what a recognition pipeline can do with its output. FANVIDv2 provides $320\\times180$ low-resolution (LR) clips with high-resolution (HR) references for 48 public figures (with one HR gallery image each) and 375 licence-plate clips covering 360 distinct plate strings. LR clips are generated with a randomised compound degradation (blur, resize jitter, sensor noise, JPEG compression, final downsampling) rather than bicubic downsampling alone. Two metrics score recognition \\emph{inside} detections: FaceRecBox rewards a face only if it is localised and correctly identified, and TextRecBox scores plate transcriptions by normalised edit distance weighted by localisation quality. With a 2.3\\,M-parameter VSR baseline (RCDM), FaceRecBox rises from 0.6864 to 0.7222, identity accuracy on matched faces from 84.35\\% to 86.93\\%, and TextRecBox from 0.3088 to 0.3667; a residual-map gated variant (RCDM-RMGF) reaches 0.3801 on plates. We describe th",
+    "authors": [
+      "Kavitha Viswanathan",
+      "Vrinda Goel",
+      "Shlesh Gholap",
+      "Devayan Ghosh",
+      "Madhav Gupta",
+      "Dhruvi Ganatra",
+      "Sanket Potdar",
+      "Amit Sethi"
+    ],
+    "published": "2026-09-30T12:52:12Z",
+    "updated": "2026-09-30T12:52:12Z",
+    "paper_url": "https://arxiv.org/abs/2609.39649",
+    "comment": "",
+    "open_status": "unconfirmed",
+    "checked_at": "2026-10-05T21:45:24+08:00",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2609.39649",
+        "kind": "paper"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "高分辨率相关，未确认 4K 证据",
+    "category": "视频超分/修复",
+    "repo": "",
+    "stars": 0,
+    "stars_delta": 0,
+    "license": "未知",
+    "code_count": 0,
+    "weights": [],
+    "weights_note": "未确认权重",
+    "venue": "预印本/录用未核验",
+    "confidence": "证据不足",
+    "resource_news": false
+  },
+  {
+    "id": "2609.38689",
+    "title": "EPIC: Epipolar-Consistent 360° Immersive Stereo Video Generation",
+    "abstract": "Immersive displays can enable rich and diverse virtual experiences. Manually authoring every possible experience to realize this potential, however, is prohibitively expensive, difficult to scale, and impractical. Generative AI models could remove this bottleneck, but today's models are built for conventional displays and cannot generate the high-resolution, stereoscopic $360^\\circ$ content required for immersive viewing. Further, temporal and stereo inconsistencies that may be tolerable on conventional displays can become highly disruptive when viewed through an immersive headset. Here, we address this gap with a zero-shot generative pipeline that extends existing video diffusion models into 4K stereoscopic $360^\\circ$ videos. Inspired from binocular vision and depth perception, we develop an epipolar-aware $360^\\circ$ image matching metric that captures the temporal and stereo geometric inconsistencies across views. We then use this metric as a preference signal for direct preference optimization with limited training data. Our work enables $360^\\circ$ stereo video generation and provides a scalable path for bringing generative content to immersive displays, allowing diverse mixe",
+    "authors": [
+      "Debabrata Mandal",
+      "Dongdong Fu",
+      "Jonathon Miller",
+      "William Villareal",
+      "Xi Peng",
+      "Praneeth Chakravarthula"
+    ],
+    "published": "2026-09-30T00:17:27Z",
+    "updated": "2026-09-30T00:17:27Z",
+    "paper_url": "https://arxiv.org/abs/2609.38689",
+    "comment": "",
+    "open_status": "unconfirmed",
+    "checked_at": "2026-10-05T21:45:24+08:00",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2609.38689",
+        "kind": "paper"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "作者明确提及 4K/UHD（未实测）",
+    "category": "直接高分辨率视频生成",
+    "repo": "",
+    "stars": 0,
+    "stars_delta": 0,
+    "license": "未知",
+    "code_count": 0,
+    "weights": [],
+    "weights_note": "未确认权重",
+    "venue": "预印本/录用未核验",
+    "confidence": "证据不足",
+    "resource_news": false
+  },
+  {
+    "id": "2609.36757",
+    "title": "FastVR: Efficient Streaming Video Restoration with One-Step Diffusion",
+    "abstract": "Diffusion-based video restoration recovers realistic details, but its practical deployment is limited by two efficiency bottlenecks: costly VAE encoding and decoding, and the quadratic cost of full self-attention in diffusion transformers (DiTs). This paper presents FastVR, a streaming video restoration framework built on a one-step diffusion model, which delivers strong restoration quality and temporal consistency while processing 1080p video at 11 FPS on a single H20 GPU. To improve inference efficiency, FastVR combines a lightweight VAE with chunk-wise causal attention, which substantially reduces the computational cost. During training, it further adopts velocity consistency regularization and continuous trajectory learning, which improve restoration quality. Extensive experiments show that FastVR is more efficient than the evaluated diffusion baselines while achieving state-of-the-art performance on synthetic and real-world benchmarks. We hope that this work supports further progress in the community.",
+    "authors": [
+      "Xiaoxu Chen",
+      "Qin Yang",
+      "Haoran Bai",
+      "Sibin Deng",
+      "Ying Chen"
+    ],
+    "published": "2026-09-29T05:29:12Z",
+    "updated": "2026-09-29T05:29:12Z",
+    "paper_url": "https://arxiv.org/abs/2609.36757",
+    "comment": "",
+    "open_status": "unconfirmed",
+    "checked_at": "2026-10-05T21:45:24+08:00",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2609.36757",
+        "kind": "paper"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "高分辨率相关，未确认 4K 证据",
+    "category": "视频超分/修复",
+    "repo": "",
+    "stars": 0,
+    "stars_delta": 0,
+    "license": "未知",
+    "code_count": 0,
+    "weights": [],
+    "weights_note": "未确认权重",
+    "venue": "预印本/录用未核验",
+    "confidence": "证据不足",
+    "resource_news": false
+  },
+  {
+    "id": "2609.32742",
+    "title": "LoCoVSR: Local Context Diffusion Posterior Sampling for Video Super-Resolution",
+    "abstract": "Video super-resolution (VSR) is an ill-posed inverse problem that aims to reconstruct a high-resolution (HR) video from a noisy, low-resolution (LR) version of it. We present LoCoVSR, a diffusion-based VSR framework that leverages pixel-space denoising diffusion probabilistic models. LoCoVSR integrates the Diffusion Posterior Sampling technique with spatio-temporal context learning, operating in a moving-average form. A localized window of adjacent LR frames is used for recovering each center frame, while applying a shared noise trajectory across all frames. The localized windowing enables processing of long videos without length limitations, supports parallel inference, and prevents error accumulation that may occur in recursive processing. Unlike prior methods, LoCoVSR offers a simple yet very effective VSR solution, avoiding explicit optical flow estimation, or information loss caused by latent space processing. Trained on the VFHQ face dataset, LoCoVSR achieves accurate, temporally consistent and high-quality upscaling with competitive results against recent diffusion-based VSR approaches.",
+    "authors": [
+      "Matan Ben Chorin",
+      "Michael Elad"
+    ],
+    "published": "2026-09-26T16:02:19Z",
+    "updated": "2026-09-26T16:02:19Z",
+    "paper_url": "https://arxiv.org/abs/2609.32742",
+    "comment": "",
+    "open_status": "unconfirmed",
+    "checked_at": "2026-10-05T21:45:24+08:00",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2609.32742",
+        "kind": "paper"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "高分辨率相关，未确认 4K 证据",
+    "category": "视频超分/修复",
+    "repo": "",
+    "stars": 0,
+    "stars_delta": 0,
+    "license": "未知",
+    "code_count": 0,
+    "weights": [],
+    "weights_note": "未确认权重",
+    "venue": "预印本/录用未核验",
+    "confidence": "证据不足",
+    "resource_news": false
+  },
+  {
+    "id": "2609.18836",
+    "title": "Copy What Is Seen, Generate What Is Not: Training-Free Anomaly-Aware Video Restoration",
+    "abstract": "A surveillance system that detects an anomaly often has to repair the footage as well, yet the two tasks are studied in isolation: training-free anomaly detectors stop at a score or a label, while training-free video editing answers to a user prompt rather than to a detector. This paper proposes AVR (Anomaly-aware Video Restoration), which closes that gap with frozen pretrained models alone and generates content only where the clip offers no evidence to copy. Motion evidence first gates open-vocabulary proposals into spatio-temporal masks. A background prior computed from the clip then fills every pixel the anomaly ever uncovers, leaving diffusion to synthesize only what no frame showed, and a frozen verifier decides per clip whether to trust a classical, a prior-anchored, or a background-conditioned restorer. Extensive experiments on three surveillance datasets, under both full-reference anomaly injection and real anomalies, show that AVR leads full-frame fidelity under oracle masks, matches three trained video inpainters inside the edited region, and outperforms a detect-then-generate pipeline on the masks it produces itself, while suppressing both the residual anomaly and the fl",
+    "authors": [
+      "Zhida Qu",
+      "Shengchao Chen"
+    ],
+    "published": "2026-09-16T15:43:21Z",
+    "updated": "2026-09-16T15:43:21Z",
+    "paper_url": "https://arxiv.org/abs/2609.18836",
+    "comment": "10 pages, 9 figures, 7 tables",
+    "open_status": "unconfirmed",
+    "checked_at": "2026-10-05T21:45:24+08:00",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2609.18836",
+        "kind": "paper"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "高分辨率相关，未确认 4K 证据",
+    "category": "视频超分/修复",
+    "repo": "",
+    "stars": 0,
+    "stars_delta": 0,
+    "license": "未知",
+    "code_count": 0,
+    "weights": [],
+    "weights_note": "未确认权重",
+    "venue": "预印本/录用未核验",
+    "confidence": "证据不足",
+    "resource_news": false
+  },
+  {
+    "id": "2507.19138",
+    "title": "RealisVSR: Detail-enhanced Diffusion for Real-World 4K Video Super-Resolution",
+    "abstract": "Video Super-Resolution (VSR) has achieved significant progress through diffusion models, effectively addressing the over-smoothing issues inherent in GAN-based methods. Despite recent advances, three critical challenges persist in VSR community: 1) Inconsistent modeling of temporal dynamics in foundational models; 2) limited high-frequency detail recovery under complex real-world degradations; and 3) insufficient evaluation of detail enhancement and 4K super-resolution, as current methods primarily rely on 720P datasets with inadequate details. To address these challenges, we propose RealisVSR, a high-frequency detail-enhanced video diffusion model with three core innovations: 1) Consistency Preserved ControlNet (CPC) architecture integrated with the Wan2.1 video diffusion to model the smooth and complex motions and suppress artifacts; 2) High-Frequency Rectified Diffusion Loss (HR-Loss) combining wavelet decomposition and HOG feature constraints for texture restoration; 3) RealisVideo-4K, the first public 4K VSR benchmark containing 1,000 high-definition video-text pairs. Leveraging the advanced spatio-temporal guidance of Wan2.1, our method requires only 5-25% of the training dat",
+    "authors": [
+      "Weisong Zhao",
+      "Jingkai Zhou",
+      "Xiangyu Zhu",
+      "Weihua Chen",
+      "Xiao-Yu Zhang",
+      "Zhen Lei",
+      "Fan Wang"
+    ],
+    "published": "2025-07-25T10:18:33Z",
+    "updated": "2025-07-25T10:18:33Z",
+    "paper_url": "https://arxiv.org/abs/2507.19138",
+    "comment": "",
+    "open_status": "unconfirmed",
+    "checked_at": "2026-10-05T21:45:24+08:00",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2507.19138",
+        "kind": "paper"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "作者明确提及 4K/UHD（未实测）",
+    "category": "视频超分/修复",
+    "repo": "",
+    "stars": 0,
+    "stars_delta": 0,
+    "license": "未知",
+    "code_count": 0,
+    "weights": [],
+    "weights_note": "未确认权重",
+    "venue": "预印本/录用未核验",
+    "confidence": "证据不足",
+    "resource_news": false
+  }
+]
