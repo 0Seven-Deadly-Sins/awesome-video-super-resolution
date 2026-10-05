@@ -1,0 +1,511 @@
+{
+  "model": "gpt-6.1-sol",
+  "period": "codex:bootstrap:2026-10-05",
+  "generated_at": "2026-10-05T23:00:28+08:00",
+  "weekly_summary": "本期最值得先读 ReCaVSR 与 SwiftVR：前者把时序记忆分配变成可学习问题，附录还补充了候选节选遗漏的 4K 显存与吞吐测试；后者提供明确的 UHD 系统测试和消费卡部署证据。RelayVSR 则把大模型计算摊薄到稀疏关键帧，与已读 PS-SR 形成有价值的对照。近期进展主要来自注意力、缓存、解码器和训练时自回归反馈的共同优化，单步本身已不足以解释效率。身份、文字和真实细节仍缺少专门验证。此次 bootstrap 选择 7 篇，包含历史基础工作的重评；承诺开源但尚未发布的入选工作为 0 篇，已读三篇不重新推送。直接 4K 生成及生成视频精修方面发现了值得重新核验的作者资源，已放入 discoveries。所有性能数字均为作者报告，未运行代码或下载权重。",
+  "selected_ids": [
+    "2609.37831",
+    "2606.09516",
+    "2609.37850",
+    "2510.00948",
+    "2506.05301",
+    "2603.16864",
+    "2512.23709"
+  ],
+  "reviews": [
+    {
+      "id": "2609.37831",
+      "decision": "recommend",
+      "priority": "必读",
+      "contribution": "ReCaVSR 将上一块生成的 SR 潜变量作为局部时序条件，并在缓存预算下学习各 DiT 层需要的历史范围，导出固定推理策略；再结合自回归 rollout、多尺度查询判别器和 LR 条件 FlashDecoder。",
+      "why_read": "2026-09-29 的新预印本，本期 bootstrap 重评。我的判断：这是目前候选中最直接连接长视频稳定、细节质量与 4K 显存预算的工作，值得优先研究其缓存消融。",
+      "comparison": "相对 StableVSR、MGLD-VSR 的运动引导与多步采样，增量是视频原生单步生成和受预算约束的历史分配；相对 PS-SR，优化重点从采样步骤之间的模型协作转向视频块之间的记忆复用。",
+      "evidence_quality": "正文节选及补查附录覆盖配对与真实数据、约千帧 LongVSR60、缓存和判别器消融，以及 35 个视频、15 名评价者的人评。作者报告 1080p、A100-80GB 下 21.20 FPS、15.16 GB 峰值分配显存；这些是 GPU 模型计时。[论文及附录](https://arxiv.org/html/2609.37831)",
+      "limitations": "合成退化与训练匹配；长视频都是单镜头，作者明确未评估硬切镜。缓存策略固定，不能按运动或内容动态调整。脸、文字样例和主观质量不能证明身份或字符正确；递归条件仍可能传播错误。",
+      "reproduction": "作者仓库提供推理实现和 kopper/ReCaVSR 权重链接，候选核验为 Apache-2.0；未确认完整训练、数据与评测链路公开，未实测。优先复测固定路由、状态重置和峰值显存，而非直接重训整个系统。",
+      "four_k": "补查附录 C.2 表 C.3 明确列出 4K：201 帧、单张 A100-80GB 下 5.40 FPS、27.53 GB 峰值分配显存。表中未写具体宽高，复现时应核对输出尺寸；这不是实时 4K。[表 C.3](https://arxiv.org/html/2609.37831)",
+      "reading_plan": "先读 3.1、4.4 缓存消融和附录 C.2/C.3、D；再读 MSQ 判别器与 LR 条件解码器。复测增加镜头切换、遮挡重现、细字和脸部身份测试。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2609.37831",
+        "https://github.com/kopperx/ReCaVSR/blob/main/README.md"
+      ]
+    },
+    {
+      "id": "2606.09516",
+      "decision": "recommend",
+      "priority": "必读",
+      "contribution": "SwiftVR 用确定性索引收集移位空间窗口，使注意力保持在无掩码的标准密集 SDPA 路径；以轻量 ReAE 和三阶段优化支持单步、块级流式修复。跨块连续性由 ReAE 状态承担，DiT 不保留滚动 KV。",
+      "why_read": "2026-06-08 发布。我的判断：其价值是把理论稀疏性落实为跨硬件可用的执行路径，并公开 UHD 端到端成本，适合研究部署与速度—保真权衡。",
+      "comparison": "比已读工作的主要增量是高分辨率注意力和自编码器的系统优化；与 ReCaVSR、InfVSR 对照，可研究没有 DiT 历史缓存时，跨块细节连续性究竟由什么维持。",
+      "evidence_quality": "有修复基准、注意力实现对照、ReAE 消融和不同后端测试。作者的统一块级协议便于内部比较，但也改变了部分离线基线的使用条件；不能据此宣布所有实现都无法运行 4K。[实验与部署附录](https://arxiv.org/html/2606.09516)",
+      "limitations": "块内可看整块输入，仍有收集输入块的等待；不是逐帧即时输出。感知质量优先并不意味着全参考指标领先，轻量自编码器也有重建损失。长期身份、文字和镜头切换证据不足。",
+      "reproduction": "H-oliday/SwiftVR 作者仓库提供推理、流式接口和 Hugging Face 权重，Apache-2.0。标准 SDPA 减少专用稀疏算子依赖；未确认完整训练链路，未验证权重下载或性能。",
+      "four_k": "表 5 明确测试 3840×2160：H100-80G、bfloat16 下 13.84 FPS、60.91 GB 峰值显存。RTX 5090 的约 26 FPS 仅对应 1080p；作者明确消费卡实时 4K 尚未实现。[表 5 与局限](https://arxiv.org/html/2606.09516)",
+      "reading_plan": "先读 3.2、3.3、表 5 和附录 7、8；随后比较 ReAE 重建损失与最终修复质量。复测应同时记录输入等待、块边界闪烁与编码解码成本。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2606.09516",
+        "https://github.com/H-oliday/SwiftVR"
+      ]
+    },
+    {
+      "id": "2609.37850",
+      "decision": "recommend",
+      "priority": "必读",
+      "contribution": "RelayVSR 只让大生成模型增强稀疏关键帧，由轻量双记忆 Transformer 利用参考潜变量逐帧超分；VARO 用最终视频与参考帧两级奖励优化参考生成器，处理关键帧质量与下游视频质量的目标错位。",
+      "why_read": "2026-09-29 发布，本期 bootstrap 重评。我的判断：它提供了区别于持续运行大 DiT 的计算分配方式，特别适合研究长视频吞吐和参考错误传播。",
+      "comparison": "PS-SR 在一个样本的去噪步骤之间分配大、小模型计算；RelayVSR 在时间轴上分配关键帧与普通帧计算。相对 StableVSR、MGLD-VSR，生成细节变成可反复读取的稀疏参考。",
+      "evidence_quality": "评估完整输出视频而非只评关键帧，有关键帧间隔、条件模式与 VARO 消融、长视频和人评。作者报告双端点、间隔 15 帧时，A100-80GB、1080p 下 29.29 FPS、13.82 GB；计时排除了输入等待。[系统效率分析](https://arxiv.org/html/2609.37850)",
+      "limitations": "双端点需要等待右端关键帧，0.327 秒首输出模型时间不能当作实际端到端启动延迟。固定间隔不适应镜头切换和快速变化；作者承认参考纹理、颜色错误仍会传播。奖励中的质量与光流指标不保证文字、身份正确。",
+      "reproduction": "作者仓库提供推理与 kopper/RelayVSR 权重链接，候选核验为 Apache-2.0。未确认 VARO 训练、奖励实现及完整训练数据公开；目前更适合先做推理和模式对照。",
+      "four_k": "论文及附录未找到明确 4K 测试。4× 超分和仓库高分辨率对比视频不能替代 UHD 输出、显存和吞吐证据。",
+      "reading_plan": "先读 3.1 的两种条件模式、3.3 的奖励定义、4.3 和附录 D；复测按真实输入帧率计入 lookahead，并增加参考错误、快速遮挡和切镜实验。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2609.37850",
+        "https://github.com/kopperx/RelayVSR/blob/main/README.md"
+      ]
+    },
+    {
+      "id": "2510.00948",
+      "decision": "recommend",
+      "priority": "必读",
+      "contribution": "InfVSR 将视频原生扩散改造成单步自回归模型，结合滚动 KV、LR 视觉引导、块间分布匹配和局部像素监督；提供长视频 MovieLQ 与语义时序评估。",
+      "why_read": "初稿为 2025-10-01，作者在 2026-10-02 明确发布推理代码、预训练权重和测试集。这是本期最有实际意义的资源更新之一；旧标题 Breaking Length Limits 与当前 Toward Consistency-Driven 对应同一 arXiv ID。",
+      "comparison": "相对 MGLD-VSR，时序约束进入模型结构和跨块蒸馏，而不只通过采样路径引导；相对 PS-SR，重点是长序列状态与块边界。可作为 ReCaVSR 选择性缓存设计的前置对照。",
+      "evidence_quality": "有合成及真实数据、长视频测试和跨块监督消融；SC、BC、MS 补充了像素指标，但并非所有时序指标都全面领先，也不能替代身份与细节追踪。[正文](https://arxiv.org/html/2510.00948)",
+      "limitations": "长视频测试集规模有限，使用训练匹配合成退化。语义一致性可能容忍平滑或重复细节；无界长度是计算结构性质，不能推导出无漂移、任意镜头内容的质量保证。",
+      "reproduction": "作者仓库当前有 inference.py、权重及 MovieLQ 链接；LICENSE 为项目 MIT，并列出第三方 Apache-2.0/MIT 条款。未确认训练代码完整发布。这里的 MovieLQ 是长视频测试集，不能与 SparkVSR 的同名短片集混用。",
+      "four_k": "未找到作者明确的 4K 输出性能实验；4× 与任意长度声明不构成 4K 部署证据。",
+      "reading_plan": "先读因果结构、视觉引导和跨块分布匹配，再读 MovieLQ 协议。利用新发布资源检查缓存随长度是否有界，以及块边界、身份重现和细节漂移。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2510.00948",
+        "https://github.com/Kai-Liu001/InfVSR",
+        "https://github.com/Kai-Liu001/InfVSR/blob/main/LICENSE"
+      ]
+    },
+    {
+      "id": "2506.05301",
+      "decision": "recommend",
+      "priority": "建议阅读",
+      "contribution": "SeedVR2 将渐进蒸馏与扩散对抗后训练结合，使用真实 HQ 数据监督、适配输出分辨率的窗口注意力及稳定化损失，保留单步修复的感知细节。",
+      "why_read": "2025-06-05 发布，本期作为历史基础重评。我的判断：它是研究单步高质量修复训练的重要参照，尤其适合解释为何单纯端点回归或蒸馏会损失细节。",
+      "comparison": "相对 StableVSR、MGLD-VSR，转向视频原生 Transformer 和单步训练；相对 PS-SR，通过训练将质量压入一次生成，而非保留轻量后续修正。",
+      "evidence_quality": "正文节选支持多个修复基准、训练损失及窗口设计消融。公开仓库还明确提醒：发布的是原型模型，表现可能不完全对应论文。[论文](https://arxiv.org/html/2506.05301)、[作者说明](https://github.com/ByteDance-Seed/SeedVR)",
+      "limitations": "完整训练依赖大量自收集数据和计算，不能把推理开源等同训练可复现。作者指出重退化、大运动会失败，轻退化 AIGC 输入可能被过度生成和锐化。离线窗口处理不等于低延迟因果流式。",
+      "reproduction": "作者仓库提供 3B/7B 推理和模型链接、多 GPU 序列并行说明。适合复现公开原型的质量基线；训练数据、论文版本一致性和最终性能仍需单独核查。",
+      "four_k": "自身论文与当前作者说明未找到完整 4K 性能表。ReCaVSR 附录将 SeedVR2-3B 作为采用空间切块的 4K 基线测试，这是后续论文的测量，不能归为 SeedVR2 作者的原始部署承诺。",
+      "reading_plan": "优先读对抗后训练、特征匹配与自适应窗口消融；复现同时比较重退化和轻退化输入，记录锐化、结构偏移与离线启动延迟。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2506.05301",
+        "https://github.com/ByteDance-Seed/SeedVR",
+        "https://arxiv.org/html/2609.37831"
+      ]
+    },
+    {
+      "id": "2603.16864",
+      "decision": "recommend",
+      "priority": "建议阅读",
+      "contribution": "SparkVSR 将可编辑的稀疏 HR 关键帧作为控制接口，以 LR 视频约束运动和结构，通过关键帧条件潜变量—像素两阶段训练传播参考细节，并提供参考强度调节。",
+      "why_read": "2026-03-17 发布，本期 bootstrap 重评。我的判断：它对影视修复的价值在于允许人先纠正少量关键帧，再观察修正能否可靠传播，比单纯追求盲修复指标更贴近实际工作流。",
+      "comparison": "与已读三篇相比，新增可干预的外部参考，而非完全接受生成结果；与 RelayVSR 相比，它强调编辑控制，传播阶段仍运行较大的视频模型。",
+      "evidence_quality": "有盲修复、不同参考来源、引导强度及真实老电影案例。参考模式的感知收益伴随部分全参考指标下降，不能将质量指标改善解释为真实内容恢复。[正文](https://arxiv.org/html/2603.16864)",
+      "limitations": "参考自身的假文字、脸部改动和颜色错误可能被传播；增强参考依从性也可能降低输入保真。可选 Nano-Banana-Pro 参考路径依赖外部服务，不能视为整套流程都开放。老电影测试只有十个短片，长影视剪辑证据有限。",
+      "reproduction": "作者仓库已列出训练、推理、ComfyUI、两阶段 Hugging Face 权重及测试集；比候选中仅列出的 Google Drive 链接更完整。可用盲 ISR 参考路径研究，未实测。",
+      "four_k": "正文中的“修复到 4K”提示词不构成 4K 实验。未见明确 UHD 显存、吞吐或长视频测试表。",
+      "reading_plan": "先读 3.3 控制机制和参考模式的感知—失真比较，再读两阶段训练。复现重点放在人工纠正文字、脸部参考和参考错误传播。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2603.16864",
+        "https://github.com/taco-group/SparkVSR"
+      ]
+    },
+    {
+      "id": "2512.23709",
+      "decision": "recommend",
+      "priority": "建议阅读",
+      "contribution": "Stream-DiffVSR 以四步 rollout 蒸馏、光流对齐的上一帧 SR 引导和带门控的时序解码器，实现严格逐帧、只依赖过去的扩散 VSR。",
+      "why_read": "2025-12-29 初稿，当前正文已有更新，本期 bootstrap 重评。我的判断：它提供真正逐帧因果协议，适合与高吞吐但需要收集输入块的方法比较启动和交互延迟。",
+      "comparison": "与 StableVSR、MGLD-VSR 的运动对齐思路较接近，但取消未来帧依赖并减少采样步数；与 PS-SR 和其他单步方案相比，保留少量迭代以换取质量。",
+      "evidence_quality": "有感知、时序指标和引导、解码器、步数消融。作者报告 RTX 4090、720p 为 0.328 秒/帧，约 3.05 FPS；低等待不意味着实时吞吐。与离线方法的巨大首帧差距依赖其测量协议。[效率与消融](https://arxiv.org/html/2512.23709)",
+      "limitations": "光流误差、遮挡和生成结果递归可能传播伪影；消费卡吞吐仍远低于常规播放帧率。缺少身份、OCR 和完整影视长序列验证。",
+      "reproduction": "候选核验与作者仓库支持训练、推理和预训练模型公开，Apache-2.0；未运行。适合复测逐帧延迟与四步质量收益，不宜将论文中的离线 TTFF 数字推广到所有实现。",
+      "four_k": "未找到该工作自身明确的 4K 系统实验。后续 ReCaVSR 附录将其作为空间切块的 4K 基线，属于后续作者测量。",
+      "reading_plan": "先读逐帧协议、ARTG、TPM 和效率表，再读步数及 rollout 消融。与块级方法比较时统一输入到达方式，分开记录输入等待与 GPU 时间。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2512.23709",
+        "https://jamichss.github.io/stream-diffvsr-project-page/",
+        "https://arxiv.org/html/2609.37831"
+      ]
+    },
+    {
+      "id": "2510.12747",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "FlashVSR 将单步蒸馏、局部因果稀疏注意力、KV 缓存和 LR 条件轻量解码器组合为流式系统。",
+      "why_read": "2025-10-14 发布，是理解当前流式路线的基础。本期建议定向阅读并作为复测基线，未另外占用推荐名额。",
+      "comparison": "相对已读工作，系统性降低采样、注意力与解码成本；ReCaVSR、SwiftVR 和 RelayVSR 的增量都应以其作为重要对照。",
+      "evidence_quality": "正文节选有速度、质量和模块消融；作者原始约 17 FPS 对应 768×1408、A100，并非 UHD。仓库提供 v1.1 资源和部署说明。",
+      "limitations": "块级输出与 lookahead 仍有等待；依赖专用稀疏注意力实现。作者仓库对消费卡兼容性未给充分验证，训练数据 VSR120k 仍列为待发布。",
+      "reproduction": "作者推理、权重与训练相关资源已公开，但数据、算子兼容性及论文配置对应关系仍有缺口；未实测。",
+      "four_k": "原论文相关 1440p 证据不能当作 4K。ReCaVSR 附录提供了后续作者对 FlashVSR Tiny 的 4K 测量，不能直接与原论文速度混用。",
+      "reading_plan": "只优先读注意力范围、LR 条件解码器及训练到推理的配置变化；复现前核查稀疏算子和 GPU 支持。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2510.12747",
+        "https://github.com/OpenImagingLab/FlashVSR",
+        "https://arxiv.org/html/2609.37831"
+      ]
+    },
+    {
+      "id": "2505.16239",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "DOVE 通过潜变量学习与像素空间细化，将视频生成先验适配为一步真实视频超分，并结合图像、视频监督。",
+      "why_read": "2025-05-22 发布，适合作为两阶段单步训练的基础参考；本期更优先选择与流式、控制或 UHD 成本直接相关的工作。",
+      "comparison": "相对已读工作，避免多步采样；相对 PS-SR，直接学习单步映射。SparkVSR 延续其潜变量—像素训练思路并增加参考控制。",
+      "evidence_quality": "正文节选支持多基准和训练阶段消融，公开数据及实现提高研究可操作性；单步效率收益不能推导为流式低延迟。",
+      "limitations": "离线视频处理与较重自编码器限制部署；端点回归的细节损失需要像素阶段补偿。文字、身份和长影视证据有限。",
+      "reproduction": "候选已核验作者代码、训练与推理资源、权重和 HQ-VSR 数据线索；公开不代表已实测复现。",
+      "four_k": "候选正文节选未提供明确自身 4K 系统测试；后续论文采用切块测其 4K 基线，需注明测量来源。",
+      "reading_plan": "优先读两阶段训练及像素损失消融，作为 SparkVSR、FastVR 的方法背景。",
+      "confidence": "中",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2505.16239",
+        "https://arxiv.org/html/2603.16864",
+        "https://arxiv.org/html/2609.37831"
+      ]
+    },
+    {
+      "id": "2501.01320",
+      "decision": "skip",
+      "priority": "跳过",
+      "contribution": "SeedVR 使用视频原生扩散与移位窗口，处理可变长度和分辨率的通用修复。",
+      "why_read": "2025-01-02 发布，保留为历史背景；本期以 SeedVR2 替代完整阅读，避免同路线重复投入。",
+      "comparison": "比已读图像扩散先验方法更直接利用视频生成先验，但仍是较昂贵的多步修复。",
+      "evidence_quality": "候选正文节选提供修复实验。作者共享仓库明确区分 SeedVR 的 CVPR 2025 与 SeedVR2 的 ICLR 2026，不能把后者录用信息套给前者。",
+      "limitations": "任意长度、分辨率的结构适应性不能证明严格在线、低显存或任意长度质量稳定；训练资源负担较大。",
+      "reproduction": "共享作者仓库有推理与模型资源；未确认完整训练数据与训练结果可复现。",
+      "four_k": "候选节选及当前作者说明不足以建立完整 4K 吞吐与显存证据。",
+      "reading_plan": "只读窗口设计和 SeedVR2 所继承的部分。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2501.01320",
+        "https://github.com/ByteDance-Seed/SeedVR"
+      ]
+    },
+    {
+      "id": "2607.10495",
+      "decision": "skip",
+      "priority": "跳过",
+      "contribution": "NanoVSR 用结构重参数化、纯卷积和加法双向传播减少部署开销，避免显式光流与自定义算子。",
+      "why_read": "2026-07-11 发布。我的判断：适合边缘设备重建基线，但与生成式真实修复、细节真实性及 UHD 影视目标的增量较小。",
+      "comparison": "它优化传统重建模型的硬件执行，不提供已读生成式方法的细节合成能力；可用于测量生成质量所支付的计算成本。",
+      "evidence_quality": "有 REDS4、Vid4、Vimeo90K-T 与 Jetson TensorRT 测试。作者的速度对应指定输入分辨率及 15 帧双向块。",
+      "limitations": "双向块不是逐帧因果流式；全参考指标优先，复杂真实退化和身份、文字专门评测不足。",
+      "reproduction": "作者仓库有训练、评估、ONNX 导出，MIT；未确认预训练权重可直接取得。",
+      "four_k": "测试输入 180×320、270×480 的 4× 输出对应 720p、1080p，不能称为 4K。",
+      "reading_plan": "有边缘部署需求时只读重参数化和 TensorRT 协议。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2607.10495",
+        "https://github.com/filippawlicki/nanovsr"
+      ]
+    },
+    {
+      "id": "2510.18775",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "UltraGen 以压缩的全局分支、局部窗口及层次跨窗注意力，将预训练 Wan 扩展到原生高分辨率视频生成。",
+      "why_read": "2025-10-21 发布。直接 4K 生成的研究价值明确，但本期不因题目相关就填满名额；新发现的 T3-Video 更值得在资源核验后比较。",
+      "comparison": "已读三篇处理 LR 到 HR 修复；UltraGen 在目标高分辨率空间生成内容，适合研究全局语义与局部细节如何协同。",
+      "evidence_quality": "正文及附录给出 4K 对比和注意力消融。HD-MSE、HD-LPIPS 的定义和方向不同于常规重建误差，不能解释为恢复真实纹理。作者表 2 报告 4K 推理约 1 小时 50 分钟。",
+      "limitations": "4K 输出限于 29 帧，复杂运动仍有局限；训练与推理成本高。部分效率展示的帧数说明需要与 4K 实验协议逐项对齐。",
+      "reproduction": "官方仓库有推理与训练目录，LICENSE 标注 Apache-2.0；列出的 JTUplayer/Ultragen 权重页面本次无法取得，且安装示例含占位仓库地址，完整复现链路仍需核查。",
+      "four_k": "论文明确有原生 4K 实验，不是低分辨率生成后接 SR；但短片证据不支持长镜头或可交互的 UHD 影视生成。",
+      "reading_plan": "定向读全局—局部注意力、附录 C/D/H 和时延协议；优先与 T3-Video 比较再决定是否投入复现。",
+      "confidence": "中",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2510.18775",
+        "https://github.com/sjtuplayer/UltraGen",
+        "https://github.com/sjtuplayer/UltraGen/blob/main/LICENSE"
+      ]
+    },
+    {
+      "id": "2512.13492",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "T3-Video 用共享权重的多尺度近、远窗口，结合层次划分和保留轴向全注意力，改造预训练 Transformer 的注意力计算。",
+      "why_read": "2025-12-15 初稿，正式标题已变为 Transform Trained Transformer for Accelerating Native 4K Video Generation；官方 PMLR 确认 ICML 2026。我的判断：它是直接 4K 分支最值得补入核验的工作之一。",
+      "comparison": "与已读 SR 方法相比，它在生成模型本身解决高分辨率计算；相对 UltraGen，更强调复用参数与改变注意力模式。无需改核心架构不等于无需微调。",
+      "evidence_quality": "候选正文节选支持 4K-VBench、消融及 81 帧生成。加速数值包含不同模型与优化组合，不能把标题的十倍直接解释为所有端到端配置。",
+      "limitations": "仍需高分辨率训练，论文的小规模计算是相对从头预训练而言。训练脚本、权重版本和加速组件的公开对应关系需核验。",
+      "reproduction": "联网找到作者 zhangzjn/T3-Video 仓库，含推理实现、Apache-2.0 与 APRIL-AIGC/T3-Video 权重链接；已放入 discoveries。候选原状态未确认，本轮不直接选入。",
+      "four_k": "明确原生 3840×2176、81 帧证据；应按实际填充尺寸理解，而非把所有实验写成 3840×2160。",
+      "reading_plan": "先读注意力变换、轴向与层次消融、完整加速栈，再对照正式 proceedings 版本。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2512.13492",
+        "https://proceedings.mlr.press/v306/zhang26jj.html",
+        "https://github.com/zhangzjn/T3-Video"
+      ]
+    },
+    {
+      "id": "2508.15774",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "当前 CineScale 版本通过注意力位置处理与自级联高分辨率生成，探索免调参地扩展已有视频模型。",
+      "why_read": "2025-08-21 初稿、2026-09-16 更新；旧标题 Free Lunch in High-Resolution Cinematic Visual Generation 与当前 CineScale 需要按同一 ID 追踪，旧版训练描述不能套给新版。",
+      "comparison": "已读工作学习修复模型；当前 CineScale 的增量是推理时扩展生成分辨率。其低分辨率潜变量上采样、加噪再细化路线，也值得与生成视频 refiner 对照。",
+      "evidence_quality": "正文节选有高分辨率生成、位置设计和消融；部分比较跨输出分辨率，且 4K 展示与主量化表需要分开判断。",
+      "limitations": "免调参不等于低成本；级联流程也不能称为从纯噪声一次直接生成 4K。缺少可直接套用的完整单卡显存与吞吐证据。",
+      "reproduction": "发现作者 Eyeline-Labs/CineScale 仓库与当前实现、4K 视频细化示例；仓库仍注明建设中，已放入 discoveries，本轮等待独立核验。",
+      "four_k": "作者实现明确示例 3840×2160、41 帧；示例使用多 GPU，不能推断为单卡可部署或最低硬件要求。",
+      "reading_plan": "优先读当前版本的位置处理、自级联和分辨率比较协议，核对代码对应的论文版本。",
+      "confidence": "中",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2508.15774",
+        "https://github.com/Eyeline-Labs/CineScale"
+      ]
+    },
+    {
+      "id": "2609.37969",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "SoL-Refiner 以高分辨率继续训练、帧级奖励后训练和 DMD/GAN 蒸馏，将跨生成器的视频精修压到一步，并配合轻量自编码器与推理引擎。",
+      "why_read": "2026-09-29 发布。我的判断：对低分辨率影视生成接 UHD 精修很相关，尤其值得研究生成器伪影与真实退化是否需要不同训练协议。",
+      "comparison": "与已读真实视频 SR 相比，主要目标是生成视频缺陷与细节；可在保持分辨率时修复，也可上采样，不能简单归类为通用真实视频恢复。",
+      "evidence_quality": "Refiner-Bench 有 150 个共享输入视频及跨生成器测试。作者报告 4K 质量改善，但 8.91 倍精修加速来自约 2K 配置；27.03 倍端到端示例是一张 GPU 的基线对每阶段一张 GPU 的两阶段系统。[论文](https://arxiv.org/html/2609.37969)",
+      "limitations": "内部训练数据、帧级奖励和无参考指标不能保证真实内容、文字或身份。部分基线输出尺寸不完全相同，平均分也不能证明所有时序维度领先。",
+      "reproduction": "找到作者项目 Code 入口及 Efficient-Large-Model 官方权重资源线索，但 Code 链接本次打开失败，权重页面缺少完整模型说明；先放 discoveries，暂不选入。",
+      "four_k": "质量测试明确为 3840×2176；2K 的加速比、1344×768 的 H3 示例均不能当作 4K 速度证据。",
+      "reading_plan": "先读共享输入协议、4K 与 2K 区分、奖励采样和完整加速消融，再检查发布的 LTX-2.3 与后续 LTX-2.5 资源是否对应论文。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2609.37969",
+        "https://nvlabs.github.io/Sana/Sol-Refiner/",
+        "https://huggingface.co/Efficient-Large-Model/SoL-Refiner-LTX-2.3-One-Step"
+      ]
+    },
+    {
+      "id": "2609.36757",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "FastVR 用轻量 VAE、空间切块和块级因果注意力控制成本，通过连续 LQ—HQ 轨迹与自蒸馏速度一致性改善一步学习。",
+      "why_read": "2026-09-29 发布。其训练目标与 SwiftVR 的连续轨迹值得直接比较；联网发现的仓库标题 Real-Time 与论文 Efficient Streaming 对应同一工作，不能与 FastVSR 混淆。",
+      "comparison": "相对已读工作，增量是单步映射的轨迹监督与部署结构；与 ReCaVSR 相比，使用固定近期上下文，而非学习层级历史分配。",
+      "evidence_quality": "正文节选含多个真实、合成数据集与实验。作者报告 H20、1080p 下 11 FPS，计时排除文件 I/O 和模型加载；全参考指标仍有竞争方法优势。",
+      "limitations": "块内仍双向可见，空间切块可能影响全局细节和边界；无参考质量领先不能证明文字、身份正确。自收集训练数据限制完整重训。",
+      "reproduction": "作者 chenxx89/FastVR 仓库明确 9 月 29 日发布训练与推理，列出 Apache-2.0 和权重链接；已加入 discoveries。原候选未确认开放状态，本轮不直接选入。",
+      "four_k": "未见明确 4K 显存、吞吐实验；任意倍率和最终输出尺寸参数不能替代在目标分辨率完成模型处理的证据。",
+      "reading_plan": "优先读连续轨迹、速度一致性与其消融，再读推理时模型处理尺寸、空间切块及真实输出尺寸的关系。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2609.36757",
+        "https://github.com/chenxx89/FastVR"
+      ]
+    },
+    {
+      "id": "2603.04291",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "CubeComposer 按 cubemap 面与时间窗自回归生成，用覆盖优先顺序、稀疏上下文注意力及拓扑边界处理降低峰值成本并维护连续性。",
+      "why_read": "2026-03-04 发布。我的判断：其空间—时间联合分块和边界一致性，对高分辨率生成有借鉴价值，但应用是透视视频补全到 360°。",
+      "comparison": "相对已读修复工作，新增未观测区域内容生成与跨空间块约束；可借鉴状态组织，不能直接期待普通平面 VSR 同样获益。",
+      "evidence_quality": "正文节选有基准、组件消融和原生高分辨率实验；官方 CVPR 2026 proceedings 可确认录用。生成过程中使用未来透视片段，时间生成顺序因果不等于严格在线输入。",
+      "limitations": "全景内容外推缺少真实唯一答案；ERP 宽度和局部视角清晰度并不等同常规 UHD。相机轨迹、面间接缝和误差传播增加复现难度。",
+      "reproduction": "发现 TencentARC/CubeComposer 作者仓库，列出 3K/4K 权重及运行说明，已放 discoveries。4K360Vid 发布的是视频 ID 和标注，不能当作原始视频已完整打包。",
+      "four_k": "作者 4K 指 3840×1920 全景 ERP，区别于 3840×2160 UHD；由各面原生生成后组合，不是外接 SR。",
+      "reading_plan": "先读上下文机制、空间生成顺序、连续性消融和实际权重配置。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2603.04291",
+        "https://github.com/TencentARC/CubeComposer",
+        "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_CubeComposer_Spatio-Temporal_Autoregressive_4K_360deg_Video_Generation_from_Perspective_Video_CVPR_2026_paper.pdf"
+      ]
+    },
+    {
+      "id": "2507.19138",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "RealisVSR 使用 Wan 视频先验、保持一致性的条件分支及 wavelet/HOG 高频损失，并建立 RealisVideo-4K 测试资源。",
+      "why_read": "2025-07-25 发布。对研究细节真实性与 4K 评测很有价值，但未确认模型代码开放，不能选入。",
+      "comparison": "相对已读方法，更强调视频原生先验与显式高频训练；高频损失可借鉴，不能自动保证生成纹理是真实纹理。",
+      "evidence_quality": "正文有真实 4K 来源的 140 个测试视频和配对指标；关键局限是部分竞争方法先在显存允许的尺寸处理，再双三次放大到 4K，比较不是等目标分辨率计算。",
+      "limitations": "合成退化与训练匹配、测试选择偏向细节丰富内容；4K 基线插值处理影响公平性。公开时延表不足以建立统一 4K 部署成本。",
+      "reproduction": "作者项目页只有论文和数据入口；网站源码的开放许可不能当作模型实现开源。未找到明确模型代码、权重发布证据。",
+      "four_k": "确有 4K 配对评价，不是只有标题；但需要分别记录各方法实际模型处理分辨率与最终文件尺寸。",
+      "reading_plan": "优先读高频损失消融、4K 基线协议及数据筛选；资源发布前暂缓完整复现。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2507.19138",
+        "https://zws98.github.io/RealisVSR-project/"
+      ]
+    },
+    {
+      "id": "2609.39649",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "FANVIDv2 用脸部识别和车牌读取评价 VSR 输出，补充仅看 PSNR、SSIM 与观感的盲点。",
+      "why_read": "2026-09-30 发布。我的判断：评测问题高度相关，值得借鉴，但当前资源与实验不足以作为成熟生成式修复评测套件推荐。",
+      "comparison": "它不提供替代已读工作的生成模型，而是检验漂亮细节是否保留可识别身份和字符。",
+      "evidence_quality": "正文给出识别任务、复合退化和轻量 VSR 对照。实验没有充分覆盖当前大生成模型，固定识别器也可能影响结论；不能据此认定生成式方法保真。",
+      "limitations": "需检查数据划分、识别器偏差和评分分母。脸部识别与车牌文字不能代表全部人像、字幕和影视文字保真，也未充分测量生成细节跨时间正确性。",
+      "reproduction": "论文指向作者 Hugging Face 数据资源，但 v2 退化、评分脚本称随投稿附带，尚未确认完整公开入口。不能把旧 FANVID 数据发布当成 v2 代码已发布。",
+      "four_k": "相关实验从 320×180 提升到 1280×720，不是 4K。",
+      "reading_plan": "先读划分、FaceRecBox/TextRecBox 及评分局限；在正式复用前核查 v2 脚本和数据版本。",
+      "confidence": "中",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2609.39649"
+      ]
+    },
+    {
+      "id": "2609.32742",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "摘要声明 LoCoVSR 以像素扩散后验采样、相邻 LR 局部窗口和共享噪声轨迹处理视频，减少递归误差累积并支持并行。",
+      "why_read": "2026-09-26 发布。其输入条件驱动而非生成历史驱动的路线值得观察，但目前只能基于摘要判断。",
+      "comparison": "与 StableVSR、MGLD-VSR 的显式运动引导不同，采用局部上下文和共享噪声；“不递归”只能消除一类错误传播，不能证明所有时序漂移消失。",
+      "evidence_quality": "仅基于摘要/项目资源；正文 HTML 不可访问，本次未取得可分析的正文。摘要说明训练在 VFHQ 脸部数据，无法核验具体速度、消融和泛化。",
+      "limitations": "脸部领域结果不能外推到一般影视、字幕和严重真实退化；局部相邻窗口可能包含未来帧，不能仅凭摘要称其严格流式。",
+      "reproduction": "未找到明确作者模型仓库与权重发布证据，不选入。",
+      "four_k": "未取得任何可核验 4K 实验。",
+      "reading_plan": "取得正文后先核查退化、时序协议、身份指标与采样成本，再决定阅读和复现优先级。",
+      "confidence": "低",
+      "reading_basis": "仅摘要与资源",
+      "sources": [
+        "https://arxiv.org/abs/2609.32742"
+      ]
+    },
+    {
+      "id": "2609.38689",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "EPIC 将现有生成模型扩展到 360° 立体视频，利用球面极线几何一致性指标作为偏好优化信号。",
+      "why_read": "2026-09-30 发布。对沉浸式生成中的几何保真有研究价值，但与普通影视 VSR 的直接关系较弱，开放状态也未确认。",
+      "comparison": "已读工作约束时间一致性；EPIC 增加双目及球面几何一致性，可借鉴评价思想，不能直接替代真实细节或文字保真指标。",
+      "evidence_quality": "正文节选支持几何指标与生成流水线；需分开理解无需任务适配的生成环节和另外进行的偏好训练。",
+      "limitations": "几何匹配可能受纹理、遮挡和匹配器影响；没有足够证据支持平面影视修复、长视频稳定或部署成本。",
+      "reproduction": "联网未找到明确作者实现及权重开源证据，不选入。",
+      "four_k": "4K 来自包含上采样的生成流水线，不能称为原生 4K 视频生成。",
+      "reading_plan": "有 360° 立体需求时只优先读几何指标、偏好数据和上采样协议。",
+      "confidence": "中",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2609.38689"
+      ]
+    },
+    {
+      "id": "2609.18836",
+      "decision": "skip",
+      "priority": "跳过",
+      "contribution": "AVR 在检测异常区域后，优先复制视频中实际出现的背景，仅对始终不可见区域使用生成补全。",
+      "why_read": "2026-09-16 发布。证据优先的原则有启发，但主要是监控异常移除，不是本期重点的真实退化修复或视频超分。",
+      "comparison": "与已读生成式 SR 不同，它改变或移除场景内容；不能把对象去除的保真结果推广到恢复原视频。",
+      "evidence_quality": "正文节选覆盖检测、补全和异常注入实验；编辑区域占比较小，全帧指标会被未编辑背景主导，应重点看区域结果。",
+      "limitations": "静态背景假设和固定相机实验限制电影镜头泛化；小尺寸短片不能证明长视频或 UHD 能力。",
+      "reproduction": "未找到明确作者模型代码发布证据；使用开放基础模型不等于组合系统已开源。",
+      "four_k": "未见 4K 实验。",
+      "reading_plan": "仅保留观察证据与生成区域分离的思想，不投入完整复现。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2609.18836"
+      ]
+    },
+    {
+      "id": "2610.00812",
+      "decision": "skip",
+      "priority": "跳过",
+      "contribution": "综述将视频生成后训练与对齐分为监督适配、自训练及蒸馏、奖励偏好和推理时方法。",
+      "why_read": "本次 arXiv 条目为 2026-09-30，但官方 TMLR 来源显示 2026 年 6 月已发表；不能据 arXiv 日期把它视为全新工作，也不能沿用候选中的 ICML 标注。",
+      "comparison": "可为理解 SeedVR2、RelayVSR 和 SoL-Refiner 的训练目标提供索引，不构成相对已读方法的新修复模型。",
+      "evidence_quality": "官方 TMLR 目录及论文首页支持发表信息；作者资源是文献集合，没有该综述自身的新模型性能实验。",
+      "limitations": "综合他人结果不能证明某路线解决 UHD 显存、时序保真或身份问题。",
+      "reproduction": "配套 awesome 仓库是阅读资源，其许可证不代表被收录模型全部开放。",
+      "four_k": "没有自身 4K 实验。",
+      "reading_plan": "按需查蒸馏、奖励与长时序评价部分，不作为本期完整阅读和复现推荐。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/abs/2610.00812",
+        "https://openreview.net/pdf/b3d652ade269e1760a3fea44a4e600956bd28be3.pdf",
+        "https://jmlr.org/tmlr/papers/",
+        "https://github.com/people-robots/Awesome-Video-Generation-Post-Training"
+      ]
+    }
+  ],
+  "discoveries": [
+    {
+      "id": "2512.13492",
+      "repo": "zhangzjn/T3-Video",
+      "source_url": "https://github.com/zhangzjn/T3-Video",
+      "why": "候选开放状态遗漏作者推理实现、Apache-2.0 和 4K 权重入口；正式标题已更名，PMLR 确认 ICML 2026。原生 3840×2176、81 帧使其值得核验后进入直接高分辨率分支；仍须检查权重和训练发布完整性。"
+    },
+    {
+      "id": "2508.15774",
+      "repo": "Eyeline-Labs/CineScale",
+      "source_url": "https://github.com/Eyeline-Labs/CineScale",
+      "why": "找到当前版本作者实现及明确 3840×2160 视频细化示例。旧标题和旧版训练描述容易造成遗漏或混淆；应核验当前免调参版本、建设中资源和多 GPU 条件。"
+    },
+    {
+      "id": "2609.36757",
+      "repo": "chenxx89/FastVR",
+      "source_url": "https://github.com/chenxx89/FastVR",
+      "why": "作者明确 2026-09-29 发布训练、推理代码及权重入口，代码为 Apache-2.0。仓库别名 Real-Time 与论文 Efficient Streaming 对应同一 ID；连续轨迹与速度一致性对单步修复研究有直接价值。"
+    },
+    {
+      "id": "2609.37969",
+      "repo": "",
+      "source_url": "https://nvlabs.github.io/Sana/Sol-Refiner/",
+      "why": "作者项目有 Code 入口，官方 Efficient-Large-Model 组织出现 LTX-2.3 单步权重资源，但本次 Code 链接无法打开，未确认仓库路径和完整许可。生成视频一步精修与 4K 质量测试高度相关，应独立核验后再排序。"
+    },
+    {
+      "id": "2603.04291",
+      "repo": "TencentARC/CubeComposer",
+      "source_url": "https://github.com/TencentARC/CubeComposer",
+      "why": "找到作者实现及 3K/4K 权重配置，补足候选未确认资源。空间—时间自回归和接缝控制值得研究；其 4K 是 3840×1920 全景，数据发布为视频 ID 与标注，须分别核验。"
+    },
+    {
+      "id": "2606.09150",
+      "repo": "xin1u/UltraFlash",
+      "source_url": "https://github.com/xin1u/UltraFlash",
+      "why": "遗漏的 Ultra Flash: Scaling Real-Time Streaming Video Generation to High Resolutions，将低分辨率生成、一步生成式 SR 与级联流式优化结合。作者已在 2026 年 8 月发布短、长视频推理和权重，训练仍待发布。论文主结果到 1K/2K，不能标为 4K；部分附录时延口径还需复核。"
+    },
+    {
+      "id": "2607.22231",
+      "repo": "Ree1s/TRaM-VSR",
+      "source_url": "https://arxiv.org/abs/2607.22231",
+      "why": "遗漏的 Importance-Aware Token Routing and Merging for One-Step Diffusion Video Super-Resolution，以重要性路由和合并减少 token 成本，与 ReCaVSR 的历史缓存分配互补。论文指向作者仓库，但本次仓库为空，属于资源未兑现风险，不能按已发布实现处理。"
+    },
+    {
+      "id": "2606.28677",
+      "repo": "chenxx89/SATB-VR",
+      "source_url": "https://github.com/chenxx89/SATB-VR",
+      "why": "遗漏的少步修复路线：辅助预测器、SNR 感知轨迹混合及去噪器一致性，适合检验极端单步化的质量代价。作者已发布 Apache-2.0 推理实现；需要核验权重、训练资源和具体高分辨率协议后决定推荐。"
+    }
+  ]
+}

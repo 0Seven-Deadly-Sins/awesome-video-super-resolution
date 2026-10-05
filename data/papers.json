@@ -1,66 +1,5 @@
 [
   {
-    "id": "2609.37850",
-    "title": "RelayVSR: Large-Small Model Collaboration for Efficient Real-World Video Super-Resolution",
-    "abstract": "Large generative models can recover realistic detail in real-world video super-resolution (VSR), but processing an entire video with them is computationally expensive. In this work, we present RelayVSR, a streaming VSR framework built on the Sparse Generative Relay mechanism. A large generative model generates reference latents for sparse keyframes, while a lightweight VSR network uses these references and low-resolution video to super-resolve every frame. The lightweight VSR network, implemented as a Dual-Memory Video Transformer, reuses keyframe information across frames and updates recent video context, supporting first-keyframe conditioning and dual-endpoint conditioning with bounded lookahead. However, errors in shared keyframes can propagate and accumulate across output frames, making keyframe quality alone an insufficient optimization target. We address this collaboration gap with Video-Aware Reference Optimization (VARO), which uses reinforcement learning to update the large generative model with two reward levels: a system-level reward evaluates videos produced by the fixed lightweight VSR network, while a reference-level reward evaluates decoded keyframe quality. VARO imp",
-    "authors": [
-      "Xijun Wang",
-      "Xin Li",
-      "Zirui Lang",
-      "Suhang Yao",
-      "Haoran Li",
-      "Zhibo Chen"
-    ],
-    "published": "2026-09-29T15:42:18Z",
-    "updated": "2026-09-29T15:42:18Z",
-    "paper_url": "https://arxiv.org/abs/2609.37850",
-    "comment": "The code is available at https://github.com/kopperx/RelayVSR",
-    "open_status": "released",
-    "checked_at": "2026-10-05T21:45:24+08:00",
-    "evidence": [
-      {
-        "url": "https://arxiv.org/abs/2609.37850",
-        "kind": "paper"
-      },
-      {
-        "url": "https://github.com/kopperx/RelayVSR/blob/main/README.md",
-        "kind": "author_repository"
-      }
-    ],
-    "promise_note": "",
-    "resolution": "高分辨率相关，未确认 4K 证据",
-    "category": "视频超分/修复",
-    "repo": "kopperx/RelayVSR",
-    "repo_url": "https://github.com/kopperx/RelayVSR",
-    "stars": 3,
-    "archived": false,
-    "license": "Apache-2.0",
-    "code_files": [
-      "inference.py",
-      "refvsr_inference/__init__.py",
-      "refvsr_inference/checkpoints.py",
-      "refvsr_inference/media.py",
-      "refvsr_inference/models/__init__.py",
-      "refvsr_inference/models/flash/__init__.py",
-      "refvsr_inference/models/flash/_flashvsr_ops.py",
-      "refvsr_inference/models/flash/_local_attention.py"
-    ],
-    "code_count": 19,
-    "weights": [
-      "https://huggingface.co/kopper/RelayVSR"
-    ],
-    "weights_note": "作者页面列有模型/权重链接，未验证下载",
-    "venue_text": "",
-    "evidence_url": "https://github.com/kopperx/RelayVSR/blob/main/README.md",
-    "association": "论文/作者项目直接链接仓库",
-    "stars_delta": 0,
-    "venue": "预印本/录用未核验",
-    "confidence": "来源关联与实现文件已核验",
-    "resource_news": false,
-    "digest_reason": "本周/近期新论文",
-    "pending_digest": false
-  },
-  {
     "id": "2609.37831",
     "title": "ReCaVSR: One-Step Streaming Diffusion Video Super-Resolution with Recycled Latents and Learned Cache Routing",
     "abstract": "Real-time diffusion-based video super-resolution (VSR) is in high demand for online streaming, yet stringent latency requirements often compromise generative fidelity. We propose ReCaVSR, a Wan2.2-based, one-step framework for streaming VSR that builds on two observations: recycled SR latents retain local temporal context, reducing the need for full historical Key-Value (KV) caches; and individual transformer layers benefit from distinct temporal scopes. ReCaVSR combines three complementary designs: (i) layer-wise cache routing with recycled SR latents: each DiT layer learns its KV-cache temporal scope under a cache budget and exports a static inference schedule, while recycled SR latents propagate local context by conditioning each new block on the model's own preceding predictions. (ii) Multi-Scope Query (MSQ) Discriminator: a compositional discriminator combining global, spatial-window, and temporal-tube feedback for holistic realism, local texture generation, and temporal stability. (iii) LR-conditioned adaptation of FlashDecoder: a VAE decoder that incorporates LR observations for efficient latent decoding. ReCaVSR enables streaming VSR without iterative sampling or full histo",
@@ -77,7 +16,7 @@
     "paper_url": "https://arxiv.org/abs/2609.37831",
     "comment": "The code is available at https://github.com/kopperx/ReCaVSR",
     "open_status": "released",
-    "checked_at": "2026-10-05T21:45:24+08:00",
+    "checked_at": "2026-10-05T22:59:50+08:00",
     "evidence": [
       {
         "url": "https://arxiv.org/abs/2609.37831",
@@ -117,8 +56,173 @@
     "stars_delta": 0,
     "venue": "预印本/录用未核验",
     "confidence": "来源关联与实现文件已核验",
+    "pending_digest": false,
     "resource_news": false,
-    "digest_reason": "本周/近期新论文",
+    "material_change": false,
+    "ai_review": {
+      "id": "2609.37831",
+      "decision": "recommend",
+      "priority": "必读",
+      "contribution": "ReCaVSR 将上一块生成的 SR 潜变量作为局部时序条件，并在缓存预算下学习各 DiT 层需要的历史范围，导出固定推理策略；再结合自回归 rollout、多尺度查询判别器和 LR 条件 FlashDecoder。",
+      "why_read": "2026-09-29 的新预印本，本期 bootstrap 重评。我的判断：这是目前候选中最直接连接长视频稳定、细节质量与 4K 显存预算的工作，值得优先研究其缓存消融。",
+      "comparison": "相对 StableVSR、MGLD-VSR 的运动引导与多步采样，增量是视频原生单步生成和受预算约束的历史分配；相对 PS-SR，优化重点从采样步骤之间的模型协作转向视频块之间的记忆复用。",
+      "evidence_quality": "正文节选及补查附录覆盖配对与真实数据、约千帧 LongVSR60、缓存和判别器消融，以及 35 个视频、15 名评价者的人评。作者报告 1080p、A100-80GB 下 21.20 FPS、15.16 GB 峰值分配显存；这些是 GPU 模型计时。[论文及附录](https://arxiv.org/html/2609.37831)",
+      "limitations": "合成退化与训练匹配；长视频都是单镜头，作者明确未评估硬切镜。缓存策略固定，不能按运动或内容动态调整。脸、文字样例和主观质量不能证明身份或字符正确；递归条件仍可能传播错误。",
+      "reproduction": "作者仓库提供推理实现和 kopper/ReCaVSR 权重链接，候选核验为 Apache-2.0；未确认完整训练、数据与评测链路公开，未实测。优先复测固定路由、状态重置和峰值显存，而非直接重训整个系统。",
+      "four_k": "补查附录 C.2 表 C.3 明确列出 4K：201 帧、单张 A100-80GB 下 5.40 FPS、27.53 GB 峰值分配显存。表中未写具体宽高，复现时应核对输出尺寸；这不是实时 4K。[表 C.3](https://arxiv.org/html/2609.37831)",
+      "reading_plan": "先读 3.1、4.4 缓存消融和附录 C.2/C.3、D；再读 MSQ 判别器与 LR 条件解码器。复测增加镜头切换、遮挡重现、细字和脸部身份测试。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2609.37831",
+        "https://github.com/kopperx/ReCaVSR/blob/main/README.md"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00"
+  },
+  {
+    "id": "2609.37850",
+    "title": "RelayVSR: Large-Small Model Collaboration for Efficient Real-World Video Super-Resolution",
+    "abstract": "Large generative models can recover realistic detail in real-world video super-resolution (VSR), but processing an entire video with them is computationally expensive. In this work, we present RelayVSR, a streaming VSR framework built on the Sparse Generative Relay mechanism. A large generative model generates reference latents for sparse keyframes, while a lightweight VSR network uses these references and low-resolution video to super-resolve every frame. The lightweight VSR network, implemented as a Dual-Memory Video Transformer, reuses keyframe information across frames and updates recent video context, supporting first-keyframe conditioning and dual-endpoint conditioning with bounded lookahead. However, errors in shared keyframes can propagate and accumulate across output frames, making keyframe quality alone an insufficient optimization target. We address this collaboration gap with Video-Aware Reference Optimization (VARO), which uses reinforcement learning to update the large generative model with two reward levels: a system-level reward evaluates videos produced by the fixed lightweight VSR network, while a reference-level reward evaluates decoded keyframe quality. VARO imp",
+    "authors": [
+      "Xijun Wang",
+      "Xin Li",
+      "Zirui Lang",
+      "Suhang Yao",
+      "Haoran Li",
+      "Zhibo Chen"
+    ],
+    "published": "2026-09-29T15:42:18Z",
+    "updated": "2026-09-29T15:42:18Z",
+    "paper_url": "https://arxiv.org/abs/2609.37850",
+    "comment": "The code is available at https://github.com/kopperx/RelayVSR",
+    "open_status": "released",
+    "checked_at": "2026-10-05T22:59:50+08:00",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2609.37850",
+        "kind": "paper"
+      },
+      {
+        "url": "https://github.com/kopperx/RelayVSR/blob/main/README.md",
+        "kind": "author_repository"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "高分辨率相关，未确认 4K 证据",
+    "category": "视频超分/修复",
+    "repo": "kopperx/RelayVSR",
+    "repo_url": "https://github.com/kopperx/RelayVSR",
+    "stars": 3,
+    "archived": false,
+    "license": "Apache-2.0",
+    "code_files": [
+      "inference.py",
+      "refvsr_inference/__init__.py",
+      "refvsr_inference/checkpoints.py",
+      "refvsr_inference/media.py",
+      "refvsr_inference/models/__init__.py",
+      "refvsr_inference/models/flash/__init__.py",
+      "refvsr_inference/models/flash/_flashvsr_ops.py",
+      "refvsr_inference/models/flash/_local_attention.py"
+    ],
+    "code_count": 19,
+    "weights": [
+      "https://huggingface.co/kopper/RelayVSR"
+    ],
+    "weights_note": "作者页面列有模型/权重链接，未验证下载",
+    "venue_text": "",
+    "evidence_url": "https://github.com/kopperx/RelayVSR/blob/main/README.md",
+    "association": "论文/作者项目直接链接仓库",
+    "stars_delta": 0,
+    "venue": "预印本/录用未核验",
+    "confidence": "来源关联与实现文件已核验",
+    "pending_digest": false,
+    "resource_news": false,
+    "material_change": false,
+    "ai_review": {
+      "id": "2609.37850",
+      "decision": "recommend",
+      "priority": "必读",
+      "contribution": "RelayVSR 只让大生成模型增强稀疏关键帧，由轻量双记忆 Transformer 利用参考潜变量逐帧超分；VARO 用最终视频与参考帧两级奖励优化参考生成器，处理关键帧质量与下游视频质量的目标错位。",
+      "why_read": "2026-09-29 发布，本期 bootstrap 重评。我的判断：它提供了区别于持续运行大 DiT 的计算分配方式，特别适合研究长视频吞吐和参考错误传播。",
+      "comparison": "PS-SR 在一个样本的去噪步骤之间分配大、小模型计算；RelayVSR 在时间轴上分配关键帧与普通帧计算。相对 StableVSR、MGLD-VSR，生成细节变成可反复读取的稀疏参考。",
+      "evidence_quality": "评估完整输出视频而非只评关键帧，有关键帧间隔、条件模式与 VARO 消融、长视频和人评。作者报告双端点、间隔 15 帧时，A100-80GB、1080p 下 29.29 FPS、13.82 GB；计时排除了输入等待。[系统效率分析](https://arxiv.org/html/2609.37850)",
+      "limitations": "双端点需要等待右端关键帧，0.327 秒首输出模型时间不能当作实际端到端启动延迟。固定间隔不适应镜头切换和快速变化；作者承认参考纹理、颜色错误仍会传播。奖励中的质量与光流指标不保证文字、身份正确。",
+      "reproduction": "作者仓库提供推理与 kopper/RelayVSR 权重链接，候选核验为 Apache-2.0。未确认 VARO 训练、奖励实现及完整训练数据公开；目前更适合先做推理和模式对照。",
+      "four_k": "论文及附录未找到明确 4K 测试。4× 超分和仓库高分辨率对比视频不能替代 UHD 输出、显存和吞吐证据。",
+      "reading_plan": "先读 3.1 的两种条件模式、3.3 的奖励定义、4.3 和附录 D；复测按真实输入帧率计入 lookahead，并增加参考错误、快速遮挡和切镜实验。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2609.37850",
+        "https://github.com/kopperx/RelayVSR/blob/main/README.md"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00"
+  },
+  {
+    "id": "ps-sr",
+    "title": "PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion",
+    "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_PS-SR_Pseudo-Single-Step_Video_Super-Resolution_via_Speculative_Diffusion_CVPR_2026_paper.pdf",
+    "published": "2026-06-01",
+    "updated": "2026-06-01",
+    "date_note": "会议月份，未确认首次预印本日期",
+    "authors": [
+      "Aiqiu Wu",
+      "Zhaofan Qiu",
+      "Ting Yao",
+      "Tao Mei"
+    ],
+    "comment": "CVPR 2026. Manually verified official proceedings and author repository.",
+    "abstract": "PS-SR uses a base model for a comprehensive denoising step and a lightweight draft model for subsequent speculative refinement. A frequency-domain update preserves low-frequency content consistency while injecting high-frequency details.",
+    "repo": "HiDream-ai/PS-SR",
+    "open_status": "released",
+    "checked_at": "2026-10-05T22:59:50+08:00",
+    "evidence": [
+      {
+        "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_PS-SR_Pseudo-Single-Step_Video_Super-Resolution_via_Speculative_Diffusion_CVPR_2026_paper.pdf",
+        "kind": "paper"
+      },
+      {
+        "url": "https://github.com/HiDream-ai/PS-SR/blob/main/README.md",
+        "kind": "author_repository"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "作者明确提及 4K/UHD（未实测）",
+    "category": "视频超分/修复",
+    "repo_url": "https://github.com/HiDream-ai/PS-SR",
+    "stars": 30,
+    "archived": false,
+    "license": "Apache-2.0",
+    "code_files": [
+      "Wan_SR/__init__.py",
+      "Wan_SR/configs/__init__.py",
+      "Wan_SR/configs/model_config.py",
+      "Wan_SR/degradation/degradation_video.py",
+      "Wan_SR/degradation/realesrgan_video.py",
+      "Wan_SR/degradation_RealBasicVSR/blur_kernels.py",
+      "Wan_SR/degradation_RealBasicVSR/degradation.py",
+      "Wan_SR/degradation_RealBasicVSR/real_sr_dataset.py"
+    ],
+    "code_count": 44,
+    "weights": [
+      "https://drive.google.com/drive/folders/1TUO80tp3I4N93Q_rOsn_HopMeXpHSpCO?usp=sharing",
+      "https://drive.google.com/file/d/1KIV6VewwO2eDC9g4Gcvgm-a0LDI7Lmwm/view?usp=drive_link",
+      "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B",
+      "https://huggingface.co/spaces/xinyu1205/recognize-anything/blob/main/ram_swin_large_14m.pth"
+    ],
+    "weights_note": "作者页面列有模型/权重链接，未验证下载",
+    "venue_text": "[CVPR 2026] Official Implementation of PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion",
+    "evidence_url": "https://github.com/HiDream-ai/PS-SR/blob/main/README.md",
+    "association": "论文/作者项目直接链接仓库",
+    "stars_delta": 0,
+    "venue": "CVPR 2026（作者来源标注）",
+    "confidence": "来源关联与实现文件已核验",
+    "resource_news": false,
     "pending_digest": false
   },
   {
@@ -175,68 +279,29 @@
     "confidence": "来源关联与实现文件已核验",
     "resource_news": true,
     "digest_reason": "新开源/更新资源",
-    "pending_digest": true
-  },
-  {
-    "id": "ps-sr",
-    "title": "PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion",
-    "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_PS-SR_Pseudo-Single-Step_Video_Super-Resolution_via_Speculative_Diffusion_CVPR_2026_paper.pdf",
-    "published": "2026-06-01",
-    "updated": "2026-06-01",
-    "date_note": "会议月份，未确认首次预印本日期",
-    "authors": [
-      "Aiqiu Wu",
-      "Zhaofan Qiu",
-      "Ting Yao",
-      "Tao Mei"
-    ],
-    "comment": "CVPR 2026. Manually verified official proceedings and author repository.",
-    "abstract": "PS-SR uses a base model for a comprehensive denoising step and a lightweight draft model for subsequent speculative refinement. A frequency-domain update preserves low-frequency content consistency while injecting high-frequency details.",
-    "repo": "HiDream-ai/PS-SR",
-    "open_status": "released",
-    "checked_at": "2026-10-05T21:45:24+08:00",
-    "evidence": [
-      {
-        "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_PS-SR_Pseudo-Single-Step_Video_Super-Resolution_via_Speculative_Diffusion_CVPR_2026_paper.pdf",
-        "kind": "paper"
-      },
-      {
-        "url": "https://github.com/HiDream-ai/PS-SR/blob/main/README.md",
-        "kind": "author_repository"
-      }
-    ],
-    "promise_note": "",
-    "resolution": "作者明确提及 4K/UHD（未实测）",
-    "category": "视频超分/修复",
-    "repo_url": "https://github.com/HiDream-ai/PS-SR",
-    "stars": 30,
-    "archived": false,
-    "license": "Apache-2.0",
-    "code_files": [
-      "Wan_SR/__init__.py",
-      "Wan_SR/configs/__init__.py",
-      "Wan_SR/configs/model_config.py",
-      "Wan_SR/degradation/degradation_video.py",
-      "Wan_SR/degradation/realesrgan_video.py",
-      "Wan_SR/degradation_RealBasicVSR/blur_kernels.py",
-      "Wan_SR/degradation_RealBasicVSR/degradation.py",
-      "Wan_SR/degradation_RealBasicVSR/real_sr_dataset.py"
-    ],
-    "code_count": 44,
-    "weights": [
-      "https://drive.google.com/drive/folders/1TUO80tp3I4N93Q_rOsn_HopMeXpHSpCO?usp=sharing",
-      "https://drive.google.com/file/d/1KIV6VewwO2eDC9g4Gcvgm-a0LDI7Lmwm/view?usp=drive_link",
-      "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B",
-      "https://huggingface.co/spaces/xinyu1205/recognize-anything/blob/main/ram_swin_large_14m.pth"
-    ],
-    "weights_note": "作者页面列有模型/权重链接，未验证下载",
-    "venue_text": "[CVPR 2026] Official Implementation of PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion",
-    "evidence_url": "https://github.com/HiDream-ai/PS-SR/blob/main/README.md",
-    "association": "论文/作者项目直接链接仓库",
-    "stars_delta": 0,
-    "venue": "CVPR 2026（作者来源标注）",
-    "confidence": "来源关联与实现文件已核验",
-    "resource_news": false
+    "pending_digest": true,
+    "material_change": false,
+    "ai_review": {
+      "id": "2607.10495",
+      "decision": "skip",
+      "priority": "跳过",
+      "contribution": "NanoVSR 用结构重参数化、纯卷积和加法双向传播减少部署开销，避免显式光流与自定义算子。",
+      "why_read": "2026-07-11 发布。我的判断：适合边缘设备重建基线，但与生成式真实修复、细节真实性及 UHD 影视目标的增量较小。",
+      "comparison": "它优化传统重建模型的硬件执行，不提供已读生成式方法的细节合成能力；可用于测量生成质量所支付的计算成本。",
+      "evidence_quality": "有 REDS4、Vid4、Vimeo90K-T 与 Jetson TensorRT 测试。作者的速度对应指定输入分辨率及 15 帧双向块。",
+      "limitations": "双向块不是逐帧因果流式；全参考指标优先，复杂真实退化和身份、文字专门评测不足。",
+      "reproduction": "作者仓库有训练、评估、ONNX 导出，MIT；未确认预训练权重可直接取得。",
+      "four_k": "测试输入 180×320、270×480 的 4× 输出对应 720p、1080p，不能称为 4K。",
+      "reading_plan": "有边缘部署需求时只读重参数化和 TensorRT 协议。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2607.10495",
+        "https://github.com/filippawlicki/nanovsr"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00"
   },
   {
     "id": "2603.16864",
@@ -307,7 +372,29 @@
     "confidence": "来源关联与实现文件已核验",
     "resource_news": false,
     "digest_reason": "基础阅读列表",
-    "pending_digest": false
+    "pending_digest": false,
+    "material_change": false,
+    "ai_review": {
+      "id": "2603.16864",
+      "decision": "recommend",
+      "priority": "建议阅读",
+      "contribution": "SparkVSR 将可编辑的稀疏 HR 关键帧作为控制接口，以 LR 视频约束运动和结构，通过关键帧条件潜变量—像素两阶段训练传播参考细节，并提供参考强度调节。",
+      "why_read": "2026-03-17 发布，本期 bootstrap 重评。我的判断：它对影视修复的价值在于允许人先纠正少量关键帧，再观察修正能否可靠传播，比单纯追求盲修复指标更贴近实际工作流。",
+      "comparison": "与已读三篇相比，新增可干预的外部参考，而非完全接受生成结果；与 RelayVSR 相比，它强调编辑控制，传播阶段仍运行较大的视频模型。",
+      "evidence_quality": "有盲修复、不同参考来源、引导强度及真实老电影案例。参考模式的感知收益伴随部分全参考指标下降，不能将质量指标改善解释为真实内容恢复。[正文](https://arxiv.org/html/2603.16864)",
+      "limitations": "参考自身的假文字、脸部改动和颜色错误可能被传播；增强参考依从性也可能降低输入保真。可选 Nano-Banana-Pro 参考路径依赖外部服务，不能视为整套流程都开放。老电影测试只有十个短片，长影视剪辑证据有限。",
+      "reproduction": "作者仓库已列出训练、推理、ComfyUI、两阶段 Hugging Face 权重及测试集；比候选中仅列出的 Google Drive 链接更完整。可用盲 ISR 参考路径研究，未实测。",
+      "four_k": "正文中的“修复到 4K”提示词不构成 4K 实验。未见明确 UHD 显存、吞吐或长视频测试表。",
+      "reading_plan": "先读 3.3 控制机制和参考模式的感知—失真比较，再读两阶段训练。复现重点放在人工纠正文字、脸部参考和参考错误传播。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2603.16864",
+        "https://github.com/taco-group/SparkVSR"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00"
   },
   {
     "id": "2512.23709",
@@ -374,7 +461,30 @@
     "confidence": "来源关联与实现文件已核验",
     "resource_news": true,
     "digest_reason": "新开源/更新资源",
-    "pending_digest": false
+    "pending_digest": false,
+    "material_change": false,
+    "ai_review": {
+      "id": "2512.23709",
+      "decision": "recommend",
+      "priority": "建议阅读",
+      "contribution": "Stream-DiffVSR 以四步 rollout 蒸馏、光流对齐的上一帧 SR 引导和带门控的时序解码器，实现严格逐帧、只依赖过去的扩散 VSR。",
+      "why_read": "2025-12-29 初稿，当前正文已有更新，本期 bootstrap 重评。我的判断：它提供真正逐帧因果协议，适合与高吞吐但需要收集输入块的方法比较启动和交互延迟。",
+      "comparison": "与 StableVSR、MGLD-VSR 的运动对齐思路较接近，但取消未来帧依赖并减少采样步数；与 PS-SR 和其他单步方案相比，保留少量迭代以换取质量。",
+      "evidence_quality": "有感知、时序指标和引导、解码器、步数消融。作者报告 RTX 4090、720p 为 0.328 秒/帧，约 3.05 FPS；低等待不意味着实时吞吐。与离线方法的巨大首帧差距依赖其测量协议。[效率与消融](https://arxiv.org/html/2512.23709)",
+      "limitations": "光流误差、遮挡和生成结果递归可能传播伪影；消费卡吞吐仍远低于常规播放帧率。缺少身份、OCR 和完整影视长序列验证。",
+      "reproduction": "候选核验与作者仓库支持训练、推理和预训练模型公开，Apache-2.0；未运行。适合复测逐帧延迟与四步质量收益，不宜将论文中的离线 TTFF 数字推广到所有实现。",
+      "four_k": "未找到该工作自身明确的 4K 系统实验。后续 ReCaVSR 附录将其作为空间切块的 4K 基线，属于后续作者测量。",
+      "reading_plan": "先读逐帧协议、ARTG、TPM 和效率表，再读步数及 rollout 消融。与块级方法比较时统一输入到达方式，分开记录输入等待与 GPU 时间。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2512.23709",
+        "https://jamichss.github.io/stream-diffvsr-project-page/",
+        "https://arxiv.org/html/2609.37831"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00"
   },
   {
     "id": "2510.12747",
@@ -442,7 +552,30 @@
     "confidence": "来源关联与实现文件已核验",
     "resource_news": false,
     "digest_reason": "基础阅读列表",
-    "pending_digest": false
+    "pending_digest": false,
+    "material_change": false,
+    "ai_review": {
+      "id": "2510.12747",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "FlashVSR 将单步蒸馏、局部因果稀疏注意力、KV 缓存和 LR 条件轻量解码器组合为流式系统。",
+      "why_read": "2025-10-14 发布，是理解当前流式路线的基础。本期建议定向阅读并作为复测基线，未另外占用推荐名额。",
+      "comparison": "相对已读工作，系统性降低采样、注意力与解码成本；ReCaVSR、SwiftVR 和 RelayVSR 的增量都应以其作为重要对照。",
+      "evidence_quality": "正文节选有速度、质量和模块消融；作者原始约 17 FPS 对应 768×1408、A100，并非 UHD。仓库提供 v1.1 资源和部署说明。",
+      "limitations": "块级输出与 lookahead 仍有等待；依赖专用稀疏注意力实现。作者仓库对消费卡兼容性未给充分验证，训练数据 VSR120k 仍列为待发布。",
+      "reproduction": "作者推理、权重与训练相关资源已公开，但数据、算子兼容性及论文配置对应关系仍有缺口；未实测。",
+      "four_k": "原论文相关 1440p 证据不能当作 4K。ReCaVSR 附录提供了后续作者对 FlashVSR Tiny 的 4K 测量，不能直接与原论文速度混用。",
+      "reading_plan": "只优先读注意力范围、LR 条件解码器及训练到推理的配置变化；复现前核查稀疏算子和 GPU 支持。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2510.12747",
+        "https://github.com/OpenImagingLab/FlashVSR",
+        "https://arxiv.org/html/2609.37831"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00"
   },
   {
     "id": "2506.05301",
@@ -518,7 +651,30 @@
     "confidence": "来源关联与实现文件已核验",
     "resource_news": false,
     "digest_reason": "基础阅读列表",
-    "pending_digest": false
+    "pending_digest": false,
+    "material_change": false,
+    "ai_review": {
+      "id": "2506.05301",
+      "decision": "recommend",
+      "priority": "建议阅读",
+      "contribution": "SeedVR2 将渐进蒸馏与扩散对抗后训练结合，使用真实 HQ 数据监督、适配输出分辨率的窗口注意力及稳定化损失，保留单步修复的感知细节。",
+      "why_read": "2025-06-05 发布，本期作为历史基础重评。我的判断：它是研究单步高质量修复训练的重要参照，尤其适合解释为何单纯端点回归或蒸馏会损失细节。",
+      "comparison": "相对 StableVSR、MGLD-VSR，转向视频原生 Transformer 和单步训练；相对 PS-SR，通过训练将质量压入一次生成，而非保留轻量后续修正。",
+      "evidence_quality": "正文节选支持多个修复基准、训练损失及窗口设计消融。公开仓库还明确提醒：发布的是原型模型，表现可能不完全对应论文。[论文](https://arxiv.org/html/2506.05301)、[作者说明](https://github.com/ByteDance-Seed/SeedVR)",
+      "limitations": "完整训练依赖大量自收集数据和计算，不能把推理开源等同训练可复现。作者指出重退化、大运动会失败，轻退化 AIGC 输入可能被过度生成和锐化。离线窗口处理不等于低延迟因果流式。",
+      "reproduction": "作者仓库提供 3B/7B 推理和模型链接、多 GPU 序列并行说明。适合复现公开原型的质量基线；训练数据、论文版本一致性和最终性能仍需单独核查。",
+      "four_k": "自身论文与当前作者说明未找到完整 4K 性能表。ReCaVSR 附录将 SeedVR2-3B 作为采用空间切块的 4K 基线测试，这是后续论文的测量，不能归为 SeedVR2 作者的原始部署承诺。",
+      "reading_plan": "优先读对抗后训练、特征匹配与自适应窗口消融；复现同时比较重退化和轻退化输入，记录锐化、结构偏移与离线启动延迟。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2506.05301",
+        "https://github.com/ByteDance-Seed/SeedVR",
+        "https://arxiv.org/html/2609.37831"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00"
   },
   {
     "id": "2505.16239",
@@ -585,7 +741,30 @@
     "confidence": "来源关联与实现文件已核验",
     "resource_news": false,
     "digest_reason": "基础阅读列表",
-    "pending_digest": false
+    "pending_digest": false,
+    "material_change": false,
+    "ai_review": {
+      "id": "2505.16239",
+      "decision": "watch",
+      "priority": "观察",
+      "contribution": "DOVE 通过潜变量学习与像素空间细化，将视频生成先验适配为一步真实视频超分，并结合图像、视频监督。",
+      "why_read": "2025-05-22 发布，适合作为两阶段单步训练的基础参考；本期更优先选择与流式、控制或 UHD 成本直接相关的工作。",
+      "comparison": "相对已读工作，避免多步采样；相对 PS-SR，直接学习单步映射。SparkVSR 延续其潜变量—像素训练思路并增加参考控制。",
+      "evidence_quality": "正文节选支持多基准和训练阶段消融，公开数据及实现提高研究可操作性；单步效率收益不能推导为流式低延迟。",
+      "limitations": "离线视频处理与较重自编码器限制部署；端点回归的细节损失需要像素阶段补偿。文字、身份和长影视证据有限。",
+      "reproduction": "候选已核验作者代码、训练与推理资源、权重和 HQ-VSR 数据线索；公开不代表已实测复现。",
+      "four_k": "候选正文节选未提供明确自身 4K 系统测试；后续论文采用切块测其 4K 基线，需注明测量来源。",
+      "reading_plan": "优先读两阶段训练及像素损失消融，作为 SparkVSR、FastVR 的方法背景。",
+      "confidence": "中",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2505.16239",
+        "https://arxiv.org/html/2603.16864",
+        "https://arxiv.org/html/2609.37831"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00"
   },
   {
     "id": "2501.01320",
@@ -656,7 +835,29 @@
     "confidence": "来源关联与实现文件已核验",
     "resource_news": false,
     "digest_reason": "基础阅读列表",
-    "pending_digest": false
+    "pending_digest": false,
+    "material_change": false,
+    "ai_review": {
+      "id": "2501.01320",
+      "decision": "skip",
+      "priority": "跳过",
+      "contribution": "SeedVR 使用视频原生扩散与移位窗口，处理可变长度和分辨率的通用修复。",
+      "why_read": "2025-01-02 发布，保留为历史背景；本期以 SeedVR2 替代完整阅读，避免同路线重复投入。",
+      "comparison": "比已读图像扩散先验方法更直接利用视频生成先验，但仍是较昂贵的多步修复。",
+      "evidence_quality": "候选正文节选提供修复实验。作者共享仓库明确区分 SeedVR 的 CVPR 2025 与 SeedVR2 的 ICLR 2026，不能把后者录用信息套给前者。",
+      "limitations": "任意长度、分辨率的结构适应性不能证明严格在线、低显存或任意长度质量稳定；训练资源负担较大。",
+      "reproduction": "共享作者仓库有推理与模型资源；未确认完整训练数据与训练结果可复现。",
+      "four_k": "候选节选及当前作者说明不足以建立完整 4K 吞吐与显存证据。",
+      "reading_plan": "只读窗口设计和 SeedVR2 所继承的部分。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2501.01320",
+        "https://github.com/ByteDance-Seed/SeedVR"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00"
   },
   {
     "id": "2312.00853",
@@ -715,7 +916,8 @@
     "stars_delta": 0,
     "venue": "ECCV 2024（作者来源标注）",
     "confidence": "来源关联与实现文件已核验",
-    "resource_news": false
+    "resource_news": false,
+    "pending_digest": false
   },
   {
     "id": "2311.15908",
@@ -770,6 +972,180 @@
     "stars_delta": 0,
     "venue": "ECCV 2024（作者来源标注）",
     "confidence": "来源关联与实现文件已核验",
-    "resource_news": false
+    "resource_news": false,
+    "pending_digest": false
+  },
+  {
+    "id": "2606.09516",
+    "title": "SwiftVR: Real-Time One-Step Generative Video Restoration",
+    "abstract": "Real-time video restoration (VR) for live streams requires high-resolution outputs under strict per-frame latency constraints. Existing one-step diffusion-based VR models remain difficult to deploy on consumer-grade GPUs due to two main bottlenecks: quadratic spatial attention at high resolutions and the latency-memory overhead of large video autoencoders. We present SwiftVR, a streaming one-step generative VR framework that reduces both bottlenecks under a causal chunk-wise protocol. For attention, mask-free shifted-window self-attention gathers each spatial window into a dense tensor via deterministic indexing, keeping all attention calls on the dense scaled dot-product attention path without masks, cyclic shifts, padding, or hardware-specific sparse kernels. Because SwiftVR uses only standard dense SDPA calls, the trained model transfers to consumer GPUs without retraining or custom kernels. For autoencoding, a lightweight Restoration-aware Autoencoder enables fast chunk-wise decoding while preserving reconstruction quality. On a single H100, SwiftVR sustains 31~FPS at 2560x1440 and 14~FPS at 3840x2160, whereas all compared diffusion-based VR baselines exceed the memory limit at",
+    "authors": [
+      "Jiaqi Yan",
+      "Xiangyu Chen",
+      "Xinlin Zhong",
+      "Haibin Huang",
+      "Chi Zhang",
+      "Jie Liu",
+      "Jiantao Zhou",
+      "Xuelong Li"
+    ],
+    "published": "2026-06-08T14:07:29Z",
+    "updated": "2026-06-08T14:07:29Z",
+    "paper_url": "https://arxiv.org/abs/2606.09516",
+    "comment": "",
+    "open_status": "released",
+    "checked_at": "2026-10-05T23:00:22+08:00",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2606.09516",
+        "kind": "paper"
+      },
+      {
+        "url": "https://h-oliday.github.io/SwiftVR",
+        "kind": "author_project"
+      },
+      {
+        "url": "https://github.com/H-oliday/SwiftVR/blob/main/README.md",
+        "kind": "author_repository"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "作者明确提及 4K/UHD（未实测）",
+    "category": "视频超分/修复",
+    "repo": "H-oliday/SwiftVR",
+    "repo_url": "https://github.com/H-oliday/SwiftVR",
+    "stars": 111,
+    "archived": false,
+    "license": "Apache-2.0",
+    "code_files": [
+      "scripts/inference.py",
+      "setup.py",
+      "swiftvr/__init__.py",
+      "swiftvr/io.py",
+      "swiftvr/models/__init__.py",
+      "swiftvr/models/reae.py",
+      "swiftvr/models/transformer.py",
+      "swiftvr/pipeline.py"
+    ],
+    "code_count": 13,
+    "weights": [],
+    "weights_note": "未确认该方法权重",
+    "venue_text": "Repo for SwiftVR: Real-Time One-Step Generative Video Restoration",
+    "evidence_url": "https://github.com/H-oliday/SwiftVR/blob/main/README.md",
+    "association": "论文/作者项目直接链接仓库",
+    "stars_delta": 0,
+    "venue": "预印本/录用未核验",
+    "confidence": "来源关联与实现文件已核验",
+    "material_change": false,
+    "ai_review": {
+      "id": "2606.09516",
+      "decision": "recommend",
+      "priority": "必读",
+      "contribution": "SwiftVR 用确定性索引收集移位空间窗口，使注意力保持在无掩码的标准密集 SDPA 路径；以轻量 ReAE 和三阶段优化支持单步、块级流式修复。跨块连续性由 ReAE 状态承担，DiT 不保留滚动 KV。",
+      "why_read": "2026-06-08 发布。我的判断：其价值是把理论稀疏性落实为跨硬件可用的执行路径，并公开 UHD 端到端成本，适合研究部署与速度—保真权衡。",
+      "comparison": "比已读工作的主要增量是高分辨率注意力和自编码器的系统优化；与 ReCaVSR、InfVSR 对照，可研究没有 DiT 历史缓存时，跨块细节连续性究竟由什么维持。",
+      "evidence_quality": "有修复基准、注意力实现对照、ReAE 消融和不同后端测试。作者的统一块级协议便于内部比较，但也改变了部分离线基线的使用条件；不能据此宣布所有实现都无法运行 4K。[实验与部署附录](https://arxiv.org/html/2606.09516)",
+      "limitations": "块内可看整块输入，仍有收集输入块的等待；不是逐帧即时输出。感知质量优先并不意味着全参考指标领先，轻量自编码器也有重建损失。长期身份、文字和镜头切换证据不足。",
+      "reproduction": "H-oliday/SwiftVR 作者仓库提供推理、流式接口和 Hugging Face 权重，Apache-2.0。标准 SDPA 减少专用稀疏算子依赖；未确认完整训练链路，未验证权重下载或性能。",
+      "four_k": "表 5 明确测试 3840×2160：H100-80G、bfloat16 下 13.84 FPS、60.91 GB 峰值显存。RTX 5090 的约 26 FPS 仅对应 1080p；作者明确消费卡实时 4K 尚未实现。[表 5 与局限](https://arxiv.org/html/2606.09516)",
+      "reading_plan": "先读 3.2、3.3、表 5 和附录 7、8；随后比较 ReAE 重建损失与最终修复质量。复测应同时记录输入等待、块边界闪烁与编码解码成本。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2606.09516",
+        "https://github.com/H-oliday/SwiftVR"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00",
+    "pending_digest": false
+  },
+  {
+    "id": "2510.00948",
+    "title": "InfVSR: Toward Consistency-Driven Streaming Generative Video Super-Resolution",
+    "abstract": "Real-world videos often extend over thousands of frames. Existing generative video super-resolution (VSR) approaches, however, face two persistent challenges when processing long sequences: (1) inefficiency due to the heavy cost of multi-step denoising for full-length sequences; and (2) poor consistency is hindered by temporal decomposition that causes artifacts and discontinuities. To break these limits, we propose InfVSR, which reformulates VSR as an autoregressive-one-step-diffusion paradigm, and enables streaming inference with video diffusion priors. First, we adapt the pretrained DiT into a causal structure, maintaining both local and global coherence via rolling KV-cache and joint visual guidance. Second, we distill the diffusion process into a single step efficiently, with patch-wise pixel supervision and cross-chunk distribution matching. To fill the gap in long-form video evaluation, we build a new benchmark tailored for extended sequences and further introduce semantic-level metrics to comprehensively assess temporal consistency. Our method pushes the frontier of long-form VSR, achieves state-of-the-art quality with enhanced semantic consistency, and delivers up to 58x s",
+    "authors": [
+      "Ziqing Zhang",
+      "Kai Liu",
+      "Zheng Chen",
+      "Xi Li",
+      "Yucong Chen",
+      "Bingnan Duan",
+      "Linghe Kong",
+      "Yulun Zhang"
+    ],
+    "published": "2025-10-01T14:21:45Z",
+    "updated": "2026-05-22T02:38:04Z",
+    "paper_url": "https://arxiv.org/abs/2510.00948",
+    "comment": "Code and model are available at https://github.com/Kai-Liu001/InfVSR",
+    "open_status": "released",
+    "checked_at": "2026-10-05T23:00:23+08:00",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2510.00948",
+        "kind": "paper"
+      },
+      {
+        "url": "https://github.com/Kai-Liu001/InfVSR/blob/main/README.md",
+        "kind": "author_repository"
+      }
+    ],
+    "promise_note": "",
+    "resolution": "高分辨率相关，未确认 4K 证据",
+    "category": "视频超分/修复",
+    "repo": "Kai-Liu001/InfVSR",
+    "repo_url": "https://github.com/Kai-Liu001/InfVSR",
+    "stars": 61,
+    "archived": false,
+    "license": "自定义/未识别",
+    "code_files": [
+      "diffsynth_wan/__init__.py",
+      "diffsynth_wan/pipeline.py",
+      "diffsynth_wan/scenes.py",
+      "diffsynth_wan/swin.py",
+      "diffsynth_wan/vae_sequence.py",
+      "diffsynth_wan/video.py",
+      "diffsynth_wan/visual_encoder.py",
+      "diffsynth_wan/wan_video_dit.py"
+    ],
+    "code_count": 10,
+    "weights": [
+      "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B/resolve/37ec512624d61f7aa208f7ea8140a131f93afc9a/Wan2.1_VAE.pth",
+      "https://huggingface.co/alexnasa/SEESR/resolve/4059ae0246bf52f5ac5017821bb6e59a6849a758/DAPE.pth",
+      "https://huggingface.co/datasets/zzqingz/MovieLQ",
+      "https://huggingface.co/spaces/xinyu1205/recognize-anything/resolve/7c76cec1377de0d46df8091a032c4b667aea4459/ram_swin_large_14m.pth",
+      "https://huggingface.co/zzqingz/InfVSR"
+    ],
+    "weights_note": "作者页面列有模型/权重链接，未验证下载",
+    "venue_text": "[ICML'26] InfVSR: Toward Consistency-Driven Streaming Generative Video Super-Resolution",
+    "evidence_url": "https://github.com/Kai-Liu001/InfVSR/blob/main/README.md",
+    "association": "论文/作者项目直接链接仓库",
+    "stars_delta": 0,
+    "venue": "ICML 26（作者来源标注）",
+    "confidence": "来源关联与实现文件已核验",
+    "material_change": false,
+    "ai_review": {
+      "id": "2510.00948",
+      "decision": "recommend",
+      "priority": "必读",
+      "contribution": "InfVSR 将视频原生扩散改造成单步自回归模型，结合滚动 KV、LR 视觉引导、块间分布匹配和局部像素监督；提供长视频 MovieLQ 与语义时序评估。",
+      "why_read": "初稿为 2025-10-01，作者在 2026-10-02 明确发布推理代码、预训练权重和测试集。这是本期最有实际意义的资源更新之一；旧标题 Breaking Length Limits 与当前 Toward Consistency-Driven 对应同一 arXiv ID。",
+      "comparison": "相对 MGLD-VSR，时序约束进入模型结构和跨块蒸馏，而不只通过采样路径引导；相对 PS-SR，重点是长序列状态与块边界。可作为 ReCaVSR 选择性缓存设计的前置对照。",
+      "evidence_quality": "有合成及真实数据、长视频测试和跨块监督消融；SC、BC、MS 补充了像素指标，但并非所有时序指标都全面领先，也不能替代身份与细节追踪。[正文](https://arxiv.org/html/2510.00948)",
+      "limitations": "长视频测试集规模有限，使用训练匹配合成退化。语义一致性可能容忍平滑或重复细节；无界长度是计算结构性质，不能推导出无漂移、任意镜头内容的质量保证。",
+      "reproduction": "作者仓库当前有 inference.py、权重及 MovieLQ 链接；LICENSE 为项目 MIT，并列出第三方 Apache-2.0/MIT 条款。未确认训练代码完整发布。这里的 MovieLQ 是长视频测试集，不能与 SparkVSR 的同名短片集混用。",
+      "four_k": "未找到作者明确的 4K 输出性能实验；4× 与任意长度声明不构成 4K 部署证据。",
+      "reading_plan": "先读因果结构、视觉引导和跨块分布匹配，再读 MovieLQ 协议。利用新发布资源检查缓存随长度是否有界，以及块边界、身份重现和细节漂移。",
+      "confidence": "高",
+      "reading_basis": "正文节选与资源",
+      "sources": [
+        "https://arxiv.org/html/2510.00948",
+        "https://github.com/Kai-Liu001/InfVSR",
+        "https://github.com/Kai-Liu001/InfVSR/blob/main/LICENSE"
+      ]
+    },
+    "ai_review_model": "gpt-6.1-sol",
+    "ai_review_generated_at": "2026-10-05T23:00:18+08:00",
+    "pending_digest": false
   }
 ]

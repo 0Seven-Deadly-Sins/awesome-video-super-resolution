@@ -21,25 +21,27 @@ Codex 判断贡献、实验支持、与已读工作的增量、局限、复现�
 <!-- PAPERS:START -->
 ### 已发布代码
 
-| 论文 | 日期 / 会议 | 4K 证据 | 代码 / 许可证 | 关注度 |
-| --- | --- | --- | --- | --- |
-| [RelayVSR: Large-Small Model Collaboration for Efficient Real-World Video Super-Resolution](https://arxiv.org/abs/2609.37850) | 2026-09-29 / 预印本/录用未核验 | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/kopperx/RelayVSR) / Apache-2.0 | 3 ★ |
-| [ReCaVSR: One-Step Streaming Diffusion Video Super-Resolution with Recycled Latents and Learned Cache Routing](https://arxiv.org/abs/2609.37831) | 2026-09-29 / 预印本/录用未核验 | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/kopperx/ReCaVSR) / Apache-2.0 | 5 ★ |
-| [NanoVSR: Towards Real-Time Video Super-Resolution on Edge Devices](https://arxiv.org/abs/2607.10495) | 2026-07-11 / ECCV 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/filippawlicki/nanovsr) / MIT | 52 ★ |
-| [PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_PS-SR_Pseudo-Single-Step_Video_Super-Resolution_via_Speculative_Diffusion_CVPR_2026_paper.pdf) | 2026-06-01 / CVPR 2026（作者来源标注） | 作者明确提及 4K/UHD（未实测） | [代码](https://github.com/HiDream-ai/PS-SR) / Apache-2.0 | 30 ★ |
-| [SparkVSR: Interactive Video Super-Resolution via Sparse Keyframe Propagation](https://arxiv.org/abs/2603.16864) | 2026-03-17 / ECCV 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/taco-group/SparkVSR) / Apache-2.0 | 742 ★ |
-| [Stream-DiffVSR: Low-Latency Streamable Video Super-Resolution via Auto-Regressive Diffusion](https://arxiv.org/abs/2512.23709) | 2025-12-29 / ECCV 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/jamichss/Stream-DiffVSR) / Apache-2.0 | 317 ★ |
-| [FlashVSR: Towards Real-Time Diffusion-Based Streaming Video Super-Resolution](https://arxiv.org/abs/2510.12747) | 2025-10-14 / CVPR 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/OpenImagingLab/FlashVSR) / Apache-2.0 | 1889 ★ |
-| [SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](https://arxiv.org/abs/2506.05301) | 2025-06-05 / ICLR 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/ByteDance-Seed/SeedVR) / Apache-2.0 | 1383 ★ |
-| [DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](https://arxiv.org/abs/2505.16239) | 2025-05-22 / NeurIPS 25（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/zhengchen1999/DOVE) / Apache-2.0 | 223 ★ |
-| [SeedVR: Seeding Infinity in Diffusion Transformer Towards Generic Video Restoration](https://arxiv.org/abs/2501.01320) | 2025-01-02 / ICLR 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/ByteDance-Seed/SeedVR) / Apache-2.0 | 1383 ★ |
-| [Motion-Guided Latent Diffusion for Temporally Consistent Real-world Video Super-resolution](https://arxiv.org/abs/2312.00853) | 2023-12-01 / ECCV 2024（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/IanYeung/MGLD-VSR) / 自定义/未识别 | 166 ★ |
-| [Enhancing Perceptual Quality in Video Super-Resolution through Temporally-Consistent Detail Synthesis using Diffusion Models](https://arxiv.org/abs/2311.15908) | 2023-11-27 / ECCV 2024（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/claudiom4sir/StableVSR) / MIT | 180 ★ |
+| 论文 | 日期 / 会议 | 4K 证据 | 代码 / 许可证 | 关注度 | 模型研究判断 |
+| --- | --- | --- | --- | --- | --- |
+| [RelayVSR: Large-Small Model Collaboration for Efficient Real-World Video Super-Resolution](https://arxiv.org/abs/2609.37850) | 2026-09-29 / 预印本/录用未核验 | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/kopperx/RelayVSR) / Apache-2.0 | 3 ★ | [必读 · 高](data/papers.json) |
+| [ReCaVSR: One-Step Streaming Diffusion Video Super-Resolution with Recycled Latents and Learned Cache Routing](https://arxiv.org/abs/2609.37831) | 2026-09-29 / 预印本/录用未核验 | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/kopperx/ReCaVSR) / Apache-2.0 | 5 ★ | [必读 · 高](data/papers.json) |
+| [NanoVSR: Towards Real-Time Video Super-Resolution on Edge Devices](https://arxiv.org/abs/2607.10495) | 2026-07-11 / ECCV 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/filippawlicki/nanovsr) / MIT | 52 ★ | [跳过 · 高](data/papers.json) |
+| [SwiftVR: Real-Time One-Step Generative Video Restoration](https://arxiv.org/abs/2606.09516) | 2026-06-08 / 预印本/录用未核验 | 作者明确提及 4K/UHD（未实测） | [代码](https://github.com/H-oliday/SwiftVR) / Apache-2.0 | 111 ★ | [必读 · 高](data/papers.json) |
+| [PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_PS-SR_Pseudo-Single-Step_Video_Super-Resolution_via_Speculative_Diffusion_CVPR_2026_paper.pdf) | 2026-06-01 / CVPR 2026（作者来源标注） | 作者明确提及 4K/UHD（未实测） | [代码](https://github.com/HiDream-ai/PS-SR) / Apache-2.0 | 30 ★ | 待分析 |
+| [SparkVSR: Interactive Video Super-Resolution via Sparse Keyframe Propagation](https://arxiv.org/abs/2603.16864) | 2026-03-17 / ECCV 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/taco-group/SparkVSR) / Apache-2.0 | 742 ★ | [建议阅读 · 高](data/papers.json) |
+| [Stream-DiffVSR: Low-Latency Streamable Video Super-Resolution via Auto-Regressive Diffusion](https://arxiv.org/abs/2512.23709) | 2025-12-29 / ECCV 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/jamichss/Stream-DiffVSR) / Apache-2.0 | 317 ★ | [建议阅读 · 高](data/papers.json) |
+| [FlashVSR: Towards Real-Time Diffusion-Based Streaming Video Super-Resolution](https://arxiv.org/abs/2510.12747) | 2025-10-14 / CVPR 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/OpenImagingLab/FlashVSR) / Apache-2.0 | 1889 ★ | [观察 · 高](data/papers.json) |
+| [InfVSR: Toward Consistency-Driven Streaming Generative Video Super-Resolution](https://arxiv.org/abs/2510.00948) | 2025-10-01 / ICML 26（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/Kai-Liu001/InfVSR) / 自定义/未识别 | 61 ★ | [必读 · 高](data/papers.json) |
+| [SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](https://arxiv.org/abs/2506.05301) | 2025-06-05 / ICLR 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/ByteDance-Seed/SeedVR) / Apache-2.0 | 1383 ★ | [建议阅读 · 高](data/papers.json) |
+| [DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](https://arxiv.org/abs/2505.16239) | 2025-05-22 / NeurIPS 25（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/zhengchen1999/DOVE) / Apache-2.0 | 223 ★ | [观察 · 中](data/papers.json) |
+| [SeedVR: Seeding Infinity in Diffusion Transformer Towards Generic Video Restoration](https://arxiv.org/abs/2501.01320) | 2025-01-02 / ICLR 2026（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/ByteDance-Seed/SeedVR) / Apache-2.0 | 1383 ★ | [跳过 · 高](data/papers.json) |
+| [Motion-Guided Latent Diffusion for Temporally Consistent Real-world Video Super-resolution](https://arxiv.org/abs/2312.00853) | 2023-12-01 / ECCV 2024（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/IanYeung/MGLD-VSR) / 自定义/未识别 | 166 ★ | 待分析 |
+| [Enhancing Perceptual Quality in Video Super-Resolution through Temporally-Consistent Detail Synthesis using Diffusion Models](https://arxiv.org/abs/2311.15908) | 2023-11-27 / ECCV 2024（作者来源标注） | 高分辨率相关，未确认 4K 证据 | [代码](https://github.com/claudiom4sir/StableVSR) / MIT | 180 ★ | 待分析 |
 
 ### 作者明确承诺，待开源
 
-| 论文 | 日期 / 会议 | 4K 证据 | 代码 / 许可证 | 关注度 |
-| --- | --- | --- | --- | --- |
+| 论文 | 日期 / 会议 | 4K 证据 | 代码 / 许可证 | 关注度 | 模型研究判断 |
+| --- | --- | --- | --- | --- | --- |
 
 <!-- PAPERS:END -->
 
