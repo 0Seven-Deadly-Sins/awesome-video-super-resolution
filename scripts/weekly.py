@@ -129,7 +129,7 @@ def relevant(p):
 def heading_match(readme, title):
     # Bibliography/related-work full-title matches do not establish an official repo.
     head = readme[:4000]
-    headings = [line for line in head.splitlines() if re.match(r"\s*(?:#{1,3}\s|>\s|\*\*)", line)]
+    headings = [line for line in head.splitlines() if re.match(r"\s*(?:#{1,3}\s|>\s|\*\*|<h[1-3]\b)", line, re.I)]
     return any(norm(title) in norm(line) for line in headings) and bool(re.search(r"official|implementation|our (?:paper|work)|authors?:|^>.*", head, re.I | re.M))
 
 
@@ -141,7 +141,7 @@ def repo_info(repo, paper, trusted=False):
         return None
     # trusted means a direct paper-to-repository link, not merely a search match.
     if not trusted:
-        headings = " ".join(line for line in readme[:5000].splitlines() if re.match(r"\s*(?:#{1,3}\s|>\s|\*\*)", line))
+        headings = " ".join(line for line in readme[:5000].splitlines() if re.match(r"\s*(?:#{1,3}\s|>\s|\*\*|<h[1-3]\b)", line, re.I))
         title_linked = norm(paper["title"]) in norm(headings)
         author_matches = sum(norm(author) in norm(readme[:5000]) for author in paper.get("authors", []) if len(norm(author)) > 5)
         official_claim = re.search(r"official|code for.{0,50}paper", meta.get("description") or "", re.I)
@@ -160,8 +160,8 @@ def repo_info(repo, paper, trusted=False):
             "archived": meta.get("archived", False), "license": lic, "code_files": code[:8],
             "code_count": len(code), "weights": weights if weight_lines else [],
             "weights_note": "作者页面列有模型/权重链接，未验证下载" if weight_lines else "未确认该方法权重",
-            "readme": readme, "evidence_url": meta["html_url"] + "/blob/" + meta["default_branch"] + "/" + readme_obj.get("path", "README.md"),
-            "association": "论文直接链接作者仓库" if trusted else "README 首部完整标题与官方实现声明/论文作者相符"}
+            "readme": readme, "venue_text": meta.get("description") or "", "evidence_url": meta["html_url"] + "/blob/" + meta["default_branch"] + "/" + readme_obj.get("path", "README.md"),
+            "association": "论文/作者项目直接链接仓库" if trusted else "README 首部完整标题与官方实现声明/论文作者相符"}
 
 
 def text_urls(text):
@@ -174,7 +174,7 @@ def verify(p, now, repo_hint="", old=None):
     evidence = [{"url": p["paper_url"], "kind": "paper"}]
     # Follow project links explicitly supplied in the paper metadata, not arbitrary references.
     for url in text_urls(source_text):
-        if candidates or repo_hint or (old and old.get("repo")):
+        if candidates:
             break
         host = urllib.parse.urlsplit(url).hostname or ""
         if host.endswith(".github.io") or (host not in {"github.com", "arxiv.org", "doi.org", "huggingface.co"} and "project" in url.lower()):
@@ -183,7 +183,11 @@ def verify(p, now, repo_hint="", old=None):
                 page_text = clean(re.sub(r"<[^>]+>", " ", page))
                 # Require the current paper title in the project page.
                 if norm(p["title"]) in norm(page_text):
-                    candidates += [(r.rstrip("."), False) for r in re.findall(REPO_RE, page)[:8]]
+                    # Author-linked page + current paper title + an explicit Code link.
+                    for href, label in re.findall(r'<a\b[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', page, re.I | re.S):
+                        repo_match = re.match(REPO_RE, href)
+                        if repo_match and re.fullmatch(r"(?:code|github|implementation|official code|code repository)", clean(re.sub(r"<[^>]+>", " ", label)), re.I):
+                            candidates.append((repo_match.group(1).rstrip("."), True))
                     source_text += " " + page_text
                     evidence.append({"url": url, "kind": "author_project"})
             except Exception:
@@ -253,7 +257,7 @@ def verify(p, now, repo_hint="", old=None):
     else:
         p.update({"repo": "", "stars": 0, "stars_delta": 0, "license": "未知", "code_count": 0, "weights": [], "weights_note": "未确认权重"})
     # Venue is explicitly attributed to the author repository/metadata; not inferred from dates.
-    venue = re.search(r"\b(CVPR|ICCV|ECCV|ICLR|NeurIPS|ICML|AAAI)\s*['’]?\s*(20\d{2}|\d{2})\b", (info["readme"][:4000] if info else "") + " " + p.get("comment", ""), re.I)
+    venue = re.search(r"\b(CVPR|ICCV|ECCV|ICLR|NeurIPS|ICML|AAAI)\s*['’]?\s*(20\d{2}|\d{2})\b", (info.get("venue_text", "") + " " + info["readme"][:4000] if info else "") + " " + p.get("comment", ""), re.I)
     p["venue"] = (venue.group(1) + " " + venue.group(2) + "（作者来源标注）") if venue else "预印本/录用未核验"
     p["confidence"] = "来源关联与实现文件已核验" if state == "released" else "仅作者开源承诺，尚未发布" if state == "promised" else "证据不足"
     return p

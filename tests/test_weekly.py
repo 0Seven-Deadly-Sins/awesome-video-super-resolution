@@ -1,5 +1,8 @@
 import datetime as dt
 import importlib.util
+import json
+import tempfile
+from types import SimpleNamespace
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -78,6 +81,52 @@ class WatcherTests(unittest.TestCase):
         with patch.dict(w.os.environ, {}, clear=True):
             with self.assertRaises(RuntimeError):
                 w.send_mail("body", "2026-10-05", False, "owner/repo")
+
+    def test_smtp_failure_does_not_publish_or_mark_delivered(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            cfg = dict(self.cfg, repository="owner/repo", queries=["query"], seed_papers=[])
+            (root / "config.json").write_text(json.dumps(cfg), encoding="utf-8")
+            original = "<!-- PAPERS:START -->original<!-- PAPERS:END -->"
+            (root / "README.md").write_text(original, encoding="utf-8")
+            p = paper(abstract="text", paper_url="https://arxiv.org/abs/2609.12345", category="视频超分/修复", confidence="核验", code_count=2, evidence=[], weights_note="未确认")
+            args = SimpleNamespace(dry_run=False, bootstrap=True, initialize=False)
+            with patch.object(w, "ROOT", root), patch.object(w.argparse.ArgumentParser, "parse_args", return_value=args), patch.object(w, "arxiv", return_value=[p]), patch.object(w, "gh", return_value={"items": []}), patch.object(w, "verify", return_value=p), patch.object(w.time, "sleep"), patch.object(w, "send_mail", side_effect=RuntimeError("SMTP failed")):
+                with self.assertRaises(RuntimeError):
+                    w.main()
+            self.assertFalse((root / "data/state.json").exists())
+            self.assertFalse((root / "data/papers.json").exists())
+            self.assertEqual(original, (root / "README.md").read_text(encoding="utf-8"))
+
+    def test_all_search_failures_are_not_an_empty_week(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            cfg = dict(self.cfg, repository="owner/repo", queries=["query"], seed_papers=[])
+            (root / "config.json").write_text(json.dumps(cfg), encoding="utf-8")
+            args = SimpleNamespace(dry_run=False, bootstrap=False, initialize=False)
+            with patch.object(w, "ROOT", root), patch.object(w.argparse.ArgumentParser, "parse_args", return_value=args), patch.object(w, "arxiv", side_effect=RuntimeError("search failed")), patch.object(w, "send_mail") as send:
+                with self.assertRaisesRegex(RuntimeError, "All new-paper"):
+                    w.main()
+                send.assert_not_called()
+
+    def test_direct_paper_evidence_survives_untrusted_seed_hint(self):
+        p = paper(source_text="Code: https://github.com/author/model", paper_url="https://arxiv.org/abs/2609.12345", abstract="", authors=[], comment="")
+        with patch.object(w, "repo_info", return_value=None) as verify:
+            w.verify(p, "now", "author/model")
+        self.assertTrue(verify.call_args.args[2])
+
+    def test_author_project_code_link_and_repository_migration(self):
+        title = "SeedVR2: One-Step Video Restoration"
+        p = paper(title=title, source_text="Project page https://author.github.io/projects/seedvr2/", paper_url="https://arxiv.org/abs/2506.05301", authors=[])
+        page = '<h1>' + title + '</h1><a href="https://github.com/new-owner/SeedVR">Code</a><a href="https://github.com/template/website">source code</a>'
+        with patch.object(w, "get", return_value=page), patch.object(w, "repo_info", return_value=None) as check:
+            w.verify(p, "now", "old-owner/SeedVR2")
+        self.assertEqual("new-owner/SeedVR", check.call_args_list[0].args[0])
+        self.assertTrue(check.call_args_list[0].args[2])
+        self.assertNotIn("template/website", [call.args[0] for call in check.call_args_list])
+
+    def test_html_headings_are_supported(self):
+        self.assertTrue(w.heading_match('<h1>Video Super-Resolution via Diffusion</h1>\nOfficial implementation', "Video Super-Resolution via Diffusion"))
 
 
 if __name__ == "__main__":
