@@ -6,13 +6,13 @@ A categorized collection of video super-resolution papers, author implementation
 
 集中整理 **2024 年至今**的相关顶会工作；正式录用以官方论文集或会议页面为依据，近期预印本另行标注。范围与检索入口见 [收录说明](docs/COVERAGE.md)。
 
-目前收录 **102 篇**：**99 篇会议论文**、**3 篇预印本**，按 **15 个方向**编排。每篇只出现一次，交叉特征列为补充标签。
+目前收录 **98 篇**：**95 篇会议论文**、**3 篇预印本**，按 **15 个方向**编排。每篇只出现一次，交叉特征列为补充标签。
 
 `Code` 表示作者提供的仓库链接，资源是否完整请以作者说明为准；`待发布` 表示明确的发布计划；`—` 表示尚未找到作者公开代码链接，不等同于确定闭源。
 
 ## Contents
 
-- [时序对齐与特征传播 / Alignment and Propagation](#alignment) · 8
+- [时序对齐与特征传播 / Alignment and Propagation](#alignment) · 4
 - [Transformer 与状态空间架构 / Sequence Architectures](#architecture) · 1
 - [扩散先验与生成式超分 / Diffusion-based VSR](#generative) · 19
 - [单步扩散与蒸馏 / One-step Diffusion and Distillation](#onestep) · 11
@@ -37,11 +37,7 @@ A categorized collection of video super-resolution papers, author implementation
 
 | Paper | Venue | Focus / Tags | Resources |
 | --- | --- | --- | --- |
-| [When AVSR Meets Video Conferencing: Dataset, Degradation, and the Hidden Mechanism Behind Performance Collapse](https://openaccess.thecvf.com/content/CVPR2026/html/Huang_When_AVSR_Meets_Video_Conferencing_Dataset_Degradation_and_the_Hidden_CVPR_2026_paper.html) | CVPR 2026 | Video super-resolution | [PDF](https://openaccess.thecvf.com/content/CVPR2026/papers/Huang_When_AVSR_Meets_Video_Conferencing_Dataset_Degradation_and_the_Hidden_CVPR_2026_paper.pdf) |
-| [A First Exploration of Neuromorphic OT-CFM for Multi-Speaker VSR](https://eccv.ecva.net/virtual/2026/poster/3216) | ECCV 2026 | Video super-resolution | — |
-| [AutoVSR: Automatic Visual-to-Symbolic Reasoning for Symbolic Expression Generation from Circuit Schematic](https://proceedings.mlr.press/v306/xiao26h.html) | ICML 2026 | Video super-resolution | [Code](https://github.com/LongfeiLi1/AutoVSR) · [PDF](https://raw.githubusercontent.com/mlresearch/v306/main/assets/xiao26h/xiao26h.pdf) |
 | [LDIP: Long Distance Information Propagation for Video Super-Resolution](https://openaccess.thecvf.com/content/ICCV2025/html/Bernasconi_LDIP_Long_Distance_Information_Propagation_for_Video_Super-Resolution_ICCV_2025_paper.html) | ICCV 2025 | Long-distance feature propagation | [PDF](https://openaccess.thecvf.com/content/ICCV2025/papers/Bernasconi_LDIP_Long_Distance_Information_Propagation_for_Video_Super-Resolution_ICCV_2025_paper.pdf) |
-| [Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](https://openaccess.thecvf.com/content/ICCV2025/html/Yeo_Zero-AVSR_Zero-Shot_Audio-Visual_Speech_Recognition_with_LLMs_by_Learning_Language-Agnostic_ICCV_2025_paper.html) | ICCV 2025 | Video super-resolution | [PDF](https://openaccess.thecvf.com/content/ICCV2025/papers/Yeo_Zero-AVSR_Zero-Shot_Audio-Visual_Speech_Recognition_with_LLMs_by_Learning_Language-Agnostic_ICCV_2025_paper.pdf) |
 | [Semantic Lens: Instance-Centric Semantic Alignment for Video Super-resolution](https://ojs.aaai.org/index.php/AAAI/article/view/28321) | AAAI 2024 | Instance-centric semantic alignment | — |
 | [Enhancing Video Super-Resolution via Implicit Resampling-based Alignment](https://openaccess.thecvf.com/content/CVPR2024/html/Xu_Enhancing_Video_Super-Resolution_via_Implicit_Resampling-based_Alignment_CVPR_2024_paper.html) | CVPR 2024 | Implicit resampling alignment | [PDF](https://openaccess.thecvf.com/content/CVPR2024/papers/Xu_Enhancing_Video_Super-Resolution_via_Implicit_Resampling-based_Alignment_CVPR_2024_paper.pdf) |
 | [Learning Truncated Causal History Model for Video Restoration](https://proceedings.neurips.cc/paper_files/paper/2024/hash/309fd617a4168d592e543690fbd094db-Abstract-Conference.html) | NeurIPS 2024 | Turtle; truncated causal history; includes VSR | [Code](https://github.com/Ascend-Research/Turtle) · [Project](https://kjanjua26.github.io/turtle/) · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/309fd617a4168d592e543690fbd094db-Paper-Conference.pdf) |

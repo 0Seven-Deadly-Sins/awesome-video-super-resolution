@@ -13,8 +13,8 @@ import urllib.robotparser
 
 import catalog
 
-DIRECT_TOPIC = re.compile(r"(?:video|space.?time|spatial.?temporal).*super.?resol|super.?resol.*video|video upscal|\b\w*VSR\b", re.I)
-RELATED_TOPIC = re.compile(r"video.*(?:inverse problem|restor|enhanc)", re.I)
+DIRECT_TOPIC = re.compile(r"(?:video|space.?time|spatial.?temporal).*super.?resol|super.?resol.*video|video upscal", re.I)
+RELATED_TOPIC = re.compile(r"video.*(?:inverse problem|restor|enhanc)|\b\w*VSR\b", re.I)
 
 
 def clean(value):

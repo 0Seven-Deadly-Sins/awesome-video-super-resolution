@@ -92,6 +92,13 @@ class BibliographyIntegrity(unittest.TestCase):
             record = refresh.new_record("Video Inverse Problem Solver", "https://example.org/paper", source)
             self.assertEqual("", record["code_url"])
 
+    def test_vsr_acronym_does_not_establish_video_super_resolution(self):
+        source = {"venue": "ICML", "year": 2026}
+        aliases = ["Zero-AVSR: Audio-Visual Speech Recognition", "AutoVSR: Visual-to-Symbolic Reasoning", "Multi-Speaker VSR"]
+        with patch.object(refresh, "fetch", return_value='<div id="abstract">We solve visual speech recognition and symbolic reasoning.</div>'):
+            for title in aliases:
+                self.assertIsNone(refresh.new_record(title, "https://example.org/paper", source))
+
 
 if __name__ == "__main__":
     unittest.main()
