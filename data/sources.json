@@ -1,0 +1,86 @@
+[
+  {
+    "venue": "CVPR",
+    "year": 2024,
+    "kind": "links",
+    "url": "https://openaccess.thecvf.com/CVPR2024?day=all"
+  },
+  {
+    "venue": "CVPR",
+    "year": 2025,
+    "kind": "links",
+    "url": "https://openaccess.thecvf.com/CVPR2025?day=all"
+  },
+  {
+    "venue": "CVPR",
+    "year": 2026,
+    "kind": "links",
+    "url": "https://openaccess.thecvf.com/CVPR2026?day=all"
+  },
+  {
+    "venue": "ICCV",
+    "year": 2025,
+    "kind": "links",
+    "url": "https://openaccess.thecvf.com/ICCV2025?day=all"
+  },
+  {
+    "venue": "ECCV",
+    "year": 2024,
+    "kind": "ecva",
+    "url": "https://www.ecva.net/papers.php"
+  },
+  {
+    "venue": "ECCV",
+    "year": 2026,
+    "kind": "links",
+    "url": "https://eccv.ecva.net/Conferences/2026/AcceptedPapers"
+  },
+  {
+    "venue": "ICML",
+    "year": 2024,
+    "kind": "pmlr",
+    "url": "https://proceedings.mlr.press/v235/"
+  },
+  {
+    "venue": "ICML",
+    "year": 2025,
+    "kind": "pmlr",
+    "url": "https://proceedings.mlr.press/v267/"
+  },
+  {
+    "venue": "ICML",
+    "year": 2026,
+    "kind": "pmlr",
+    "url": "https://proceedings.mlr.press/v306/"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2024,
+    "kind": "links",
+    "url": "https://iclr.cc/virtual/2024/papers.html"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2025,
+    "kind": "links",
+    "url": "https://iclr.cc/virtual/2025/papers.html"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2026,
+    "kind": "links",
+    "url": "https://iclr.cc/virtual/2026/papers.html"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2024,
+    "kind": "links",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2025,
+    "kind": "links",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/vol38-main-conference"
+  }
+]

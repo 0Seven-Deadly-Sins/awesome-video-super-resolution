@@ -1,0 +1,44 @@
+name: Refresh literature catalog
+on:
+  schedule:
+    - cron: '43 0 * * 3'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Check sources without committing changes'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: literature-catalog
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate bibliography
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/catalog.py --check
+      - name: Read official conference indexes
+        env:
+          DRY_RUN: ${{ inputs.dry_run || false }}
+        run: |
+          args=()
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          python scripts/refresh.py "${args[@]}"
+      - name: Publish bibliography updates
+        if: inputs.dry_run != true
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md data/catalog.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'docs: update video super-resolution bibliography'
+          git push origin HEAD:main
