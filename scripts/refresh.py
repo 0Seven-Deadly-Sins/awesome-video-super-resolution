@@ -155,6 +155,7 @@ def refresh(papers, sources, loader=fetch):
             elif record is not None:
                 known[catalog.normalized_title(title)] = record
                 additions += 1
+                print("Indexed addition: %s %d — %s" % (record["venue"], record["year"], title))
     result = sorted(known.values(), key=lambda p: (-p["year"], p["venue"], p["title"]))
     catalog.validate(result)
     return result, additions, warnings
