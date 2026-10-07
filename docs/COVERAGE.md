@@ -14,16 +14,18 @@
 | ACM MM | 2024 | 1 |
 | ACM MM | 2025 | 3 |
 | CVPR | 2024 | 5 |
-| CVPR | 2025 | 11 |
-| CVPR | 2026 | 11 |
+| CVPR | 2025 | 12 |
+| CVPR | 2026 | 12 |
 | ECCV | 2024 | 6 |
 | ECCV | 2026 | 12 |
-| ICCV | 2025 | 7 |
+| ICCV | 2025 | 9 |
+| ICLR | 2025 | 1 |
 | ICLR | 2026 | 7 |
 | ICML | 2024 | 1 |
 | ICML | 2026 | 4 |
-| NeurIPS | 2024 | 2 |
+| NeurIPS | 2024 | 3 |
 | NeurIPS | 2025 | 3 |
+| NeurIPS | 2026 | 2 |
 
 ## 官方检索入口
 
@@ -43,14 +45,17 @@
 - [ICLR 2026](https://iclr.cc/virtual/2026/papers.html)
 - [NeurIPS 2024](https://proceedings.neurips.cc/paper_files/paper/2024)
 - [NeurIPS 2025](https://proceedings.neurips.cc/paper_files/paper/2025/vol38-main-conference)
+- [NeurIPS 2026 official poster list](https://neurips.cc/Downloads/2026)（公开录用索引；部分论文原文和资源尚待发布）
 - [IJCAI 2024](https://www.ijcai.org/proceedings/2024/)（本轮标题检索未找到符合上述范围的条目）
 - [IJCAI 2025](https://www.ijcai.org/proceedings/2025/)（本轮标题检索未找到符合上述范围的条目）
 - [IJCAI 2026](https://www.ijcai.org/proceedings/2026/)（本轮标题检索未找到符合上述范围的条目）
 - [AAAI publisher archive](https://ojs.aaai.org/index.php/AAAI/issue/archive)（逐条原始论文页核验）
 - [ACM MM 2025 accepted regular papers](https://acmmm2025.org/accepted-regular-papers/)
 
-尚未公布的会议不能提前标为正式录用，例如本轮不添加 NeurIPS 2026 会议标签。AAAI/ACM 页面访问限制及标题中的同义表达可能导致遗漏；欢迎依据原始来源补充。各条目的 Paper 链接提供具体核验出处，本轮结果不等同于对所有未来版本的完整性保证。
+NeurIPS 2026 已出现官方 poster 索引，因此已核验录用与明确 VSR 题目的条目可以收录；未发布正文的条目保留空白资源，不编造作者仓库。标题仅写“video inverse problems”且暂未找到 VSR 任务原文的工作仍待核验。AAAI/ACM 页面访问限制及标题中的同义表达可能导致遗漏；欢迎依据原始来源补充。各条目的 Paper 链接提供具体核验出处，本轮结果不等同于对所有未来版本的完整性保证。
 
 ## 分类原则
 
 每篇一个主方向，交叉特征放入补充标签。同一方法的预印本和会议版本合并，避免重复。生成式方法按多步先验、单步蒸馏和 GAN 分开；部署优化、压缩传输、交互引导、事件辅助和专用场景分别编排。分类是阅读导航，不是质量排名。
+
+文献索引独立定期刷新，没有每次新增篇数上限；新会议年份会自动探测官方入口。宽泛的视频修复或逆问题标题需有超分任务证据。索引访问失败不会清空已有合集。

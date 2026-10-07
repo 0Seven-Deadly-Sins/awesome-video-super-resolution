@@ -67,7 +67,7 @@ A categorized collection of video super-resolution papers, author implementation
 
 视频超分辨率文献合集，涵盖传统重建、生成式超分、真实退化、时空联合超分、流式部署与专用场景。输出分辨率不作为收录限制。
 
-本轮集中整理 **2024–2026 会议年份**的相关顶会工作；正式录用以官方论文集或会议页面为依据，近期预印本另行标注。范围与检索入口见 [收录说明](docs/COVERAGE.md)。
+集中整理 **2024 年至今**的相关顶会工作；正式录用以官方论文集或会议页面为依据，近期预印本另行标注。范围与检索入口见 [收录说明](docs/COVERAGE.md)。
 
 """
     text += "目前收录 **%d 篇**：**%d 篇会议论文**、**%d 篇预印本**，按 **%d 个方向**编排。每篇只出现一次，交叉特征列为补充标签。\n\n" % (len(papers), accepted, len(papers) - accepted, sum(bool(counts[key]) for key, _, _ in TOPICS))

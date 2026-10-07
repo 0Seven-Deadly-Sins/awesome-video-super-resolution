@@ -65,6 +65,33 @@ class BibliographyIntegrity(unittest.TestCase):
         raw = '<div class="paper"><p class="title">Video Super-Resolution via Events</p><a href="https://proceedings.mlr.press/v235/x.html">abs</a>'
         self.assertEqual(1, len(refresh.parse_index(raw, dict(ecva, kind="pmlr"))))
 
+    def test_official_acceptance_upgrades_preprint_without_duplicate(self):
+        preprint = dict(self.papers[0], venue="arXiv", venue_status="preprint")
+        source = {"venue": "CVPR", "year": 2026, "kind": "links", "url": "https://example.org/index"}
+        raw = '<a href="/accepted">' + preprint["title"] + '</a>'
+        papers, additions, warnings = refresh.refresh([preprint], [source], loader=lambda url: raw)
+        self.assertEqual(1, len(papers))
+        self.assertEqual(0, additions)
+        self.assertEqual("verified", papers[0]["venue_status"])
+        self.assertEqual("CVPR", papers[0]["venue"])
+        self.assertEqual(preprint["summary"], papers[0]["summary"])
+        self.assertFalse(warnings)
+
+    def test_new_conference_years_are_probed_automatically(self):
+        source = {"venue": "CVPR", "year": 2026, "kind": "links", "url": "https://example.org/index"}
+        sources = refresh.current_sources([source], 2028)
+        self.assertEqual({2026, 2027, 2028}, {s["year"] for s in sources})
+        self.assertTrue(any(s["venue"] == "ICCV" and s["year"] == 2027 for s in sources))
+        self.assertFalse(any(s["venue"] == "ICCV" and s["year"] == 2028 for s in sources))
+
+    def test_broad_inverse_problem_title_requires_super_resolution_evidence(self):
+        source = {"venue": "CVPR", "year": 2026}
+        with patch.object(refresh, "fetch", return_value='<div id="abstract">We solve video camera-control inpainting.</div>'):
+            self.assertIsNone(refresh.new_record("Video Inverse Problem Solver", "https://example.org/paper", source))
+        with patch.object(refresh, "fetch", return_value='<div id="abstract">We solve video super-resolution.</div><a href="https://github.com/template/site">Template</a>'):
+            record = refresh.new_record("Video Inverse Problem Solver", "https://example.org/paper", source)
+            self.assertEqual("", record["code_url"])
+
 
 if __name__ == "__main__":
     unittest.main()
