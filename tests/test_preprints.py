@@ -38,6 +38,13 @@ class PreprintSources(unittest.TestCase):
         self.assertEqual(2, len(papers))
         self.assertIn('start=1', urls[1])
 
+    def test_author_release_promise_is_annotated_without_inventing_a_repository(self):
+        raw = feed([('2610.12345', 'High-Throughput Video Super-Resolution', 'Code will be released upon acceptance.')])
+        paper = preprints.collect([], loader=lambda url: raw)[0]
+        self.assertEqual('promised', paper['resource_status'])
+        self.assertEqual('', paper['code_url'])
+        self.assertEqual('efficiency', paper['category'])
+
     def test_existing_paper_id_and_conference_version_are_preserved(self):
         original = json.loads((ROOT / 'data/catalog.json').read_text(encoding='utf-8'))[0]
         raw = feed([('2610.12345', original['title'], ''), (original['arxiv_id'] or '2610.12346', 'Renamed Video Super-Resolution', '')])

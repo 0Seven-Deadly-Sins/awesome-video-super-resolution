@@ -58,7 +58,7 @@ def topic(title):
     patterns = [("events", r"event"), ("faces", r"face"), ("joint", r"deblur|low.light|infrared|thermal|turbulen"),
                 ("domains", r"medical|satellite|panoram|omnidirect|depth|render|cell"), ("spacetime", r"space.time|spatio.temporal|spatial.temporal|arbitrary.scale"),
                 ("compression", r"compress|delivery|packet"), ("guided", r"text.guid|prompt|interactive|reference|keyframe"),
-                ("efficiency", r"stream|online|efficient|lightweight|quantiz|edge|real.time|routing"), ("onestep", r"one.step|single.step|distill|speculative"),
+                ("efficiency", r"stream|online|efficient|lightweight|quantiz|edge|real.time|routing|high.throughput"), ("onestep", r"one.step|single.step|distill|speculative"),
                 ("generative", r"diffusion|generative"), ("gan", r"GAN"), ("architecture", r"transformer|mamba|state.space")]
     return next((key for key, pattern in patterns if re.search(pattern, title, re.I)), "alignment")
 

@@ -14,12 +14,12 @@ A categorized collection of video super-resolution papers, author implementation
 
 - [时序对齐与特征传播 / Alignment and Propagation](#alignment) · 4
 - [Transformer 与状态空间架构 / Sequence Architectures](#architecture) · 1
-- [扩散先验与生成式超分 / Diffusion-based VSR](#generative) · 22
+- [扩散先验与生成式超分 / Diffusion-based VSR](#generative) · 21
 - [单步扩散与蒸馏 / One-step Diffusion and Distillation](#onestep) · 12
 - [对抗生成式超分 / GAN-based VSR](#gan) · 1
 - [真实退化、盲超分与自监督 / Real-world and Blind VSR](#realworld) · 4
 - [时空联合与任意倍率 / Space-time and Arbitrary-scale SR](#spacetime) · 7
-- [高效、流式与模型压缩 / Efficient and Streaming VSR](#efficiency) · 16
+- [高效、流式与模型压缩 / Efficient and Streaming VSR](#efficiency) · 17
 - [压缩域与传输鲁棒性 / Compression and Delivery](#compression) · 3
 - [参考、文本引导与交互 / Guided and Interactive VSR](#guided) · 3
 - [事件相机视频超分 / Event-guided VSR](#events) · 10
@@ -67,7 +67,6 @@ A categorized collection of video super-resolution papers, author implementation
 | [SimpleGVR: A Simple Baseline for Latent-Cascaded Generative Video Super-Resolution](https://iclr.cc/virtual/2026/poster/10008775) | ICLR 2026 | Latent-cascaded generative upsampling | [Project](https://simplegvr.github.io/) · [PDF](https://iclr.cc/media/iclr-2026/Slides/10008775.pdf) |
 | [Vivid-VR: Distilling Concepts from Text-to-Video Diffusion Transformer for Photorealistic Video Restoration](https://iclr.cc/virtual/2026/poster/10008888) | ICLR 2026 | DiT-based photorealistic restoration<br>diffusion | [Code](https://github.com/csbhr/Vivid-VR) |
 | [WEVSR: Video Diffusion Generators for Real-World Video Super-Resolution with Wavelet-Enhanced VAE Encoder](https://proceedings.mlr.press/v306/chen26ce.html) | ICML 2026 | Wavelet-enhanced VAE encoder<br>diffusion | [Code](https://github.com/elvinyychen/WEVSR) · [PDF](https://raw.githubusercontent.com/mlresearch/v306/main/assets/chen26ce/chen26ce.pdf) |
-| [High-Throughput Generative Video Super-Resolution on a Single Consumer GPU](https://arxiv.org/abs/2610.13179) | arXiv 2026 · 预印本 | Video super-resolution preprint | [PDF](https://arxiv.org/pdf/2610.13179) |
 | [LoCoVSR: Local Context Diffusion Posterior Sampling for Video Super-Resolution](https://arxiv.org/abs/2609.32742) | arXiv 2026 · 预印本 | Local temporal context and shared noise for pixel-space diffusion VSR<br>pixel-space, faces, posterior sampling | [PDF](https://arxiv.org/pdf/2609.32742) |
 | [PatchVSR: Breaking Video Diffusion Resolution Limits with Patch-wise Video Super-Resolution](https://openaccess.thecvf.com/content/CVPR2025/html/Du_PatchVSR_Breaking_Video_Diffusion_Resolution_Limits_with_Patch-wise_Video_Super-Resolution_CVPR_2025_paper.html) | CVPR 2025 | Patch-wise diffusion; scalable output<br>diffusion | [PDF](https://openaccess.thecvf.com/content/CVPR2025/papers/Du_PatchVSR_Breaking_Video_Diffusion_Resolution_Limits_with_Patch-wise_Video_Super-Resolution_CVPR_2025_paper.pdf) |
 | [SeedVR: Seeding Infinity in Diffusion Transformer Towards Generic Video Restoration](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_SeedVR_Seeding_Infinity_in_Diffusion_Transformer_Towards_Generic_Video_Restoration_CVPR_2025_paper.html) | CVPR 2025 | Diffusion Transformer; generic restoration<br>diffusion | [Code](https://github.com/ByteDance-Seed/SeedVR) · [Project](https://iceclear.github.io/projects/seedvr/) · [PDF](https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_SeedVR_Seeding_Infinity_in_Diffusion_Transformer_Towards_Generic_Video_Restoration_CVPR_2025_paper.pdf) |
@@ -162,6 +161,7 @@ A categorized collection of video super-resolution papers, author implementation
 | [LSGQuant: Layer-Sensitivity Guided Quantization for One-Step Diffusion Real-World Video Super-Resolution](https://proceedings.mlr.press/v306/wu26g.html) | ICML 2026 | Layer-sensitive diffusion quantization<br>diffusion, quantization | [Code](https://github.com/zhengchen1999/LSGQuant) · [PDF](https://raw.githubusercontent.com/mlresearch/v306/main/assets/wu26g/wu26g.pdf) |
 | [LiteVSR: Lightweight Adaptation of Frozen Diffusion Transformers for Video Super-Resolution](https://proceedings.mlr.press/v306/cao26n.html) | ICML 2026 | Lightweight diffusion Transformer adaptation<br>diffusion | [PDF](https://raw.githubusercontent.com/mlresearch/v306/main/assets/cao26n/cao26n.pdf) |
 | [Accelerating Video Inverse Problem Solvers with Autoregressive Diffusion Models](https://neurips.cc/virtual/2026/poster/151472) | NeurIPS 2026 | AVIS/AVIS Flash 自回归求解视频空间及时空超分<br>Streaming, Inverse problems | [Code](https://github.com/star-kwon/ar-video-inverse) · [Project](https://avis-project.github.io/) · [PDF](https://arxiv.org/pdf/2605.20624) |
+| [High-Throughput Generative Video Super-Resolution on a Single Consumer GPU](https://arxiv.org/abs/2610.13179) | arXiv 2026 · 预印本 | Zero-shot one-step upscaling with interleaved temporal stabilization<br>diffusion, hybrid attention | 待发布 · [PDF](https://arxiv.org/pdf/2610.13179) |
 | [ReCaVSR: One-Step Streaming Diffusion Video Super-Resolution with Recycled Latents and Learned Cache Routing](https://arxiv.org/abs/2609.37831) | arXiv 2026 · 预印本 | Streaming / one-step generative VSR<br>diffusion, online/streaming | [Code](https://github.com/kopperx/ReCaVSR) · [PDF](https://arxiv.org/pdf/2609.37831) |
 | [Streaming-Aware Diffusion for Real-Time Video Super-Resolution via Cross-Step Attention](https://arxiv.org/abs/2610.11746) | arXiv 2026 · 预印本 | Cross-step feature reuse and coupled diffusion scheduling<br>diffusion, online/streaming | [PDF](https://arxiv.org/pdf/2610.11746) |
 | [SwiftVR: Real-Time One-Step Generative Video Restoration](https://arxiv.org/abs/2606.09516) | arXiv 2026 · 预印本 | Streaming / one-step generative VSR<br>online/streaming | [Code](https://github.com/H-oliday/SwiftVR) · [PDF](https://arxiv.org/pdf/2606.09516) |
@@ -266,7 +266,7 @@ A categorized collection of video super-resolution papers, author implementation
 | Paper | Venue | Focus / Tags | Resources |
 | --- | --- | --- | --- |
 | [ClearText-Video: A Large-Scale Text-Centric Video Dataset Bridging Video Restoration and Scene-Text Enhancement](https://eccv.ecva.net/virtual/2026/poster/3992) | ECCV 2026 | Text-centric video restoration benchmark | [Code](https://github.com/jinlong17/CTVid-Bench) · [PDF](https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/4006.pdf) |
-| [FANVIDv2: Evaluating Video Super-Resolution by Face and Licence-Plate Recognition Under Compound Degradation](https://arxiv.org/abs/2609.39649) | arXiv 2026 · 预印本 | Video super-resolution preprint | [PDF](https://arxiv.org/pdf/2609.39649) |
+| [FANVIDv2: Evaluating Video Super-Resolution by Face and Licence-Plate Recognition Under Compound Degradation](https://arxiv.org/abs/2609.39649) | arXiv 2026 · 预印本 | Recognition-based VSR evaluation under compound degradations<br>faces, licence plates, task-based evaluation | [PDF](https://arxiv.org/pdf/2609.39649) |
 
 ## Contributing
 
