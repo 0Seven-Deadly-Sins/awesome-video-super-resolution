@@ -1,4 +1,6 @@
 import json
+import contextlib
+import io
 from pathlib import Path
 import sys
 import tempfile
@@ -59,8 +61,9 @@ class PreprintSources(unittest.TestCase):
             path = root / 'data/catalog.json'
             content = (ROOT / 'data/catalog.json').read_bytes()
             path.write_bytes(content)
-            with patch.object(catalog, 'ROOT', root), patch.object(sys, 'argv', ['preprints']), patch.object(preprints, 'collect', side_effect=OSError('HTTP 502')):
+            with patch.object(catalog, 'ROOT', root), patch.object(sys, 'argv', ['preprints']), patch.object(preprints, 'collect', side_effect=OSError('HTTP 502')), contextlib.redirect_stdout(io.StringIO()) as output:
                 preprints.main()
+            self.assertIn('existing bibliography preserved', output.getvalue())
             self.assertEqual(content, path.read_bytes())
 
 
