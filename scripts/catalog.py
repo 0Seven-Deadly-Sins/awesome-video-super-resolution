@@ -65,7 +65,7 @@ def render(papers):
 
 A categorized collection of video super-resolution papers, author implementations, datasets and benchmarks.
 
-视频超分辨率文献合集，涵盖传统重建、生成式超分、真实退化、时空联合超分、流式部署与专用场景。输出分辨率不作为收录限制。
+视频超分辨率文献合集，涵盖传统重建、生成式超分、真实退化、时空联合超分、流式部署与专用场景。所有视频超分方向均可收录，不限制输出分辨率，也不要求公开代码或权重。
 
 集中整理 **2024 年至今**的相关顶会工作；正式录用以官方论文集或会议页面为依据，近期预印本另行标注。范围与检索入口见 [收录说明](docs/COVERAGE.md)。
 

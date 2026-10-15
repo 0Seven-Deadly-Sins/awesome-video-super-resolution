@@ -33,6 +33,13 @@ jobs:
           args=()
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           python scripts/refresh.py "${args[@]}"
+      - name: Read recent arXiv VSR preprints
+        env:
+          DRY_RUN: ${{ inputs.dry_run || false }}
+        run: |
+          args=()
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          python scripts/preprints.py "${args[@]}"
       - name: Publish bibliography updates
         if: inputs.dry_run != true
         run: |
