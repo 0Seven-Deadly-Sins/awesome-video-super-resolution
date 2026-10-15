@@ -782,6 +782,78 @@
     "resource_status": "not-found"
   },
   {
+    "id": "ca010be175aa",
+    "title": "FANVIDv2: Evaluating Video Super-Resolution by Face and Licence-Plate Recognition Under Compound Degradation",
+    "venue": "arXiv",
+    "year": 2026,
+    "category": "benchmarks",
+    "tags": [],
+    "summary": "Video super-resolution preprint",
+    "paper_url": "https://arxiv.org/abs/2609.39649",
+    "pdf_url": "https://arxiv.org/pdf/2609.39649",
+    "code_url": "",
+    "project_url": "",
+    "arxiv_id": "2609.39649",
+    "venue_status": "preprint",
+    "resource_status": "not-found"
+  },
+  {
+    "id": "75cd1f97a4e6",
+    "title": "FlashVSR+: Efficient Video Super-Resolution via Hybrid Attention and Reward-Yield Distribution Matching",
+    "venue": "arXiv",
+    "year": 2026,
+    "category": "onestep",
+    "tags": [
+      "diffusion",
+      "hybrid attention",
+      "preference alignment"
+    ],
+    "summary": "One-step VSR with hybrid attention and reward-guided distillation",
+    "paper_url": "https://arxiv.org/abs/2610.17552",
+    "pdf_url": "https://arxiv.org/pdf/2610.17552",
+    "code_url": "https://github.com/OpenImagingLab/FlashVSR_Plus",
+    "project_url": "https://www.flashvsr.tech/",
+    "arxiv_id": "2610.17552",
+    "venue_status": "preprint",
+    "resource_status": "author-linked"
+  },
+  {
+    "id": "18e7111ef414",
+    "title": "High-Throughput Generative Video Super-Resolution on a Single Consumer GPU",
+    "venue": "arXiv",
+    "year": 2026,
+    "category": "generative",
+    "tags": [],
+    "summary": "Video super-resolution preprint",
+    "paper_url": "https://arxiv.org/abs/2610.13179",
+    "pdf_url": "https://arxiv.org/pdf/2610.13179",
+    "code_url": "",
+    "project_url": "",
+    "arxiv_id": "2610.13179",
+    "venue_status": "preprint",
+    "resource_status": "not-found"
+  },
+  {
+    "id": "76b96574c666",
+    "title": "LoCoVSR: Local Context Diffusion Posterior Sampling for Video Super-Resolution",
+    "venue": "arXiv",
+    "year": 2026,
+    "category": "generative",
+    "tags": [
+      "pixel-space",
+      "faces",
+      "posterior sampling"
+    ],
+    "summary": "Local temporal context and shared noise for pixel-space diffusion VSR",
+    "paper_url": "https://arxiv.org/abs/2609.32742",
+    "pdf_url": "https://arxiv.org/pdf/2609.32742",
+    "code_url": "",
+    "project_url": "",
+    "arxiv_id": "2609.32742",
+    "venue_status": "preprint",
+    "resource_status": "not-found"
+  },
+  {
     "id": "95e67a795545",
     "title": "ReCaVSR: One-Step Streaming Diffusion Video Super-Resolution with Recycled Latents and Learned Cache Routing",
     "venue": "arXiv",
@@ -817,6 +889,25 @@
     "arxiv_id": "2609.37850",
     "venue_status": "preprint",
     "resource_status": "author-linked"
+  },
+  {
+    "id": "70d518cb2f77",
+    "title": "Streaming-Aware Diffusion for Real-Time Video Super-Resolution via Cross-Step Attention",
+    "venue": "arXiv",
+    "year": 2026,
+    "category": "efficiency",
+    "tags": [
+      "diffusion",
+      "online/streaming"
+    ],
+    "summary": "Cross-step feature reuse and coupled diffusion scheduling",
+    "paper_url": "https://arxiv.org/abs/2610.11746",
+    "pdf_url": "https://arxiv.org/pdf/2610.11746",
+    "code_url": "",
+    "project_url": "",
+    "arxiv_id": "2610.11746",
+    "venue_status": "preprint",
+    "resource_status": "not-found"
   },
   {
     "id": "eabdd3ac8447",
@@ -1372,6 +1463,25 @@
     "resource_status": "not-found"
   },
   {
+    "id": "00c2f4de581d",
+    "title": "RealisVSR: Detail-enhanced Diffusion for Real-World 4K Video Super-Resolution",
+    "venue": "arXiv",
+    "year": 2025,
+    "category": "generative",
+    "tags": [
+      "diffusion",
+      "real-world"
+    ],
+    "summary": "Detail-enhanced video diffusion; RealisVideo-4K benchmark",
+    "paper_url": "https://arxiv.org/abs/2507.19138",
+    "pdf_url": "https://arxiv.org/pdf/2507.19138",
+    "code_url": "",
+    "project_url": "",
+    "arxiv_id": "2507.19138",
+    "venue_status": "preprint",
+    "resource_status": "not-found"
+  },
+  {
     "id": "64b7aea16440",
     "title": "Arbitrary-Scale Video Super-resolution Guided by Dynamic Context",
     "venue": "AAAI",
@@ -1730,116 +1840,6 @@
     "project_url": "https://giannisdaras.github.io/warped_diffusion.github.io/",
     "arxiv_id": "",
     "venue_status": "verified",
-    "resource_status": "not-found"
-  },
-  {
-    "id": "00c2f4de581d",
-    "title": "RealisVSR: Detail-enhanced Diffusion for Real-World 4K Video Super-Resolution",
-    "venue": "arXiv",
-    "year": 2025,
-    "category": "generative",
-    "tags": [
-      "diffusion",
-      "real-world"
-    ],
-    "summary": "Detail-enhanced video diffusion; RealisVideo-4K benchmark",
-    "paper_url": "https://arxiv.org/abs/2507.19138",
-    "pdf_url": "https://arxiv.org/pdf/2507.19138",
-    "code_url": "",
-    "project_url": "",
-    "arxiv_id": "2507.19138",
-    "venue_status": "preprint",
-    "resource_status": "not-found"
-  },
-  {
-    "id": "75cd1f97a4e6",
-    "title": "FlashVSR+: Efficient Video Super-Resolution via Hybrid Attention and Reward-Yield Distribution Matching",
-    "venue": "arXiv",
-    "year": 2026,
-    "category": "onestep",
-    "tags": [
-      "diffusion",
-      "hybrid attention",
-      "preference alignment"
-    ],
-    "summary": "One-step VSR with hybrid attention and reward-guided distillation",
-    "paper_url": "https://arxiv.org/abs/2610.17552",
-    "pdf_url": "https://arxiv.org/pdf/2610.17552",
-    "code_url": "https://github.com/OpenImagingLab/FlashVSR_Plus",
-    "project_url": "https://www.flashvsr.tech/",
-    "arxiv_id": "2610.17552",
-    "venue_status": "preprint",
-    "resource_status": "author-linked"
-  },
-  {
-    "id": "76b96574c666",
-    "title": "LoCoVSR: Local Context Diffusion Posterior Sampling for Video Super-Resolution",
-    "venue": "arXiv",
-    "year": 2026,
-    "category": "generative",
-    "tags": [
-      "pixel-space",
-      "faces",
-      "posterior sampling"
-    ],
-    "summary": "Local temporal context and shared noise for pixel-space diffusion VSR",
-    "paper_url": "https://arxiv.org/abs/2609.32742",
-    "pdf_url": "https://arxiv.org/pdf/2609.32742",
-    "code_url": "",
-    "project_url": "",
-    "arxiv_id": "2609.32742",
-    "venue_status": "preprint",
-    "resource_status": "not-found"
-  },
-  {
-    "id": "70d518cb2f77",
-    "title": "Streaming-Aware Diffusion for Real-Time Video Super-Resolution via Cross-Step Attention",
-    "venue": "arXiv",
-    "year": 2026,
-    "category": "efficiency",
-    "tags": [
-      "diffusion",
-      "online/streaming"
-    ],
-    "summary": "Cross-step feature reuse and coupled diffusion scheduling",
-    "paper_url": "https://arxiv.org/abs/2610.11746",
-    "pdf_url": "https://arxiv.org/pdf/2610.11746",
-    "code_url": "",
-    "project_url": "",
-    "arxiv_id": "2610.11746",
-    "venue_status": "preprint",
-    "resource_status": "not-found"
-  },
-  {
-    "id": "18e7111ef414",
-    "title": "High-Throughput Generative Video Super-Resolution on a Single Consumer GPU",
-    "venue": "arXiv",
-    "year": 2026,
-    "category": "generative",
-    "tags": [],
-    "summary": "Video super-resolution preprint",
-    "paper_url": "https://arxiv.org/abs/2610.13179",
-    "pdf_url": "https://arxiv.org/pdf/2610.13179",
-    "code_url": "",
-    "project_url": "",
-    "arxiv_id": "2610.13179",
-    "venue_status": "preprint",
-    "resource_status": "not-found"
-  },
-  {
-    "id": "ca010be175aa",
-    "title": "FANVIDv2: Evaluating Video Super-Resolution by Face and Licence-Plate Recognition Under Compound Degradation",
-    "venue": "arXiv",
-    "year": 2026,
-    "category": "benchmarks",
-    "tags": [],
-    "summary": "Video super-resolution preprint",
-    "paper_url": "https://arxiv.org/abs/2609.39649",
-    "pdf_url": "https://arxiv.org/pdf/2609.39649",
-    "code_url": "",
-    "project_url": "",
-    "arxiv_id": "2609.39649",
-    "venue_status": "preprint",
     "resource_status": "not-found"
   }
 ]
