@@ -6,7 +6,7 @@ A categorized collection of video super-resolution papers, author implementation
 
 集中整理 **2024 年至今**的相关顶会工作；正式录用以官方论文集或会议页面为依据，近期预印本另行标注。范围与检索入口见 [收录说明](docs/COVERAGE.md)。
 
-目前收录 **104 篇**：**95 篇会议论文**、**9 篇预印本**，按 **15 个方向**编排。每篇只出现一次，交叉特征列为补充标签。
+目前收录 **105 篇**：**95 篇会议论文**、**10 篇预印本**，按 **15 个方向**编排。每篇只出现一次，交叉特征列为补充标签。
 
 `Code` 表示作者提供的仓库链接，资源是否完整请以作者说明为准；`待发布` 表示明确的发布计划；`—` 表示尚未找到作者公开代码链接，不等同于确定闭源。
 
@@ -15,7 +15,7 @@ A categorized collection of video super-resolution papers, author implementation
 - [时序对齐与特征传播 / Alignment and Propagation](#alignment) · 4
 - [Transformer 与状态空间架构 / Sequence Architectures](#architecture) · 1
 - [扩散先验与生成式超分 / Diffusion-based VSR](#generative) · 21
-- [单步扩散与蒸馏 / One-step Diffusion and Distillation](#onestep) · 12
+- [单步扩散与蒸馏 / One-step Diffusion and Distillation](#onestep) · 13
 - [对抗生成式超分 / GAN-based VSR](#gan) · 1
 - [真实退化、盲超分与自监督 / Real-world and Blind VSR](#realworld) · 4
 - [时空联合与任意倍率 / Space-time and Arbitrary-scale SR](#spacetime) · 7
@@ -98,6 +98,7 @@ A categorized collection of video super-resolution papers, author implementation
 | [SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](https://iclr.cc/virtual/2026/poster/10006682) | ICLR 2026 | One-step diffusion adversarial post-training<br>diffusion | [Code](https://github.com/ByteDance-Seed/SeedVR) · [Project](https://iceclear.github.io/projects/seedvr2/) · [PDF](https://iclr.cc/media/iclr-2026/Slides/10006682.pdf) |
 | [FlashVSR+: Efficient Video Super-Resolution via Hybrid Attention and Reward-Yield Distribution Matching](https://arxiv.org/abs/2610.17552) | arXiv 2026 · 预印本 | One-step VSR with hybrid attention and reward-guided distillation<br>diffusion, hybrid attention, preference alignment | [Code](https://github.com/OpenImagingLab/FlashVSR_Plus) · [Project](https://www.flashvsr.tech/) · [PDF](https://arxiv.org/pdf/2610.17552) |
 | [RelayVSR: Large-Small Model Collaboration for Efficient Real-World Video Super-Resolution](https://arxiv.org/abs/2609.37850) | arXiv 2026 · 预印本 | Streaming / one-step generative VSR<br>online/streaming | [Code](https://github.com/kopperx/RelayVSR) · [PDF](https://arxiv.org/pdf/2609.37850) |
+| [SoL-Refiner: Speed-of-Light One-Step Refinement for High-Resolution Video](https://arxiv.org/abs/2609.37969) | arXiv 2026 · 预印本 | One-step spatial refinement of low-resolution generator outputs<br>generated-video upscaling, distillation | [PDF](https://arxiv.org/pdf/2609.37969) |
 | [UltraVSR: Achieving Ultra-Realistic Video Super-Resolution with Efficient One-Step Diffusion Space](https://doi.org/10.1145/3746027.3755117) | ACM MM 2025 | One-step diffusion video super-resolution<br>diffusion | — |
 | [TurboVSR: Fantastic Video Upscalers and Where to Find Them](https://openaccess.thecvf.com/content/ICCV2025/html/Wang_TurboVSR_Fantastic_Video_Upscalers_and_Where_to_Find_Them_ICCV_2025_paper.html) | ICCV 2025 | 高压缩潜空间、首帧条件与少步 shortcut 采样<br>Few-step, Generative VSR | [PDF](https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_TurboVSR_Fantastic_Video_Upscalers_and_Where_to_Find_Them_ICCV_2025_paper.pdf) |
 | [DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](https://proceedings.neurips.cc/paper_files/paper/2025/hash/7b04ec5f2b89d7f601382c422dfe07af-Abstract-Conference.html) | NeurIPS 2025 | One-step diffusion adaptation<br>diffusion | [Code](https://github.com/zhengchen1999/DOVE) · [PDF](https://proceedings.neurips.cc/paper_files/paper/2025/file/7b04ec5f2b89d7f601382c422dfe07af-Paper-Conference.pdf) |

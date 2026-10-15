@@ -1848,5 +1848,24 @@
     "arxiv_id": "2609.39649",
     "venue_status": "preprint",
     "resource_status": "not-found"
+  },
+  {
+    "id": "bf78c5911438",
+    "title": "SoL-Refiner: Speed-of-Light One-Step Refinement for High-Resolution Video",
+    "venue": "arXiv",
+    "year": 2026,
+    "category": "onestep",
+    "tags": [
+      "generated-video upscaling",
+      "distillation"
+    ],
+    "summary": "One-step spatial refinement of low-resolution generator outputs",
+    "paper_url": "https://arxiv.org/abs/2609.37969",
+    "pdf_url": "https://arxiv.org/pdf/2609.37969",
+    "code_url": "",
+    "project_url": "",
+    "arxiv_id": "2609.37969",
+    "venue_status": "preprint",
+    "resource_status": "not-found"
   }
 ]
