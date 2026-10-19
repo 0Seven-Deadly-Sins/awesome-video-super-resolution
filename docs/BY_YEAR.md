@@ -228,7 +228,7 @@
 - [Online Video Super-Resolution with Convolutional Kernel Bypass Graft](https://doi.org/10.1109/tmm.2023.3243615) — IEEE Transactions on Multimedia
 - [Learning Degradation-Robust Spatiotemporal Frequency-Transformer for Video Super-Resolution](https://doi.org/10.1109/TPAMI.2023.3312166) — IEEE Transactions on Pattern Analysis and Machine Intelligence
 - [Reference-based Image and Video Super-Resolution via $C^{2}$-Matching](https://doi.org/10.1109/tpami.2022.3231089) — IEEE Transactions on Pattern Analysis and Machine Intelligence
-- [Cuboid‐Net: A multi‐branch convolutional neural network for joint space‐time video super resolution](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/ipr2.12920) — IET Image Processing
+- [Cuboid-Net: A multi-branch convolutional neural network for joint space-time video super resolution](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/ipr2.12920) — IET Image Processing
 - [Video super-resolution for single-photon LIDAR](https://doi.org/10.1364/oe.478308) — Optics Express
 - [A Lightweight Recurrent Grouping Attention Network for Video Super-Resolution](https://doi.org/10.3390/s23208574) — Sensors
 - [Can SAM Boost Video Super-Resolution?](https://arxiv.org/abs/2305.06524) — arXiv · 预印本

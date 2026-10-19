@@ -42,6 +42,18 @@ class BibliographyIntegrity(unittest.TestCase):
     def test_plus_method_extension_is_not_erased_by_title_normalization(self):
         self.assertNotEqual(catalog.normalized_title('EvTexture: Video Super-Resolution'), catalog.normalized_title('EvTexture++: Video Super-Resolution'))
 
+    def test_repository_only_is_distinguished_from_code_and_rendered(self):
+        paper = copy.deepcopy(self.papers[0])
+        paper['code_url'] = ''
+        paper['repository_url'] = 'https://github.com/example/paper-repo'
+        paper['resource_status'] = 'repository-only'
+        rendered = catalog.render([paper])
+        self.assertIn('[Repo](https://github.com/example/paper-repo)', rendered)
+        self.assertNotIn('[Code](https://github.com/example/paper-repo)', rendered)
+        paper['repository_url'] = ''
+        with self.assertRaisesRegex(ValueError, 'requires a repository URL'):
+            catalog.validate([paper])
+
     def test_publication_types_do_not_mislabel_journals_as_conferences(self):
         rendered = catalog.render(self.papers)
         overview = next(line for line in rendered.splitlines() if line.startswith('目前收录'))
@@ -128,6 +140,14 @@ class BibliographyIntegrity(unittest.TestCase):
         with patch.object(refresh, "fetch", return_value='<div id="abstract">We solve video super-resolution.</div><a href="https://github.com/template/site">Template</a>'):
             record = refresh.new_record("Video Inverse Problem Solver", "https://example.org/paper", source)
             self.assertEqual("", record["code_url"])
+
+    def test_related_github_url_in_abstract_is_not_mistaken_for_author_code(self):
+        source = {"venue": "CVPR", "year": 2026}
+        raw = '<div id="abstract">We solve video super-resolution. Prior work is available at https://github.com/other/project.</div>'
+        with patch.object(refresh, "fetch", return_value=raw):
+            record = refresh.new_record("Video Inverse Problem Solver", "https://example.org/paper", source)
+        self.assertEqual("", record["code_url"])
+        self.assertEqual("", record["repository_url"])
 
     def test_vsr_acronym_does_not_establish_video_super_resolution(self):
         source = {"venue": "ICML", "year": 2026}

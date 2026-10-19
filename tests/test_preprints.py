@@ -28,6 +28,7 @@ class PreprintSources(unittest.TestCase):
         papers = preprints.collect([], loader=lambda url: raw)
         self.assertEqual({'2610.12345', '2610.12346'}, {p['arxiv_id'] for p in papers})
         self.assertTrue(all(p['resource_status'] == 'not-found' for p in papers))
+        self.assertTrue(all(p['repository_url'] == '' for p in papers))
 
     def test_pagination_has_no_recommendation_batch_cap(self):
         pages = [feed([('2610.12345', 'Video Super-Resolution A', '')], 2), feed([('2610.12346', 'Video Super-Resolution B', '')], 2)]

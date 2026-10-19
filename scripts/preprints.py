@@ -50,7 +50,7 @@ def collect(papers, loader=refresh.fetch, today=None):
             result.append({'id': hashlib.sha1(key.encode()).hexdigest()[:12], 'title': title,
                            'venue': 'arXiv', 'year': year, 'category': category, 'tags': [],
                            'summary': 'Video super-resolution preprint', 'paper_url': 'https://arxiv.org/abs/' + aid,
-                           'pdf_url': 'https://arxiv.org/pdf/' + aid, 'code_url': '', 'project_url': '',
+                           'pdf_url': 'https://arxiv.org/pdf/' + aid, 'code_url': '', 'repository_url': '', 'project_url': '',
                            'arxiv_id': aid, 'venue_status': 'preprint', 'resource_status': 'promised' if promise else 'not-found', 'publication_type': 'preprint'})
             titles.add(key)
             ids.add(aid)

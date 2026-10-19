@@ -26,7 +26,7 @@ TOPICS = [
     ("domains", "专用场景与模态 / Domain-specific VSR", "医学、卫星、全景、实时渲染、深度及显微视频。"),
     ("benchmarks", "数据集与评测 / Datasets and Benchmarks", "支持视频超分研究的数据集和评测基准。"),
 ]
-FIELDS = {"id", "title", "venue", "year", "category", "tags", "summary", "paper_url", "pdf_url", "code_url", "project_url", "arxiv_id", "venue_status", "resource_status", "publication_type"}
+FIELDS = {"id", "title", "venue", "year", "category", "tags", "summary", "paper_url", "pdf_url", "code_url", "repository_url", "project_url", "arxiv_id", "venue_status", "resource_status", "publication_type"}
 
 
 def normalized_title(title):
@@ -58,9 +58,11 @@ def validate(papers):
             raise ValueError("Invalid publication type")
         if (p["venue_status"] == "preprint") != (p["publication_type"] == "preprint"):
             raise ValueError("Publication type and verification status disagree")
-        if p["resource_status"] not in {"author-linked", "promised", "not-found"}:
+        if p["resource_status"] not in {"author-linked", "repository-only", "promised", "not-found"}:
             raise ValueError("Invalid resource status")
-        for key in ["paper_url", "pdf_url", "code_url", "project_url"]:
+        if p["resource_status"] == "repository-only" and not p["repository_url"]:
+            raise ValueError("Repository-only status requires a repository URL")
+        for key in ["paper_url", "pdf_url", "code_url", "repository_url", "project_url"]:
             url = p[key]
             if url and (not url.startswith("https://") or re.search(r"\s", url)):
                 raise ValueError("Invalid source URL")
@@ -83,7 +85,7 @@ A categorized collection of video super-resolution papers, author implementation
 """
     text += "目前收录 **%d 篇**，覆盖 **%d–%d 年**：**%d 篇会议论文**、**%d 篇期刊论文**、**%d 篇 Workshop 论文**、**%d 篇预印本**，按 **%d 个方向**编排。每篇只出现一次，交叉特征列为补充标签。\n\n" % (len(papers), min(p["year"] for p in papers), max(p["year"] for p in papers), kinds["conference"], kinds["journal"], kinds["workshop"], kinds["preprint"], sum(bool(counts[key]) for key, _, _ in TOPICS))
     text += "也可按 [发表年份](docs/BY_YEAR.md) 浏览全部条目。\n\n"
-    text += "`Code` 表示作者提供的实现或代码入口，资源完整性、许可证及可用形式以作者说明为准；`待发布` 表示明确的发布计划；`—` 表示尚未找到作者公开实现，不等同于确定闭源。\n\n## Contents\n\n"
+    text += "`Code` 表示作者提供的代码或实现；`Repo` 表示已核实的作者仓库，但当前未找到可用实现；`待发布` 仅用于作者明确承诺发布代码的工作。论文全文优先链接可访问的出版社 PDF 或作者预印本。\n\n## Contents\n\n"
     for key, label, _ in TOPICS:
         if counts[key]:
             text += "- [%s](#%s) · %d\n" % (label, key, counts[key])
@@ -100,6 +102,8 @@ A categorized collection of video super-resolution papers, author implementation
                 links.append("[待发布](%s)" % p["code_url"] if p["resource_status"] == "promised" else "[Code](%s)" % p["code_url"])
             elif p["resource_status"] == "promised":
                 links.append("待发布")
+            if p["repository_url"]:
+                links.append("[Repo](%s)" % p["repository_url"])
             if p["project_url"]:
                 links.append("[Project](%s)" % p["project_url"])
             if p["pdf_url"]:

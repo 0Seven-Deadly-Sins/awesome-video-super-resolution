@@ -16,7 +16,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "b256766fefbb",
@@ -29,13 +30,14 @@
     ],
     "summary": "Infrared SR with atmospheric turbulence",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/38421",
-    "pdf_url": "",
-    "code_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2601.04682",
+    "code_url": "https://github.com/JZ0606/HATIR",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2601.04682",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "7a80bf60d469",
@@ -49,13 +51,14 @@
     ],
     "summary": "Opera space-time VSR; Mamba fusion",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/37261",
-    "pdf_url": "",
-    "code_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2511.06172",
+    "code_url": "https://github.com/ChangHua0/MambaOVSR",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2511.06172",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "e485b3e1d336",
@@ -69,13 +72,14 @@
     ],
     "summary": "Low-bit diffusion quantization",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/37257",
-    "pdf_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2508.04485",
     "code_url": "",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2508.04485",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "b7b76838b543",
@@ -88,13 +92,14 @@
     ],
     "summary": "Event-assisted low-light video super-resolution",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/37478",
-    "pdf_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2601.02206",
     "code_url": "",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2601.02206",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "0dedb4e0293a",
@@ -107,13 +112,14 @@
     ],
     "summary": "STDAN; 360-degree video projection and temporal alignment",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/37215",
-    "pdf_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2410.11506",
     "code_url": "",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2410.11506",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "b7e9f2796d96",
@@ -124,13 +130,14 @@
     "tags": [],
     "summary": "RGB-guided video depth SR",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/38011",
-    "pdf_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2508.01259",
     "code_url": "https://github.com/yanzq95/STDNet",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2508.01259",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "947ceeae87dc",
@@ -143,13 +150,14 @@
     ],
     "summary": "Perceptual temporal inconsistency guides spatial and temporal SR quality assessment",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/37599",
-    "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/37599/41561",
+    "pdf_url": "https://arxiv.org/pdf/2412.18933",
     "code_url": "https://github.com/Lighting-YXLI/TIG-SVQA-main",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2412.18933",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "6dad41bd83d3",
@@ -168,7 +176,8 @@
     "arxiv_id": "2503.13745",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "8bfc8e2cc566",
@@ -187,7 +196,8 @@
     "arxiv_id": "2603.07694",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "27109d2513bf",
@@ -207,7 +217,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "251a60efe9b0",
@@ -226,7 +237,8 @@
     "arxiv_id": "2603.22271",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "c967d148af39",
@@ -246,7 +258,8 @@
     "arxiv_id": "2510.12747",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "4536b84b50b8",
@@ -266,7 +279,8 @@
     "arxiv_id": "2511.14208",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "319b55157d34",
@@ -285,7 +299,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "ad312d982870",
@@ -304,7 +319,8 @@
     "arxiv_id": "2511.16928",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "fb13f6174893",
@@ -324,7 +340,8 @@
     "arxiv_id": "2511.18786",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "180b257145a2",
@@ -341,7 +358,8 @@
     "arxiv_id": "2603.15153",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "d5ba0746aaf1",
@@ -361,7 +379,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "cb1627b395b3",
@@ -380,7 +399,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "952f0cf0d2b9",
@@ -397,7 +417,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "3a04a6fba8be",
@@ -414,7 +435,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "43a959389887",
@@ -434,7 +456,8 @@
     "arxiv_id": "2607.00987",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "b25686b8f86a",
@@ -451,7 +474,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "c76a5f06c48d",
@@ -463,12 +487,13 @@
     "summary": "Face video; trajectory initialization",
     "paper_url": "https://eccv.ecva.net/virtual/2026/poster/5665",
     "pdf_url": "https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/12117.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/MediaX-SJTU/DTI",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "d6b6dd9f5af3",
@@ -485,7 +510,8 @@
     "arxiv_id": "2512.04390",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "3f8459fd232f",
@@ -502,7 +528,8 @@
     "arxiv_id": "2607.10495",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "1e8718f81bda",
@@ -519,7 +546,8 @@
     "arxiv_id": "2603.16864",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "5523bccec1b7",
@@ -539,7 +567,8 @@
     "arxiv_id": "2512.23709",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "5b274b8751eb",
@@ -558,7 +587,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "a995c7eeff62",
@@ -569,13 +599,14 @@
     "tags": [],
     "summary": "Identity and geometry priors for face restoration",
     "paper_url": "https://eccv.ecva.net/virtual/2026/poster/3384",
-    "pdf_url": "https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/1221.pdf",
+    "pdf_url": "https://arxiv.org/pdf/2606.24336",
     "code_url": "https://github.com/PixCtrol/Tiger",
     "project_url": "https://yzhoulv.github.io/Tiger/",
     "arxiv_id": "2606.24336",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "85e8fece597a",
@@ -594,7 +625,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "promised",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "f2e8b55b79b9",
@@ -610,8 +642,9 @@
     "project_url": "https://bryanswkim.github.io/tiled-prompts/",
     "arxiv_id": "2602.03342",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "promised",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "f3ab05c52a8d",
@@ -625,13 +658,14 @@
     ],
     "summary": "3D Fourier fields; continuous space-time SR",
     "paper_url": "https://iclr.cc/virtual/2026/poster/10008618",
-    "pdf_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2509.26325",
     "code_url": "https://github.com/prs-eth/v3",
     "project_url": "https://v3vsr.github.io/",
     "arxiv_id": "2509.26325",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "6ba5b167065f",
@@ -644,13 +678,14 @@
     ],
     "summary": "AdcVSR; compressed one-step adversarial distillation",
     "paper_url": "https://iclr.cc/virtual/2026/poster/10009266",
-    "pdf_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2603.00458",
     "code_url": "",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2603.00458",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "d2138d40d0a3",
@@ -669,7 +704,8 @@
     "arxiv_id": "2510.01339",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "1ecd7f0fd620",
@@ -688,7 +724,8 @@
     "arxiv_id": "2506.05301",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "104cdd2cac0f",
@@ -707,7 +744,8 @@
     "arxiv_id": "2506.19838",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "5eec1cb9c32c",
@@ -721,13 +759,14 @@
     ],
     "summary": "TS-Mamba; online state-space modeling",
     "paper_url": "https://iclr.cc/virtual/2026/poster/10009452",
-    "pdf_url": "https://iclr.cc/media/iclr-2026/Slides/10009452_EX7lTZM.pdf",
+    "pdf_url": "https://arxiv.org/pdf/2508.10453",
     "code_url": "https://github.com/QZ1-boy/TS-Mamba",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2508.10453",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "e4391925e722",
@@ -746,7 +785,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "549b04157d3a",
@@ -759,13 +799,14 @@
     ],
     "summary": "Consistency-driven streaming inference",
     "paper_url": "https://proceedings.mlr.press/v306/zhang26dm.html",
-    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhang26dm/zhang26dm.pdf",
+    "pdf_url": "https://arxiv.org/pdf/2510.00948",
     "code_url": "https://github.com/Kai-Liu001/InfVSR",
     "project_url": "",
     "arxiv_id": "2510.00948",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "5bfe7c01bd5f",
@@ -779,13 +820,14 @@
     ],
     "summary": "Layer-sensitive diffusion quantization",
     "paper_url": "https://proceedings.mlr.press/v306/wu26g.html",
-    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wu26g/wu26g.pdf",
+    "pdf_url": "https://arxiv.org/pdf/2602.03182",
     "code_url": "https://github.com/zhengchen1999/LSGQuant",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2602.03182",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "bf98ed844bae",
@@ -798,13 +840,14 @@
     ],
     "summary": "Lightweight diffusion Transformer adaptation",
     "paper_url": "https://proceedings.mlr.press/v306/cao26n.html",
-    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/cao26n/cao26n.pdf",
+    "pdf_url": "https://arxiv.org/pdf/2606.09250",
     "code_url": "",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2606.09250",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "c05667c5d204",
@@ -823,7 +866,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "06eb57f5f586",
@@ -843,7 +887,8 @@
     "arxiv_id": "2605.20624",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "075f2dec322d",
@@ -863,7 +908,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "8f85176678b9",
@@ -882,7 +928,8 @@
     "arxiv_id": "2605.25940",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "6778146e760a",
@@ -901,7 +948,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "d293c3aac271",
@@ -920,7 +968,8 @@
     "arxiv_id": "2502.06431",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "386ef0f896f1",
@@ -939,7 +988,8 @@
     "arxiv_id": "2404.04745",
     "venue_status": "verified",
     "resource_status": "promised",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b5e752345adc",
@@ -959,8 +1009,9 @@
     "project_url": "https://dachunkai.github.io/evtexture-project-page/",
     "arxiv_id": "2606.13580",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "promised",
+    "publication_type": "journal",
+    "repository_url": "https://github.com/DachunKai/EvTexture"
   },
   {
     "id": "eaf7d931eab6",
@@ -979,7 +1030,8 @@
     "arxiv_id": "2405.13389",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a88e6292eb36",
@@ -998,7 +1050,8 @@
     "arxiv_id": "2605.13182",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "ca010be175aa",
@@ -1019,7 +1072,8 @@
     "arxiv_id": "2609.39649",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "75cd1f97a4e6",
@@ -1040,7 +1094,8 @@
     "arxiv_id": "2610.17552",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "2539870de85c",
@@ -1059,7 +1114,8 @@
     "arxiv_id": "2604.18047",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "18e7111ef414",
@@ -1079,7 +1135,8 @@
     "arxiv_id": "2610.13179",
     "venue_status": "preprint",
     "resource_status": "promised",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "0b19a3824a7a",
@@ -1098,7 +1155,8 @@
     "arxiv_id": "2603.26134",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "76b96574c666",
@@ -1119,7 +1177,8 @@
     "arxiv_id": "2609.32742",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "95e67a795545",
@@ -1139,7 +1198,8 @@
     "arxiv_id": "2609.37831",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "b842b4f6d775",
@@ -1158,7 +1218,8 @@
     "arxiv_id": "2609.37850",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "bf78c5911438",
@@ -1178,7 +1239,8 @@
     "arxiv_id": "2609.37969",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "70d518cb2f77",
@@ -1198,7 +1260,8 @@
     "arxiv_id": "2610.11746",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "eabdd3ac8447",
@@ -1217,7 +1280,8 @@
     "arxiv_id": "2606.09516",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "fd11349ba2d2",
@@ -1236,7 +1300,8 @@
     "arxiv_id": "2601.20308",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "c2be267f65b2",
@@ -1253,7 +1318,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "d264641300a8",
@@ -1270,7 +1336,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "7ee411a32bf6",
@@ -1287,7 +1354,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "382652de4647",
@@ -1306,7 +1374,8 @@
     "arxiv_id": "2601.08807",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "0409e9a64579",
@@ -1326,7 +1395,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "e09ecf47aa38",
@@ -1339,13 +1409,14 @@
     ],
     "summary": "Ev-DeblurVSR; event-guided deblurring and VSR",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/32438",
-    "pdf_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2504.13042",
     "code_url": "https://github.com/DachunKai/Ev-DeblurVSR",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2504.13042",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "e8de79b50869",
@@ -1364,7 +1435,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "146e5ff4626f",
@@ -1382,8 +1454,9 @@
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "promised",
+    "publication_type": "conference",
+    "repository_url": "https://github.com/Ryan6JiaxinPeng/ReinVSR"
   },
   {
     "id": "1655f09bed7f",
@@ -1396,13 +1469,14 @@
     ],
     "summary": "One-step diffusion video super-resolution",
     "paper_url": "https://doi.org/10.1145/3746027.3755117",
-    "pdf_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2505.19958",
     "code_url": "",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2505.19958",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "88ca9767f2c2",
@@ -1421,7 +1495,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "2323a73a00aa",
@@ -1438,7 +1513,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "7468ab3aee49",
@@ -1458,7 +1534,8 @@
     "arxiv_id": "2411.16468",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "83f7820bb4a6",
@@ -1475,7 +1552,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "67f778276c6d",
@@ -1496,7 +1574,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "3b5f8443569b",
@@ -1516,7 +1595,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "ebdbdf255e22",
@@ -1535,7 +1615,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "7af38365b9f1",
@@ -1554,7 +1635,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "e73aa346c34d",
@@ -1571,7 +1653,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "ed83da3f834a",
@@ -1590,7 +1673,8 @@
     "arxiv_id": "2501.01320",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "33a31b0cc081",
@@ -1611,7 +1695,8 @@
     "arxiv_id": "2506.01037",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "67955757fd43",
@@ -1628,7 +1713,8 @@
     "arxiv_id": "2404.12388",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "b3c5057b5421",
@@ -1647,7 +1733,8 @@
     "arxiv_id": "2501.01773",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "fda16e74379a",
@@ -1664,7 +1751,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "4fb1160100c4",
@@ -1681,7 +1769,8 @@
     "arxiv_id": "2501.10110",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "2177b80ac22f",
@@ -1698,7 +1787,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "6063c9b1e84d",
@@ -1715,7 +1805,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "fac835c72ef3",
@@ -1734,7 +1825,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "b1f42f12001f",
@@ -1754,7 +1846,8 @@
     "arxiv_id": "2501.02976",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "280764b4bd3c",
@@ -1774,7 +1867,8 @@
     "arxiv_id": "2506.23618",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "b035bcde391a",
@@ -1794,7 +1888,8 @@
     "arxiv_id": "2412.00156",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "bbd641367a0c",
@@ -1812,8 +1907,9 @@
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "repository-only",
+    "publication_type": "conference",
+    "repository_url": "https://github.com/PhuTran1005/VSRM"
   },
   {
     "id": "cb56fc6d6eff",
@@ -1827,13 +1923,14 @@
       "Blind VSR"
     ],
     "paper_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/c3d6bb5723b015b20c7333d5c8273027-Abstract-Conference.html",
-    "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/c3d6bb5723b015b20c7333d5c8273027-Paper-Conference.pdf",
+    "pdf_url": "https://arxiv.org/pdf/2409.02574",
     "code_url": "https://github.com/svi-diffusion/codes",
     "project_url": "https://svi-diffusion.github.io/",
     "arxiv_id": "2409.02574",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "db7a2f367a02",
@@ -1852,7 +1949,8 @@
     "arxiv_id": "2508.00471",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "e70c0f29dbf3",
@@ -1871,7 +1969,8 @@
     "arxiv_id": "2505.16239",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "ec1930caa7d9",
@@ -1890,7 +1989,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "241e87292c11",
@@ -1909,7 +2009,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "dfc5dfaf1b0d",
@@ -1928,7 +2029,8 @@
     "arxiv_id": "2507.01012",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "d7cd7f6187f9",
@@ -1947,7 +2049,8 @@
     "arxiv_id": "2502.03502",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "dc9d98fe0074",
@@ -1964,7 +2067,8 @@
     "arxiv_id": "2311.15445",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "2d60676b6cc0",
@@ -1983,7 +2087,8 @@
     "arxiv_id": "2307.02897",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "5b9ae2c69ff8",
@@ -2000,7 +2105,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "0a53c974deec",
@@ -2019,7 +2125,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "bb45ac4db9f8",
@@ -2038,7 +2145,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "594cfe2e8d49",
@@ -2057,7 +2165,8 @@
     "arxiv_id": "2404.06036",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "97ac2186765f",
@@ -2071,12 +2180,13 @@
     "summary": "Dual-camera fusion of high-spatial/low-temporal and complementary video",
     "paper_url": "https://link.springer.com/article/10.1007/s00138-025-01685-w",
     "pdf_url": "https://arxiv.org/pdf/2310.12092",
-    "code_url": "",
+    "code_url": "https://github.com/umutsuluhan/HSTRNet",
     "project_url": "",
     "arxiv_id": "2310.12092",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "author-linked",
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "bb45685056f9",
@@ -2095,7 +2205,8 @@
     "arxiv_id": "2207.08960",
     "venue_status": "verified",
     "resource_status": "promised",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "4192024463f8",
@@ -2114,7 +2225,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "f69283d9d11f",
@@ -2133,7 +2245,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "e6f84725181e",
@@ -2152,7 +2265,8 @@
     "arxiv_id": "2411.06738",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "0daaeafdfc17",
@@ -2171,7 +2285,8 @@
     "arxiv_id": "2506.06710",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "27d496e2653f",
@@ -2190,7 +2305,8 @@
     "arxiv_id": "2509.24142",
     "venue_status": "preprint",
     "resource_status": "promised",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "c81cb7f68925",
@@ -2209,7 +2325,8 @@
     "arxiv_id": "2510.26149",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "65c828832313",
@@ -2228,7 +2345,8 @@
     "arxiv_id": "2506.14381",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "dd791253d4a5",
@@ -2247,7 +2365,8 @@
     "arxiv_id": "2506.04830",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "7b76056be6ba",
@@ -2266,7 +2385,8 @@
     "arxiv_id": "2506.11545",
     "venue_status": "preprint",
     "resource_status": "promised",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "f4f57d110de6",
@@ -2285,7 +2405,8 @@
     "arxiv_id": "2505.10577",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "10bc3548abfb",
@@ -2304,7 +2425,8 @@
     "arxiv_id": "2506.12269",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "262a96bed5ec",
@@ -2322,8 +2444,9 @@
     "project_url": "https://kopperx.github.io/projects/liftvsr",
     "arxiv_id": "2506.08529",
     "venue_status": "preprint",
-    "resource_status": "not-found",
-    "publication_type": "preprint"
+    "resource_status": "repository-only",
+    "publication_type": "preprint",
+    "repository_url": "https://github.com/kopperx/LiftVSR"
   },
   {
     "id": "45b6fabe8c8b",
@@ -2342,7 +2465,8 @@
     "arxiv_id": "2502.01816",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "132b53115fce",
@@ -2361,7 +2485,8 @@
     "arxiv_id": "2506.11768",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "22dd5fb4b82c",
@@ -2380,7 +2505,8 @@
     "arxiv_id": "2509.16507",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "00c2f4de581d",
@@ -2400,7 +2526,8 @@
     "arxiv_id": "2507.19138",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "9834abbc936c",
@@ -2419,7 +2546,8 @@
     "arxiv_id": "2504.15649",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "f6411fd0c95e",
@@ -2438,7 +2566,8 @@
     "arxiv_id": "2503.03355",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "61757079a5bb",
@@ -2456,8 +2585,9 @@
     "project_url": "",
     "arxiv_id": "2505.02159",
     "venue_status": "preprint",
-    "resource_status": "not-found",
-    "publication_type": "preprint"
+    "resource_status": "promised",
+    "publication_type": "preprint",
+    "repository_url": "https://github.com/CVL-UESTC/LRTI-VSR"
   },
   {
     "id": "a0fc5484db06",
@@ -2476,7 +2606,8 @@
     "arxiv_id": "2502.07381",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "6db0996469b4",
@@ -2495,7 +2626,8 @@
     "arxiv_id": "2509.23980",
     "venue_status": "preprint",
     "resource_status": "promised",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "c422a0bb1593",
@@ -2514,7 +2646,8 @@
     "arxiv_id": "2510.03833",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "14a8defc6539",
@@ -2532,8 +2665,9 @@
     "project_url": "",
     "arxiv_id": "2510.08143",
     "venue_status": "preprint",
-    "resource_status": "not-found",
-    "publication_type": "preprint"
+    "resource_status": "promised",
+    "publication_type": "preprint",
+    "repository_url": "https://github.com/ShianDu/UniMMVSR"
   },
   {
     "id": "48521ac1fab3",
@@ -2550,7 +2684,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "3b2420a01530",
@@ -2567,7 +2702,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "64b7aea16440",
@@ -2586,7 +2722,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "0daec714c0fe",
@@ -2599,13 +2736,14 @@
     ],
     "summary": "Joint event reconstruction; includes VSR extension",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/28293",
-    "pdf_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2303.08977",
     "code_url": "",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2303.08977",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "aec0f579b4f2",
@@ -2616,13 +2754,14 @@
     "tags": [],
     "summary": "Real-world noise modeling and negative augmentation",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/28942",
-    "pdf_url": "",
-    "code_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2305.14669",
+    "code_url": "https://github.com/NegVSR/NegVSR",
     "project_url": "https://negvsr.github.io/",
-    "arxiv_id": "",
+    "arxiv_id": "2305.14669",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "db07e943d9ed",
@@ -2641,7 +2780,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "5a60a9b3f55a",
@@ -2652,13 +2792,14 @@
     "tags": [],
     "summary": "Instance-centric semantic alignment",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/28321",
-    "pdf_url": "",
+    "pdf_url": "https://arxiv.org/pdf/2312.07823",
     "code_url": "",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2312.07823",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "620b9a96ee25",
@@ -2677,7 +2818,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "704737f9dd6a",
@@ -2694,7 +2836,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "7ec65acb5078",
@@ -2711,7 +2854,8 @@
     "arxiv_id": "2401.03707",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "3183fbb1dff2",
@@ -2730,7 +2874,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "933985376c54",
@@ -2744,12 +2889,13 @@
     "summary": "Text-guided latent diffusion",
     "paper_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhou_Upscale-A-Video_Temporal-Consistent_Diffusion_Model_for_Real-World_Video_Super-Resolution_CVPR_2024_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_Upscale-A-Video_Temporal-Consistent_Diffusion_Model_for_Real-World_Video_Super-Resolution_CVPR_2024_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/sczhou/Upscale-A-Video",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "52f762b516a1",
@@ -2766,7 +2912,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "02b9eb7a6b09",
@@ -2785,7 +2932,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "9ed3e3df8749",
@@ -2804,7 +2952,8 @@
     "arxiv_id": "2311.15908",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "4c42246db315",
@@ -2823,7 +2972,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "18c31cd09a39",
@@ -2840,7 +2990,8 @@
     "arxiv_id": "2408.05205",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "846fb2757b50",
@@ -2859,7 +3010,8 @@
     "arxiv_id": "2312.00853",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "9c788c6fedfc",
@@ -2876,7 +3028,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "e4834c35702e",
@@ -2889,13 +3042,14 @@
     ],
     "summary": "Event-driven texture enhancement",
     "paper_url": "https://proceedings.mlr.press/v235/kai24a.html",
-    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/kai24a/kai24a.pdf",
+    "pdf_url": "https://arxiv.org/pdf/2406.13457",
     "code_url": "https://github.com/DachunKai/EvTexture",
     "project_url": "",
-    "arxiv_id": "",
+    "arxiv_id": "2406.13457",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "51c4d3bc8627",
@@ -2914,7 +3068,8 @@
     "arxiv_id": "2403.15832",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "27ba5d03e7f4",
@@ -2931,7 +3086,8 @@
     "arxiv_id": "2410.03936",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "57fbfa346cd3",
@@ -2948,7 +3104,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "149686720a13",
@@ -2968,7 +3125,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "890c9cf6a430",
@@ -2987,7 +3145,8 @@
     "arxiv_id": "2402.03513",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "8a07963d8b9b",
@@ -3006,7 +3165,8 @@
     "arxiv_id": "2310.17294",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "f3c75502d2de",
@@ -3020,12 +3180,13 @@
     "summary": "Motion-excited temporal adaptation jointly removes compression damage and upsamples",
     "paper_url": "https://doi.org/10.1145/3651309",
     "pdf_url": "",
-    "code_url": "",
+    "code_url": "https://github.com/lifengcs/ECVSR",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "author-linked",
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "233473f9847f",
@@ -3044,7 +3205,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "fd0e254fb27c",
@@ -3063,7 +3225,8 @@
     "arxiv_id": "2304.04421",
     "venue_status": "verified",
     "resource_status": "promised",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "fa13ca346f79",
@@ -3082,7 +3245,8 @@
     "arxiv_id": "2506.03216",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "99218a25de1c",
@@ -3101,7 +3265,8 @@
     "arxiv_id": "2303.00334",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "fb70b3ee52b1",
@@ -3120,7 +3285,8 @@
     "arxiv_id": "2312.09909",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a6b4c00bb74d",
@@ -3141,7 +3307,8 @@
     "arxiv_id": "2201.12288",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "2e08d3801f05",
@@ -3155,12 +3322,13 @@
     "summary": "Distortion-aware spatial-temporal modeling for omnidirectional VSR",
     "paper_url": "https://doi.org/10.1109/tmm.2023.3267294",
     "pdf_url": "https://arxiv.org/pdf/2506.14803",
-    "code_url": "",
+    "code_url": "https://github.com/arbind95/360VSR",
     "project_url": "",
     "arxiv_id": "2506.14803",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "author-linked",
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "bf44ed3fef50",
@@ -3179,7 +3347,8 @@
     "arxiv_id": "2203.06841",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "3d136012ec29",
@@ -3198,7 +3367,8 @@
     "arxiv_id": "2201.07422",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "2de94050e9dd",
@@ -3217,7 +3387,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "e9978179d06f",
@@ -3236,7 +3407,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b45a64fade46",
@@ -3255,7 +3427,8 @@
     "arxiv_id": "2311.09178",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "5dda3a1f1110",
@@ -3274,7 +3447,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "5f66b5da9378",
@@ -3293,7 +3467,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "340228fbcfa6",
@@ -3306,13 +3481,14 @@
     ],
     "summary": "Content-aware selection of neighboring frames without expanding VSR architectures",
     "paper_url": "https://link.springer.com/article/10.1007/s42979-024-02710-x",
-    "pdf_url": "",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s42979-024-02710-x.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "19a2729c5987",
@@ -3331,7 +3507,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "e462831a31f5",
@@ -3350,7 +3527,8 @@
     "arxiv_id": "2407.16965",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "b5e28e571147",
@@ -3369,7 +3547,8 @@
     "arxiv_id": "2412.09427",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "3effa984f245",
@@ -3388,7 +3567,8 @@
     "arxiv_id": "2408.14244",
     "venue_status": "preprint",
     "resource_status": "promised",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "e84f38b9e2c7",
@@ -3407,7 +3587,8 @@
     "arxiv_id": "2407.08466",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "5b4f335e347d",
@@ -3426,7 +3607,8 @@
     "arxiv_id": "2406.16359",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "c45ecf97b23e",
@@ -3443,7 +3625,8 @@
     "arxiv_id": "2404.19500",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "d60118e0c14c",
@@ -3462,7 +3645,8 @@
     "arxiv_id": "2409.17256",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "4ea5bda15cbd",
@@ -3481,7 +3665,8 @@
     "arxiv_id": "2410.04225",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "fecbd6acca7b",
@@ -3500,7 +3685,8 @@
     "arxiv_id": "2401.10404",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "20c8f3719b8b",
@@ -3519,7 +3705,8 @@
     "arxiv_id": "2205.05069",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "998b21cc0670",
@@ -3538,7 +3725,8 @@
     "arxiv_id": "2207.01797",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "76bc171fd1e6",
@@ -3557,7 +3745,8 @@
     "arxiv_id": "2212.07339",
     "venue_status": "verified",
     "resource_status": "promised",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "8c77d86a01de",
@@ -3576,7 +3765,8 @@
     "arxiv_id": "2207.12496",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "9aed92aa3b10",
@@ -3593,7 +3783,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "c9a052c874ab",
@@ -3610,7 +3801,8 @@
     "arxiv_id": "2211.08658",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "f27dfb07eb83",
@@ -3624,12 +3816,13 @@
     "summary": "Event-guided implicit representation for arbitrary spatial-temporal queries",
     "paper_url": "https://openaccess.thecvf.com/content/CVPR2023/html/Lu_Learning_Spatial-Temporal_Implicit_Neural_Representations_for_Event-Guided_Video_Super-Resolution_CVPR_2023_paper.html",
     "pdf_url": "https://arxiv.org/pdf/2303.13767",
-    "code_url": "",
+    "code_url": "https://github.com/yunfanLu/INR-Event-VSR",
     "project_url": "",
     "arxiv_id": "2303.13767",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "c82ccf7f3ccc",
@@ -3648,7 +3841,8 @@
     "arxiv_id": "2206.07687",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "3edd22a00b4c",
@@ -3667,7 +3861,8 @@
     "arxiv_id": "2303.08331",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "009b2c0fb139",
@@ -3686,7 +3881,8 @@
     "arxiv_id": "2207.08674",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "094b075d1ca5",
@@ -3705,7 +3901,8 @@
     "arxiv_id": "2303.09826",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "50792aa1c276",
@@ -3724,7 +3921,8 @@
     "arxiv_id": "2307.07988",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "e8e25c87a4c4",
@@ -3741,7 +3939,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "a1ee5f2a86c4",
@@ -3760,7 +3959,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "09d2d068614f",
@@ -3779,7 +3979,8 @@
     "arxiv_id": "2211.08703",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "97082bfe3b9e",
@@ -3798,7 +3999,8 @@
     "arxiv_id": "2212.13525",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "20a82ad8a21d",
@@ -3815,7 +4017,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "1868f7c426c4",
@@ -3834,7 +4037,8 @@
     "arxiv_id": "2202.01731",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "761b79a27ac1",
@@ -3851,7 +4055,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "2fa4508f7451",
@@ -3864,13 +4069,14 @@
     ],
     "summary": "Surveys video SR alongside denoising, deblurring and compression-artifact removal.",
     "paper_url": "https://link.springer.com/article/10.1007/s10462-022-10302-5",
-    "pdf_url": "",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10462-022-10302-5.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "df31ea421449",
@@ -3889,7 +4095,8 @@
     "arxiv_id": "2211.01639",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "9b9a824445d7",
@@ -3908,7 +4115,8 @@
     "arxiv_id": "2208.02470",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b4bd917b0445",
@@ -3928,7 +4136,8 @@
     "arxiv_id": "2212.14046",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "0aae5b926a0c",
@@ -3947,11 +4156,12 @@
     "arxiv_id": "2212.09581",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a7106b91a899",
-    "title": "Cuboid‐Net: A multi‐branch convolutional neural network for joint space‐time video super resolution",
+    "title": "Cuboid-Net: A multi-branch convolutional neural network for joint space-time video super resolution",
     "venue": "IET Image Processing",
     "year": 2023,
     "category": "spacetime",
@@ -3961,12 +4171,13 @@
     "summary": "Multi-branch cuboid convolutions for joint space-time SR",
     "paper_url": "https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/ipr2.12920",
     "pdf_url": "https://arxiv.org/pdf/2407.16986",
-    "code_url": "",
+    "code_url": "https://github.com/FCongRui/Cuboid-Net",
     "project_url": "",
     "arxiv_id": "2407.16986",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "author-linked",
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "9fb7079fefb7",
@@ -3985,7 +4196,8 @@
     "arxiv_id": "2210.10474",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "f3c23f192665",
@@ -3999,12 +4211,13 @@
     "summary": "Compact bidirectional recurrent network with grouped attention",
     "paper_url": "https://doi.org/10.3390/s23208574",
     "pdf_url": "https://arxiv.org/pdf/2309.13940",
-    "code_url": "",
+    "code_url": "https://github.com/karlygzhu/RGAN",
     "project_url": "",
     "arxiv_id": "2309.13940",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "author-linked",
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "0cd689c8976c",
@@ -4023,7 +4236,8 @@
     "arxiv_id": "2305.06524",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "de2144365f4d",
@@ -4042,7 +4256,8 @@
     "arxiv_id": "2302.13256",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "8239476f7aad",
@@ -4061,7 +4276,8 @@
     "arxiv_id": "2305.14708",
     "venue_status": "preprint",
     "resource_status": "author-linked",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "ac41ac50cb25",
@@ -4080,7 +4296,8 @@
     "arxiv_id": "2310.11276",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "a016fa119f8a",
@@ -4099,7 +4316,8 @@
     "arxiv_id": "2212.05342",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "043f382c97d6",
@@ -4118,7 +4336,8 @@
     "arxiv_id": "2305.02660",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "525a348d3b77",
@@ -4135,7 +4354,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "2dc0423e2255",
@@ -4154,7 +4374,8 @@
     "arxiv_id": "2207.06345",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "2a47452b43d8",
@@ -4166,12 +4387,13 @@
     "summary": "Second-order propagation and flow-guided deformable alignment",
     "paper_url": "https://openaccess.thecvf.com/content/CVPR2022/html/Chan_BasicVSR_Improving_Video_Super-Resolution_With_Enhanced_Propagation_and_Alignment_CVPR_2022_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Chan_BasicVSR_Improving_Video_Super-Resolution_With_Enhanced_Propagation_and_Alignment_CVPR_2022_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/ckkelvinchan/BasicVSR_PlusPlus",
     "project_url": "",
     "arxiv_id": "2104.13371",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "6ac3722eb583",
@@ -4183,12 +4405,13 @@
     "summary": "Blind, adaptive or real-world video reconstruction",
     "paper_url": "https://openaccess.thecvf.com/content/CVPR2022/html/Chan_Investigating_Tradeoffs_in_Real-World_Video_Super-Resolution_CVPR_2022_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Chan_Investigating_Tradeoffs_in_Real-World_Video_Super-Resolution_CVPR_2022_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/ckkelvinchan/RealBasicVSR",
     "project_url": "",
     "arxiv_id": "2111.12704",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "ba87431f978a",
@@ -4207,7 +4430,8 @@
     "arxiv_id": "2204.04216",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "d0a103f0b630",
@@ -4226,7 +4450,8 @@
     "arxiv_id": "2204.07114",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "cc07d58bd2e5",
@@ -4238,12 +4463,13 @@
     "summary": "Temporal correspondence and feature propagation",
     "paper_url": "https://openaccess.thecvf.com/content/CVPR2022/html/Yu_Memory-Augmented_Non-Local_Attention_for_Video_Super-Resolution_CVPR_2022_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Yu_Memory-Augmented_Non-Local_Attention_for_Video_Super-Resolution_CVPR_2022_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/jiy173/MANA",
     "project_url": "",
     "arxiv_id": "2108.11048",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "bd8bf0392b9a",
@@ -4262,7 +4488,8 @@
     "arxiv_id": "2203.14186",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "1f1c94dccf24",
@@ -4276,12 +4503,13 @@
     "summary": "Reference VSR from smartphone ultra-wide/wide/telephoto video triplets",
     "paper_url": "https://doi.org/10.1109/cvpr52688.2022.01730",
     "pdf_url": "https://arxiv.org/pdf/2203.14537",
-    "code_url": "",
+    "code_url": "https://github.com/codeslake/RefVSR",
     "project_url": "",
     "arxiv_id": "2203.14537",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "7586475de41d",
@@ -4293,12 +4521,13 @@
     "summary": "Temporal correspondence and feature propagation",
     "paper_url": "https://openaccess.thecvf.com/content/CVPR2022/html/Zhou_Revisiting_Temporal_Alignment_for_Video_Restoration_CVPR_2022_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Zhou_Revisiting_Temporal_Alignment_for_Video_Restoration_CVPR_2022_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/redrock303/Revisiting-Temporal-Alignment-for-Video-Restoration",
     "project_url": "",
     "arxiv_id": "2111.15288",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "b8b47838f31a",
@@ -4317,7 +4546,8 @@
     "arxiv_id": "2205.05264",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "c1db293982c4",
@@ -4334,7 +4564,8 @@
     "arxiv_id": "2112.08950",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "be84467af65e",
@@ -4353,7 +4584,8 @@
     "arxiv_id": "2206.04647",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "74d01c54feb2",
@@ -4372,7 +4604,8 @@
     "arxiv_id": "2210.08229",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "5e85b361042c",
@@ -4391,7 +4624,8 @@
     "arxiv_id": "2203.08140",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "c98645c55cd8",
@@ -4410,7 +4644,8 @@
     "arxiv_id": "2208.03012",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "294275bc88dd",
@@ -4429,7 +4664,8 @@
     "arxiv_id": "2209.12475",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "9bc6a2e687a1",
@@ -4448,7 +4684,8 @@
     "arxiv_id": "2207.10765",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "e0ca92960fde",
@@ -4465,7 +4702,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "5f7ae7da69ad",
@@ -4482,7 +4720,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "758a8451434d",
@@ -4501,7 +4740,8 @@
     "arxiv_id": "2207.08494",
     "venue_status": "verified",
     "resource_status": "promised",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "d41d23409e3b",
@@ -4518,7 +4758,8 @@
     "arxiv_id": "2110.15327",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "4df9f79eff25",
@@ -4537,7 +4778,8 @@
     "arxiv_id": "2203.10462",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "ced1cdf098b4",
@@ -4556,7 +4798,8 @@
     "arxiv_id": "2007.12928",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "8b835a4c6cc3",
@@ -4575,7 +4818,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a2d62b5305c9",
@@ -4594,7 +4838,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "2035aaaa35e4",
@@ -4608,12 +4853,13 @@
     "summary": "Spatially adaptive spatiotemporal filters align frames without explicit optical flow",
     "paper_url": "https://ieeexplore.ieee.org/abstract/document/9700735",
     "pdf_url": "",
-    "code_url": "",
+    "code_url": "https://github.com/wwlCape/STAN",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "author-linked",
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "48a47eb5628c",
@@ -4632,7 +4878,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "0a108aed545b",
@@ -4651,7 +4898,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "f2ba2cee5dff",
@@ -4670,7 +4918,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "723e09ac3266",
@@ -4689,7 +4938,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "4ef43ab1b422",
@@ -4708,7 +4958,8 @@
     "arxiv_id": "2203.02723",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "c91b5a8fa4dc",
@@ -4727,7 +4978,8 @@
     "arxiv_id": "2201.11996",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "dc2a6220e4ae",
@@ -4746,7 +4998,8 @@
     "arxiv_id": "2204.10039",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "08b14fba9ce0",
@@ -4763,7 +5016,8 @@
     "arxiv_id": "2204.09314",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "14a023797b67",
@@ -4780,7 +5034,8 @@
     "arxiv_id": "2204.09924",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "963c3f9890d1",
@@ -4797,7 +5052,8 @@
     "arxiv_id": "2205.03409",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "75fa1f5b6255",
@@ -4816,7 +5072,8 @@
     "arxiv_id": "2211.05256",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "d02db4c7a4a7",
@@ -4835,7 +5092,8 @@
     "arxiv_id": "2208.11608",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "57045dddfe67",
@@ -4852,7 +5110,8 @@
     "arxiv_id": "2103.11744",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "29a84e2a78a2",
@@ -4866,12 +5125,13 @@
     "summary": "Analysis of deformable alignment and offset diversity",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/16181",
     "pdf_url": "https://arxiv.org/pdf/2009.07265",
-    "code_url": "",
+    "code_url": "https://github.com/ckkelvinchan/offset-fidelity-loss",
     "project_url": "",
     "arxiv_id": "2009.07265",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "2289e911c75e",
@@ -4888,7 +5148,8 @@
     "arxiv_id": "2108.02832",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "9605855a63ce",
@@ -4899,13 +5160,14 @@
     "tags": [],
     "summary": "Joint spatial super-resolution and frame interpolation",
     "paper_url": "https://doi.org/10.1145/3474085.3475672",
-    "pdf_url": "",
+    "pdf_url": "https://discovery.ucl.ac.uk/id/eprint/10136963/1/ChengchengZhou-ACMMM2021-final.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "50a007a960d3",
@@ -4922,7 +5184,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "908294543392",
@@ -4936,13 +5199,14 @@
     ],
     "summary": "Multi-kernel deformable 3D convolutions",
     "paper_url": "https://doi.org/10.1109/bmsb53066.2021.9547068",
-    "pdf_url": "",
+    "pdf_url": "https://ruor.uottawa.ca/server/api/core/bitstreams/2ae8854e-464c-49ff-9bd6-d2478ed027dd/content",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "724db8cfe680",
@@ -4961,7 +5225,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "046c4837a0cc",
@@ -4973,12 +5238,13 @@
     "summary": "Bidirectional propagation and feature alignment baseline",
     "paper_url": "https://openaccess.thecvf.com/content/CVPR2021/html/Chan_BasicVSR_The_Search_for_Essential_Components_in_Video_Super-Resolution_and_CVPR_2021_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Chan_BasicVSR_The_Search_for_Essential_Components_in_Video_Super-Resolution_and_CVPR_2021_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/XPixelGroup/BasicSR",
     "project_url": "",
     "arxiv_id": "2012.02181",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "510c82b4bdf1",
@@ -4995,7 +5261,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "aba9dd01153d",
@@ -5012,7 +5279,8 @@
     "arxiv_id": "2104.10642",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "78c9b31e5cee",
@@ -5029,7 +5297,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "4f4a8146a605",
@@ -5046,7 +5315,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "8caf7eb1e981",
@@ -5063,7 +5333,8 @@
     "arxiv_id": "2105.01237",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "466899c0aabc",
@@ -5080,7 +5351,8 @@
     "arxiv_id": "2003.04716",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "4885b57eac7b",
@@ -5097,7 +5369,8 @@
     "arxiv_id": "2104.02322",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "ed974cf37e0a",
@@ -5109,12 +5382,13 @@
     "summary": "Convolutional multi-frame reconstruction",
     "paper_url": "https://openaccess.thecvf.com/content/ICCV2021/html/Yi_Omniscient_Video_Super-Resolution_ICCV_2021_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Yi_Omniscient_Video_Super-Resolution_ICCV_2021_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/psychopa4/OVSR",
     "project_url": "",
     "arxiv_id": "2103.15683",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "5a9012ae41cf",
@@ -5131,7 +5405,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "de3b30665d92",
@@ -5146,12 +5421,13 @@
     "summary": "Wavelet attention embedding for video reconstruction",
     "paper_url": "https://doi.org/10.1109/icpr48806.2021.9412623",
     "pdf_url": "",
-    "code_url": "",
+    "code_url": "https://github.com/smu-ivpl/WAEN",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "4d9d8a5ed615",
@@ -5168,7 +5444,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "6cfb0845b56b",
@@ -5185,7 +5462,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "1210dc2c66be",
@@ -5197,12 +5475,13 @@
     "summary": "Blind, adaptive or real-world video reconstruction",
     "paper_url": "https://openaccess.thecvf.com/content/WACV2021/html/Lee_DynaVSR_Dynamic_Adaptive_Blind_Video_Super-Resolution_WACV_2021_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content/WACV2021/papers/Lee_DynaVSR_Dynamic_Adaptive_Blind_Video_Super-Resolution_WACV_2021_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/esw0116/DynaVSR",
     "project_url": "",
     "arxiv_id": "2011.04482",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "ac2627139332",
@@ -5215,13 +5494,14 @@
     ],
     "summary": "Dual attention and self-attention alignment",
     "paper_url": "https://doi.org/10.1007/s12559-021-09874-1",
-    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12559-021-09874-1.pdf",
+    "pdf_url": "https://pure.aber.ac.uk/ws/portalfiles/portal/42698406/Dual_Attention_with_the_Self_Attention_Alignment_for_Efficient_Video_Super_resolution_accepted.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "3d3133250d80",
@@ -5238,7 +5518,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "4d88cb590791",
@@ -5257,7 +5538,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "42277179e69b",
@@ -5274,7 +5556,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "834cf4db5246",
@@ -5287,13 +5570,14 @@
     ],
     "summary": "Feature multiplexing for compressed videos",
     "paper_url": "https://doi.org/10.1109/access.2021.3085414",
-    "pdf_url": "",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/9312710/09445020.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "2d7926883599",
@@ -5304,13 +5588,14 @@
     "tags": [],
     "summary": "Asymmetric back-projection for medical video reconstruction",
     "paper_url": "https://doi.org/10.1109/access.2021.3054433",
-    "pdf_url": "",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/9312710/09335594.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "00f84168261e",
@@ -5321,13 +5606,14 @@
     "tags": [],
     "summary": "Perceptual reconstruction of low-bitrate video streams",
     "paper_url": "https://doi.org/10.1109/access.2021.3090344",
-    "pdf_url": "",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/9312710/09460113.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "e60aa7a3fa7a",
@@ -5344,7 +5630,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "157520b69322",
@@ -5361,7 +5648,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "e4b5a1884aa5",
@@ -5380,7 +5668,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b41e31c78dfc",
@@ -5399,7 +5688,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "7c0172041e42",
@@ -5418,7 +5708,8 @@
     "arxiv_id": "2008.10710",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "fdf42c2fb090",
@@ -5435,7 +5726,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "9f008b0d3bd6",
@@ -5452,7 +5744,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "6a41932b3a8e",
@@ -5469,7 +5762,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "0e4ed2d1dcad",
@@ -5488,7 +5782,8 @@
     "arxiv_id": "1810.08768",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "aa6ffe51f2db",
@@ -5499,13 +5794,14 @@
     "tags": [],
     "summary": "Non-local frame alignment",
     "paper_url": "https://doi.org/10.1049/ipr2.12134",
-    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdf/10.1049/ipr2.12134",
+    "pdf_url": "https://pdfs.semanticscholar.org/661a/b08fec8557eb3c7f7eeed0a3423a1b947025.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "4d634b4e397c",
@@ -5525,7 +5821,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b0c344ecb095",
@@ -5542,7 +5839,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "76daf08d2736",
@@ -5559,7 +5857,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "95ba9f0c1db9",
@@ -5578,7 +5877,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "3f14b91caad7",
@@ -5589,13 +5889,14 @@
     "tags": [],
     "summary": "Deep back-projection with motion-feature fusion",
     "paper_url": "https://doi.org/10.1007/s11042-020-10337-2",
-    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11042-020-10337-2.pdf",
+    "pdf_url": "",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "37bf62598aba",
@@ -5606,13 +5907,14 @@
     "tags": [],
     "summary": "Face reconstruction from degraded surveillance footage",
     "paper_url": "https://doi.org/10.1007/s00521-021-05973-0",
-    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00521-021-05973-0.pdf",
+    "pdf_url": "https://www.cs.ait.ac.th/~mdailey/class/rtml/farooq_preprint.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "ab9029426db5",
@@ -5625,13 +5927,14 @@
     ],
     "summary": "Frame-wise fusion and self-calibrated deformable alignment",
     "paper_url": "https://doi.org/10.1007/s11063-021-10593-9",
-    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11063-021-10593-9.pdf",
+    "pdf_url": "",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "82836733f113",
@@ -5651,7 +5954,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "810d7de944e8",
@@ -5668,7 +5972,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "ad250c07547d",
@@ -5687,7 +5992,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "2886b833e756",
@@ -5704,7 +6010,8 @@
     "arxiv_id": "2109.13626",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "6261593b405f",
@@ -5721,7 +6028,8 @@
     "arxiv_id": "2106.11253",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "934bd3538ad6",
@@ -5738,7 +6046,8 @@
     "arxiv_id": "2102.11720",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "8b17700de431",
@@ -5750,12 +6059,13 @@
     "summary": "Reference-guided multi-frame reconstruction",
     "paper_url": "https://arxiv.org/abs/2110.07797",
     "pdf_url": "https://arxiv.org/pdf/2110.07797",
-    "code_url": "",
+    "code_url": "https://github.com/IndigoPurple/EFENet",
     "project_url": "",
     "arxiv_id": "2110.07797",
     "venue_status": "preprint",
-    "resource_status": "not-found",
-    "publication_type": "preprint"
+    "resource_status": "author-linked",
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "c1f6d0c509c7",
@@ -5772,7 +6082,8 @@
     "arxiv_id": "2110.09992",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "b81042868008",
@@ -5789,7 +6100,8 @@
     "arxiv_id": "2105.05640",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "f6b93d59470e",
@@ -5806,7 +6118,8 @@
     "arxiv_id": "2106.07190",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "b0b6d3e24a8c",
@@ -5823,7 +6136,8 @@
     "arxiv_id": "2112.05755",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "de260a7f2726",
@@ -5840,7 +6154,8 @@
     "arxiv_id": "2102.13011",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "db211ee450b1",
@@ -5857,7 +6172,8 @@
     "arxiv_id": "2110.06786",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "2c3ed21eccfc",
@@ -5874,7 +6190,8 @@
     "arxiv_id": "2112.02828",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "3e978fcbc89e",
@@ -5891,7 +6208,8 @@
     "arxiv_id": "2105.02794",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "ba6cb7daaf0c",
@@ -5908,7 +6226,8 @@
     "arxiv_id": "2105.08826",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "1f53fd654739",
@@ -5925,7 +6244,8 @@
     "arxiv_id": "2103.10081",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "3b6429071ede",
@@ -5942,7 +6262,8 @@
     "arxiv_id": "2108.08305",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "98ed8f70b8bc",
@@ -5954,12 +6275,13 @@
     "summary": "Sequence architecture for video reconstruction",
     "paper_url": "https://arxiv.org/abs/2106.06847",
     "pdf_url": "https://arxiv.org/pdf/2106.06847",
-    "code_url": "",
+    "code_url": "https://github.com/caojiezhang/VSR-Transformer",
     "project_url": "",
     "arxiv_id": "2106.06847",
     "venue_status": "preprint",
-    "resource_status": "not-found",
-    "publication_type": "preprint"
+    "resource_status": "author-linked",
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "f35395547c97",
@@ -5976,7 +6298,8 @@
     "arxiv_id": "2106.12778",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "ee6886f26172",
@@ -5990,12 +6313,13 @@
     "summary": "Joint spatial-temporal or arbitrary-scale reconstruction",
     "paper_url": "https://arxiv.org/abs/2104.07473",
     "pdf_url": "https://arxiv.org/pdf/2104.07473",
-    "code_url": "",
+    "code_url": "https://github.com/Mukosame/Zooming-Slow-Mo-CVPR-2020",
     "project_url": "",
     "arxiv_id": "2104.07473",
     "venue_status": "preprint",
-    "resource_status": "not-found",
-    "publication_type": "preprint"
+    "resource_status": "author-linked",
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "e512d3e4acef",
@@ -6007,12 +6331,13 @@
     "summary": "Joint spatial-temporal or arbitrary-scale reconstruction",
     "paper_url": "https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/html/Dutta_Efficient_Space-Time_Video_Super_Resolution_Using_Low-Resolution_Flow_and_Mask_CVPRW_2021_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Dutta_Efficient_Space-Time_Video_Super_Resolution_Using_Low-Resolution_Flow_and_Mask_CVPRW_2021_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/saikatdutta/FMU_STSR",
     "project_url": "",
     "arxiv_id": "2104.05778",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "workshop"
+    "resource_status": "author-linked",
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "ec6128af9bca",
@@ -6029,7 +6354,8 @@
     "arxiv_id": "2104.14852",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "60ed8906f8d0",
@@ -6046,7 +6372,8 @@
     "arxiv_id": "2002.06378",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "43417ab778e2",
@@ -6063,7 +6390,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "3fdd0744da66",
@@ -6077,12 +6405,13 @@
     "summary": "Recurrent residual temporal modeling",
     "paper_url": "https://doi.org/10.5244/c.34.8",
     "pdf_url": "https://arxiv.org/pdf/2008.05765",
-    "code_url": "",
+    "code_url": "https://github.com/MediaTek-NeuroPilot/mai22-real-time-video-sr",
     "project_url": "",
     "arxiv_id": "2008.05765",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "c4d1669725b0",
@@ -6099,7 +6428,8 @@
     "arxiv_id": "2003.13170",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "f40072e05b80",
@@ -6116,7 +6446,8 @@
     "arxiv_id": "1812.02898",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "3da58a060ebb",
@@ -6128,12 +6459,13 @@
     "summary": "Temporal grouping and attention for multi-frame fusion",
     "paper_url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Isobe_Video_Super-Resolution_With_Temporal_Group_Attention_CVPR_2020_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Isobe_Video_Super-Resolution_With_Temporal_Group_Attention_CVPR_2020_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/EvgeneyBogatyrev/TGA",
     "project_url": "",
     "arxiv_id": "2007.10595",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "3a4e2ec78d6f",
@@ -6145,12 +6477,13 @@
     "summary": "Joint spatial-temporal or arbitrary-scale reconstruction",
     "paper_url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Xiang_Zooming_Slow-Mo_Fast_and_Accurate_One-Stage_Space-Time_Video_Super-Resolution_CVPR_2020_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Xiang_Zooming_Slow-Mo_Fast_and_Accurate_One-Stage_Space-Time_Video_Super-Resolution_CVPR_2020_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/Mukosame/Zooming-Slow-Mo-CVPR-2020",
     "project_url": "",
     "arxiv_id": "2002.11616",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "542a6d4721d4",
@@ -6167,7 +6500,8 @@
     "arxiv_id": "2007.11803",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "625037d824a9",
@@ -6186,7 +6520,8 @@
     "arxiv_id": "2008.00455",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "8d9549086cc9",
@@ -6203,7 +6538,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "bd7bd6e2da59",
@@ -6222,7 +6558,8 @@
     "arxiv_id": "2010.00154",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "59579fa88532",
@@ -6239,7 +6576,8 @@
     "arxiv_id": "2001.01162",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "3aa318cc2b60",
@@ -6256,7 +6594,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "106b84dc5022",
@@ -6275,7 +6614,8 @@
     "arxiv_id": "1811.09393",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "d4e5da495e50",
@@ -6294,7 +6634,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "27a3e58e81a4",
@@ -6311,7 +6652,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "827428fd70c8",
@@ -6325,12 +6667,13 @@
     "summary": "Recurrent generative back-projection for temporal reconstruction",
     "paper_url": "https://doi.org/10.1007/s41095-020-0175-7",
     "pdf_url": "https://arxiv.org/pdf/2006.11161",
-    "code_url": "",
+    "code_url": "https://github.com/amanchadha/iSeeBetter",
     "project_url": "",
     "arxiv_id": "2006.11161",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "author-linked",
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a40cee47d54f",
@@ -6349,7 +6692,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "da3ed75a0290",
@@ -6360,13 +6704,14 @@
     "tags": [],
     "summary": "Local and global temporal feature fusion",
     "paper_url": "https://doi.org/10.1109/access.2020.3025780",
-    "pdf_url": "",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09203860.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "912972b1b6a9",
@@ -6386,7 +6731,8 @@
     "arxiv_id": "2004.02803",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "83c3fcbf0037",
@@ -6403,7 +6749,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "45fd5e9c8ba3",
@@ -6422,7 +6769,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b4e3e7df7d8d",
@@ -6441,7 +6789,8 @@
     "arxiv_id": "2001.02129",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a8b0e70ed4f5",
@@ -6455,12 +6804,13 @@
     "summary": "Dual attention for spatial and temporal information",
     "paper_url": "https://doi.org/10.1109/tip.2020.2972118",
     "pdf_url": "",
-    "code_url": "",
+    "code_url": "https://github.com/lifengcs/DDAN",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "author-linked",
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a89b1fef9829",
@@ -6477,7 +6827,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "07480cd3ce47",
@@ -6496,7 +6847,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "1e4121c3a346",
@@ -6513,7 +6865,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "f8cbd4525eaf",
@@ -6532,7 +6885,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "9f9b203ddcb9",
@@ -6549,7 +6903,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "1f4e462f981e",
@@ -6566,7 +6921,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "5ebd831d6d2e",
@@ -6577,13 +6933,14 @@
     "tags": [],
     "summary": "Multiresolution mixture adversarial reconstruction",
     "paper_url": "https://doi.org/10.1371/journal.pone.0235352",
-    "pdf_url": "",
+    "pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0235352&type=printable",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "cf285cc8649e",
@@ -6600,7 +6957,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "efb4f75b60f5",
@@ -6617,7 +6975,8 @@
     "arxiv_id": "1909.00073",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "61611034e846",
@@ -6634,7 +6993,8 @@
     "arxiv_id": "2008.10320",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "e91256c26bb7",
@@ -6646,12 +7006,13 @@
     "summary": "Domain-specific video super-resolution",
     "paper_url": "https://arxiv.org/abs/2005.10626",
     "pdf_url": "https://arxiv.org/pdf/2005.10626",
-    "code_url": "",
+    "code_url": "https://github.com/cmlab-mira/Efficient-and-Phase-aware-Video-Super-resolution-for-Cardiac-MRI",
     "project_url": "",
     "arxiv_id": "2005.10626",
     "venue_status": "preprint",
-    "resource_status": "not-found",
-    "publication_type": "preprint"
+    "resource_status": "author-linked",
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "85c206eb0036",
@@ -6668,7 +7029,8 @@
     "arxiv_id": "2003.06141",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "7005775f82b2",
@@ -6680,12 +7042,13 @@
     "summary": "Joint frame and feature context propagation",
     "paper_url": "https://ojs.aaai.org/index.php/AAAI/article/view/4502",
     "pdf_url": "https://arxiv.org/pdf/1909.13057",
-    "code_url": "",
+    "code_url": "https://github.com/linchuming/FFCVSR",
     "project_url": "",
     "arxiv_id": "1909.13057",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "7ba2c8bb4ea4",
@@ -6702,7 +7065,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "7f7be2be76c4",
@@ -6719,7 +7083,8 @@
     "arxiv_id": "1904.02870",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "23f6b40562fd",
@@ -6731,12 +7096,13 @@
     "summary": "Recurrent back-projection for multi-frame information fusion",
     "paper_url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Haris_Recurrent_Back-Projection_Network_for_Video_Super-Resolution_CVPR_2019_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Haris_Recurrent_Back-Projection_Network_for_Video_Super-Resolution_CVPR_2019_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/alterzero/RBPN-PyTorch",
     "project_url": "",
     "arxiv_id": "1903.10128",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "8f0d79e0ef44",
@@ -6753,7 +7119,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "b5c3877b3d9c",
@@ -6770,7 +7137,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "5e0cd9f95b3e",
@@ -6782,12 +7150,13 @@
     "summary": "Efficient multi-frame video reconstruction",
     "paper_url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Two-Stream_Action_Recognition-Oriented_Video_Super-Resolution_ICCV_2019_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Two-Stream_Action_Recognition-Oriented_Video_Super-Resolution_ICCV_2019_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/AlanZhang1995/TwoStreamSR",
     "project_url": "",
     "arxiv_id": "1903.05577",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "68841138d2db",
@@ -6804,7 +7173,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "36c1fb6d0cb0",
@@ -6823,7 +7193,8 @@
     "arxiv_id": "1909.10692",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b6a0764e186b",
@@ -6834,13 +7205,14 @@
     "tags": [],
     "summary": "Global-aware temporal reconstruction",
     "paper_url": "https://doi.org/10.1109/access.2019.2920774",
-    "pdf_url": "",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/8600701/08731979.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "75e6422a26f2",
@@ -6852,12 +7224,13 @@
     "summary": "Adaptive reconstruction robust to innovation outliers",
     "paper_url": "https://doi.org/10.1109/tip.2018.2866181",
     "pdf_url": "https://arxiv.org/pdf/1706.04695",
-    "code_url": "",
+    "code_url": "https://github.com/ricardoborsoi/Adap_SRR",
     "project_url": "",
     "arxiv_id": "1706.04695",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "author-linked",
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "06a6ef38b441",
@@ -6874,7 +7247,8 @@
     "arxiv_id": "1806.05764",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "773b794f2a82",
@@ -6891,7 +7265,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "82665fa12e3c",
@@ -6908,7 +7283,8 @@
     "arxiv_id": "1810.01938",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "0236b7376405",
@@ -6927,7 +7303,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "01a663aa6274",
@@ -6944,7 +7321,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "e6386f541a18",
@@ -6958,12 +7336,13 @@
     "summary": "TOFlow; jointly learned alignment and Vimeo-90K video reconstruction dataset",
     "paper_url": "https://doi.org/10.1007/s11263-018-01144-2",
     "pdf_url": "https://arxiv.org/pdf/1711.09078",
-    "code_url": "",
+    "code_url": "https://github.com/anchen1011/toflow",
     "project_url": "https://billf.mit.edu/publication/video-enhancement-task-oriented-flow/",
     "arxiv_id": "1711.09078",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "journal"
+    "resource_status": "author-linked",
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "1b284ce7c538",
@@ -6982,7 +7361,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a5b9348b0380",
@@ -6999,7 +7379,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "e0c357bde7a0",
@@ -7016,7 +7397,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "758c70982412",
@@ -7033,7 +7415,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b85494edab9a",
@@ -7050,7 +7433,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "9ca4e9e6d130",
@@ -7067,7 +7451,8 @@
     "arxiv_id": "1907.01399",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "60ae45b6de27",
@@ -7084,7 +7469,8 @@
     "arxiv_id": "1905.02462",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "84bfe53a5d03",
@@ -7101,7 +7487,8 @@
     "arxiv_id": "1909.08080",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "0659fe74cc34",
@@ -7121,7 +7508,8 @@
     "arxiv_id": "1905.02716",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "263df9af36f0",
@@ -7133,12 +7521,13 @@
     "summary": "Content-adaptive dynamic upsampling without explicit motion compensation",
     "paper_url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Jo_Deep_Video_Super-Resolution_CVPR_2018_paper.html",
     "pdf_url": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Jo_Deep_Video_Super-Resolution_CVPR_2018_paper.pdf",
-    "code_url": "",
+    "code_url": "https://github.com/yhjo09/VSR-DUF",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
-    "resource_status": "not-found",
-    "publication_type": "conference"
+    "resource_status": "author-linked",
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "9813e23c1acd",
@@ -7155,7 +7544,8 @@
     "arxiv_id": "1801.04590",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "aa25026ba89a",
@@ -7172,7 +7562,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "d71b340b3247",
@@ -7189,7 +7580,8 @@
     "arxiv_id": "1611.07767",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "d465dfbd4259",
@@ -7208,7 +7600,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "bd9a36da7b27",
@@ -7225,7 +7618,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "c51b4c5a8667",
@@ -7244,7 +7638,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "ae3daae456f7",
@@ -7261,7 +7656,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "0f6ed92a7ea7",
@@ -7280,7 +7676,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a33bbbae7e57",
@@ -7293,13 +7690,14 @@
     ],
     "summary": "Global motion estimation with wavelet reconstruction",
     "paper_url": "https://doi.org/10.1007/s11042-018-5941-5",
-    "pdf_url": "",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11042-018-5941-5.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "0888b6536083",
@@ -7318,7 +7716,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "9c856330725e",
@@ -7330,12 +7729,13 @@
     "summary": "Convolutional multi-frame reconstruction",
     "paper_url": "https://arxiv.org/abs/1812.09079",
     "pdf_url": "https://arxiv.org/pdf/1812.09079",
-    "code_url": "",
+    "code_url": "https://github.com/sooyekim/3DSRnet",
     "project_url": "",
     "arxiv_id": "1812.09079",
     "venue_status": "preprint",
-    "resource_status": "not-found",
-    "publication_type": "preprint"
+    "resource_status": "author-linked",
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "86b1d0230eda",
@@ -7352,7 +7752,8 @@
     "arxiv_id": "1809.08573",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "ec2904aa71a2",
@@ -7369,7 +7770,8 @@
     "arxiv_id": "1807.07930",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "1165ea7dc7b4",
@@ -7386,7 +7788,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "316f82d5ec46",
@@ -7405,7 +7808,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "0142dee86345",
@@ -7422,7 +7826,8 @@
     "arxiv_id": "1611.05250",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "7fbc777bedf9",
@@ -7439,7 +7844,8 @@
     "arxiv_id": "1704.02738",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "a037222e9da1",
@@ -7456,7 +7862,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "f1e6240c0b11",
@@ -7475,7 +7882,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "60afe821097d",
@@ -7492,7 +7900,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "23a5301a3c79",
@@ -7511,7 +7920,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a39e2a1409d6",
@@ -7528,7 +7938,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b22fbf328ec9",
@@ -7545,7 +7956,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b3c03acdbfbf",
@@ -7562,7 +7974,8 @@
     "arxiv_id": "1707.00471",
     "venue_status": "preprint",
     "resource_status": "not-found",
-    "publication_type": "preprint"
+    "publication_type": "preprint",
+    "repository_url": ""
   },
   {
     "id": "70e99e0aa01d",
@@ -7581,7 +7994,8 @@
     "arxiv_id": "1609.05158",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "68ce43ee11d1",
@@ -7600,7 +8014,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "ce79f58252bb",
@@ -7619,7 +8034,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "bc5d6792d7f4",
@@ -7638,7 +8054,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "bc70f5e0aee8",
@@ -7657,7 +8074,8 @@
     "arxiv_id": "1506.00473",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b80628c2fc56",
@@ -7670,13 +8088,14 @@
     ],
     "summary": "EM optimization selects less-blurred observations and estimates residual blur.",
     "paper_url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Ma_Handling_Motion_Blur_2015_CVPR_paper.html",
-    "pdf_url": "",
+    "pdf_url": "https://openaccess.thecvf.com/content_cvpr_2015/papers/Ma_Handling_Motion_Blur_2015_CVPR_paper.pdf",
     "code_url": "https://www.cse.cuhk.edu.hk/leojia/projects/mfsr/data/mfsr_pcode_v0.2.zip",
     "project_url": "https://www.cse.cuhk.edu.hk/leojia/projects/mfsr/index.html",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "247e1c917924",
@@ -7689,13 +8108,14 @@
     ],
     "summary": "Image segmentation guides sparse depth reconstruction with neighboring temporal samples.",
     "paper_url": "https://openaccess.thecvf.com/content_cvpr_2015/html/Lu_Sparse_Depth_Super_2015_CVPR_paper.html",
-    "pdf_url": "",
+    "pdf_url": "https://openaccess.thecvf.com/content_cvpr_2015/papers/Lu_Sparse_Depth_Super_2015_CVPR_paper.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "65ee16c27d49",
@@ -7714,7 +8134,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "80dd5a8b7fdb",
@@ -7727,13 +8148,14 @@
     ],
     "summary": "BRCN models bidirectional temporal dependencies with recurrent convolutional connections.",
     "paper_url": "https://papers.neurips.cc/paper_files/paper/2015/hash/c45147dee729311ef5b5c3003946c48f-Abstract.html",
-    "pdf_url": "",
+    "pdf_url": "https://papers.neurips.cc/paper_files/paper/2015/file/c45147dee729311ef5b5c3003946c48f-Paper.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "da63fa7e210c",
@@ -7746,13 +8168,14 @@
     ],
     "summary": "Enhances the lower-resolution stream of asymmetric stereo video.",
     "paper_url": "https://doi.org/10.1186/s13640-015-0079-0",
-    "pdf_url": "",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1186/s13640-015-0079-0.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "3b95eaec0ef6",
@@ -7771,7 +8194,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "8dc142330235",
@@ -7790,7 +8214,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a78a0597b629",
@@ -7809,7 +8234,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "aed02571d47e",
@@ -7828,7 +8254,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "d16bde3a79fb",
@@ -7847,7 +8274,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "e3004044057c",
@@ -7866,7 +8294,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "d9ff0e1a7487",
@@ -7885,7 +8314,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "5bef7bf75f51",
@@ -7904,7 +8334,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "b721d4166a30",
@@ -7923,7 +8354,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "f4ba73be2c18",
@@ -7942,7 +8374,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "19ccf5b8243f",
@@ -7961,7 +8394,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "602694ae8e56",
@@ -7980,7 +8414,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "50fcbcc958f1",
@@ -7999,7 +8434,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "c519c66cf236",
@@ -8018,7 +8454,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "4320d89bb335",
@@ -8037,7 +8474,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "0f72f1857453",
@@ -8056,7 +8494,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "337837b3843f",
@@ -8075,7 +8514,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "9607da3b74a7",
@@ -8094,7 +8534,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "539b58faec5f",
@@ -8107,13 +8548,14 @@
     ],
     "summary": "Dynamic video-to-video reconstruction jointly handles deblurring and demosaicing.",
     "paper_url": "https://doi.org/10.1155/ASP/2006/61859",
-    "pdf_url": "",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1155/ASP/2006/61859.pdf",
     "code_url": "https://elad.cs.technion.ac.il/software/?pn=264",
     "project_url": "https://elad.cs.technion.ac.il/publications/journal-papers/?stl=3&stt=14",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "e96c5393d5a5",
@@ -8132,7 +8574,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "8df11c61e986",
@@ -8151,7 +8594,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "a1017f578971",
@@ -8170,7 +8614,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "author-linked",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "1d64d16f1e26",
@@ -8189,7 +8634,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "a9c8b0688afc",
@@ -8208,7 +8654,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "df72a3b04c12",
@@ -8227,7 +8674,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   },
   {
     "id": "9141d1da4ca0",
@@ -8240,13 +8688,14 @@
     ],
     "summary": "Analyzes multiframe reconstruction limits and introduces learned recognition priors.",
     "paper_url": "https://publications.ri.cmu.edu/limits-on-super-resolution-and-how-to-break-them-2",
-    "pdf_url": "",
+    "pdf_url": "https://publications.ri.cmu.edu/storage/publications/pub_files/pub3/baker_simon_2002_4/baker_simon_2002_4.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "46b74ea2f598",
@@ -8265,7 +8714,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "conference"
+    "publication_type": "conference",
+    "repository_url": ""
   },
   {
     "id": "3e70f450d7e4",
@@ -8284,7 +8734,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "866a3ae189c4",
@@ -8303,7 +8754,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "402b550e3354",
@@ -8316,13 +8768,14 @@
     ],
     "summary": "Adaptive filtering for recursive reconstruction of a high-resolution image sequence.",
     "paper_url": "https://doi.org/10.1109/83.748893",
-    "pdf_url": "https://elad.cs.technion.ac.il/wp-content/uploads/2018/02/03_Dynamic_Superres_IP.pdf",
+    "pdf_url": "https://webee.technion.ac.il/people/feuer/JournalPapers/39_Dynamic_Superres_IP.pdf",
     "code_url": "",
     "project_url": "",
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "d1234ca27a4e",
@@ -8341,7 +8794,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "8247f5e8e003",
@@ -8360,7 +8814,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "f3bd5a52cb7f",
@@ -8379,7 +8834,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "d8e161c06bb6",
@@ -8398,7 +8854,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "ebf2d465737a",
@@ -8417,7 +8874,8 @@
     "arxiv_id": "",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "journal"
+    "publication_type": "journal",
+    "repository_url": ""
   },
   {
     "id": "8cc27f949268",
@@ -8438,6 +8896,7 @@
     "arxiv_id": "2508.07811",
     "venue_status": "verified",
     "resource_status": "not-found",
-    "publication_type": "workshop"
+    "publication_type": "workshop",
+    "repository_url": ""
   }
 ]

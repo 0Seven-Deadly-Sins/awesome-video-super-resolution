@@ -87,8 +87,16 @@ def new_record(title, url, source):
     abstract_raw = abstract.group(1) if abstract else ""
     if not vsr_scope(title, clean(abstract_raw)):
         return None
-    code_links = [href for href, label in re.findall(r'<a\b[^>]*href=["\x27]([^"\x27]+)["\x27][^>]*>(.*?)</a>', raw, re.S | re.I) if re.fullmatch(r'code|source code|implementation', clean(label), re.I)]
-    repositories = re.findall(r'https://github\.com/([\w.-]+/[\w.-]+)', abstract_raw + " " + " ".join(code_links))
+    anchors = re.findall(r'<a\b[^>]*href=["\x27]([^"\x27]+)["\x27][^>]*>(.*?)</a>', raw, re.S | re.I)
+    code_links = [href for href, label in anchors if re.fullmatch(r'(?:(?:official|source)\s+)?(?:code|implementation)(?:\s+repository)?', clean(label), re.I)]
+    repositories = re.findall(r'https://github\.com/([\w.-]+/[\w.-]+)', " ".join(code_links))
+    # Abstracts sometimes state a direct code URL without an HTML anchor. Do not
+    # mistake GitHub links mentioned as related work or examples for this paper's code.
+    for match in re.finditer(r'https://github\.com/([\w.-]+/[\w.-]+)', abstract_raw, re.I):
+        prefix = abstract_raw[max(0, match.start() - 140):match.start()].rsplit('.', 1)[-1]
+        if (re.search(r'\b(?:code|source\s+code|implementation)\s*:\s*$', prefix, re.I)
+                or re.search(r'\b(?:code|source\s+code|implementation)\b.{0,90}\b(?:available|found|provided|released|at|here)\b.{0,20}$', prefix, re.I)):
+            repositories.append(match.group(1))
     repositories = [r.rstrip(".").removesuffix(".git") for r in repositories if not r.startswith("mlresearch/")]
     pdf = re.search(r'<meta[^>]*name=["\x27]citation_pdf_url["\x27][^>]*content=["\x27]([^"\x27]+)', raw)
     aid = re.search(r'arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5})', raw)
@@ -96,7 +104,7 @@ def new_record(title, url, source):
     return {"id": hashlib.sha1(catalog.normalized_title(title).encode()).hexdigest()[:12], "title": title,
             "venue": source["venue"], "year": source["year"], "category": topic(title), "tags": [],
             "summary": "Video super-resolution", "paper_url": url, "pdf_url": html.unescape(pdf.group(1)) if pdf else "",
-            "code_url": "https://github.com/" + repo if repo else "", "project_url": "", "arxiv_id": aid.group(1) if aid else "",
+            "code_url": "https://github.com/" + repo if repo else "", "repository_url": "", "project_url": "", "arxiv_id": aid.group(1) if aid else "",
             "venue_status": "verified", "resource_status": "author-linked" if repo else "not-found",
             "publication_type": "workshop" if re.search(r'workshop', source["venue"], re.I) else "conference"}
 
@@ -169,9 +177,9 @@ def refresh(papers, sources, loader=fetch):
                     if prior['venue_status'] == 'preprint':
                         old_key = catalog.normalized_title(prior['title'])
                         merged = dict(record, id=prior['id'], category=prior['category'], summary=prior['summary'], tags=prior['tags'])
-                        for field in ['code_url', 'project_url', 'pdf_url']:
+                        for field in ['code_url', 'repository_url', 'project_url', 'pdf_url']:
                             merged[field] = prior.get(field) or record.get(field) or ''
-                        if prior.get('code_url'):
+                        if prior.get('code_url') or prior.get('repository_url'):
                             merged['resource_status'] = prior['resource_status']
                         known.pop(old_key)
                         known[catalog.normalized_title(title)] = merged
