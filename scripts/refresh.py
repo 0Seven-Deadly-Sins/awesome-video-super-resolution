@@ -70,7 +70,7 @@ def vsr_scope(title, abstract):
         return False
     if DIRECT_TOPIC.search(title):
         return True
-    return bool(re.search(r'video super.?resol|super.?resol.{0,100}\bvideo\b|\bVSR\b|video restoration.{0,160}(?:tasks|including|such as).{0,60}super.?resol', abstract, re.I))
+    return bool(re.search(r'video super.?resol|super.?resolution\s+(?:of|for|on)\s+(?:\w+[ -]){0,3}videos?\b|super.?resolving\s+(?:\w+\s+){0,3}videos?\b|\bVSR\b|video restoration.{0,160}(?:tasks|including|such as).{0,60}super.?resol', abstract, re.I))
 
 
 def new_record(title, url, source):
