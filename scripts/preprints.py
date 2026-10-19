@@ -12,7 +12,7 @@ import catalog
 import refresh
 
 NS = {"a": "http://www.w3.org/2005/Atom", "o": "http://a9.com/-/spec/opensearch/1.1/"}
-QUERY = '(ti:"video super-resolution" OR ti:"video super resolution" OR ti:"video upscaling" OR ti:"space-time super-resolution" OR ((ti:"video restoration" OR ti:VSR) AND abs:"super-resolution")) AND (cat:cs.CV OR cat:eess.IV OR cat:cs.LG)'
+QUERY = '(ti:"video super-resolution" OR ti:"video super resolution" OR ti:"video upscaling" OR ti:"space-time super-resolution" OR (ti:"video restoration" AND abs:"super-resolution") OR (ti:VSR AND abs:"video super-resolution")) AND (cat:cs.CV OR cat:eess.IV OR cat:cs.LG)'
 
 
 def collect(papers, loader=refresh.fetch, today=None):

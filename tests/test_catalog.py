@@ -142,6 +142,7 @@ class BibliographyIntegrity(unittest.TestCase):
         self.assertFalse(refresh.vsr_scope('Short-form UGC Video Quality Assessment and Enhancement', 'We study image super-resolution. The primary objective is to improve short-form UGC video quality.'))
         self.assertTrue(refresh.vsr_scope('Real-Time Single Image and Video Super-Resolution Using Sub-Pixel Convolution', 'We upscale videos.'))
         self.assertTrue(refresh.vsr_scope('DiTVR: Zero-Shot Diffusion Transformer for Video Restoration', 'Video restoration aims to reconstruct high-quality video sequences, addressing tasks such as super-resolution, denoising and deblurring.'))
+        self.assertFalse(refresh.vsr_scope('Do VSR Models Generalize Beyond LRS3?', 'Visual speech recognition (VSR) recognizes words from lip movements. We evaluate VSR on LRS3.'))
 
 
 if __name__ == "__main__":
