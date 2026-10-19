@@ -64,6 +64,15 @@ def topic(title):
     return next((key for key, pattern in patterns if re.search(pattern, title, re.I)), "cnn")
 
 
+def vsr_scope(title, abstract):
+    # Video-derived training images alone do not turn a SISR method into VSR.
+    if re.search(r'single.?image super.?resol', title, re.I) and not re.search(r'(?:single.?image|image)\s*(?:and|&|/)\s*video', title, re.I):
+        return False
+    if DIRECT_TOPIC.search(title):
+        return True
+    return bool(re.search(r'video super.?resol|super.?resol.{0,100}\bvideo\b|\bVSR\b|video restoration.{0,160}(?:tasks|including|such as).{0,60}super.?resol', abstract, re.I))
+
+
 def new_record(title, url, source):
     try:
         raw = fetch(url)
@@ -76,10 +85,8 @@ def new_record(title, url, source):
     if not abstract:
         abstract = re.search(r'<h[234][^>]*>\s*Abstract\s*</h[234]>\s*<p[^>]*>(.*?)</p>', raw, re.S | re.I)
     abstract_raw = abstract.group(1) if abstract else ""
-    if not DIRECT_TOPIC.search(title):
-        # Broad restoration and inverse-problem titles need an explicit SR task.
-        if not re.search(r'super.?resol|upscal|low.resolution.*high.resolution', clean(abstract_raw), re.I):
-            return None
+    if not vsr_scope(title, clean(abstract_raw)):
+        return None
     code_links = [href for href, label in re.findall(r'<a\b[^>]*href=["\x27]([^"\x27]+)["\x27][^>]*>(.*?)</a>', raw, re.S | re.I) if re.fullmatch(r'code|source code|implementation', clean(label), re.I)]
     repositories = re.findall(r'https://github\.com/([\w.-]+/[\w.-]+)', abstract_raw + " " + " ".join(code_links))
     repositories = [r.rstrip(".").removesuffix(".git") for r in repositories if not r.startswith("mlresearch/")]

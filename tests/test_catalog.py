@@ -136,6 +136,12 @@ class BibliographyIntegrity(unittest.TestCase):
             for title in aliases:
                 self.assertIsNone(refresh.new_record(title, "https://example.org/paper", source))
 
+    def test_video_derived_sisr_and_video_quality_plus_image_sr_are_excluded(self):
+        self.assertFalse(refresh.vsr_scope('VCISR: Blind Single Image Super-Resolution With Video Compression Synthetic Data', 'We evaluate SISR on video super-resolution datasets.'))
+        self.assertFalse(refresh.vsr_scope('Short-form UGC Video Quality Assessment and Enhancement', 'Track1 evaluates video quality. Track2 studies single-image super-resolution.'))
+        self.assertTrue(refresh.vsr_scope('Real-Time Single Image and Video Super-Resolution Using Sub-Pixel Convolution', 'We upscale videos.'))
+        self.assertTrue(refresh.vsr_scope('DiTVR: Zero-Shot Diffusion Transformer for Video Restoration', 'Video restoration aims to reconstruct high-quality video sequences, addressing tasks such as super-resolution, denoising and deblurring.'))
+
 
 if __name__ == "__main__":
     unittest.main()

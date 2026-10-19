@@ -41,9 +41,8 @@ def collect(papers, loader=refresh.fetch, today=None):
             if aid in ids or key in titles:
                 continue
             abstract = refresh.clean(entry.findtext('a:summary', '', NS))
-            if not refresh.DIRECT_TOPIC.search(title):
-                if not re.search(r'video super.?resol|super.?resol.{0,80}video', abstract, re.I):
-                    continue
+            if not refresh.vsr_scope(title, abstract):
+                continue
             published = entry.findtext('a:published', '', NS)
             year = int(published[:4])
             category = 'benchmarks' if re.search(r'dataset|benchmark|evaluating', title, re.I) else refresh.topic(title)
