@@ -6,7 +6,7 @@ A categorized collection of video super-resolution papers, author implementation
 
 整理视频超分的发展脉络，包括经典方法、深度学习重建、生成式超分与专用场景。会议、期刊、Workshop 和预印本分别标注；来源以官方论文集、出版社和作者原文为依据。范围与检索入口见 [收录说明](docs/COVERAGE.md)。
 
-目前收录 **462 篇**，覆盖 **1991–2026 年**：**211 篇会议论文**、**153 篇期刊论文**、**26 篇 Workshop 论文**、**72 篇预印本**，按 **18 个方向**编排。每篇只出现一次，交叉特征列为补充标签。
+目前收录 **459 篇**，覆盖 **1991–2026 年**：**209 篇会议论文**、**153 篇期刊论文**、**25 篇 Workshop 论文**、**72 篇预印本**，按 **18 个方向**编排。每篇只出现一次，交叉特征列为补充标签。
 
 也可按 [发表年份](docs/BY_YEAR.md) 浏览全部条目。
 
@@ -16,7 +16,7 @@ A categorized collection of video super-resolution papers, author implementation
 
 - [综述与阅读指南 / Surveys](#surveys) · 8
 - [传统重建与优化 / Classical Reconstruction](#classical) · 33
-- [卷积重建与时空融合 / CNN Reconstruction](#cnn) · 47
+- [卷积重建与时空融合 / CNN Reconstruction](#cnn) · 45
 - [时序对齐与特征传播 / Alignment and Propagation](#alignment) · 55
 - [Transformer 与状态空间架构 / Sequence Architectures](#architecture) · 9
 - [扩散先验与生成式超分 / Diffusion-based VSR](#generative) · 28
@@ -31,7 +31,7 @@ A categorized collection of video super-resolution papers, author implementation
 - [人脸视频超分与修复 / Face Video SR](#faces) · 12
 - [联合去模糊、弱光与物理退化 / Joint Restoration](#joint) · 12
 - [专用场景与模态 / Domain-specific VSR](#domains) · 36
-- [数据集与评测 / Datasets and Benchmarks](#benchmarks) · 25
+- [数据集与评测 / Datasets and Benchmarks](#benchmarks) · 24
 - [Contributing](CONTRIBUTING.md)
 
 <a id="surveys"></a>
@@ -102,10 +102,8 @@ A categorized collection of video super-resolution papers, author implementation
 | Paper | Venue | Focus / Tags | Resources |
 | --- | --- | --- | --- |
 | [C2-STVSR: Correlation-Guided Continuous Spatial-Temporal Video Super-Resolution](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Park_C2-STVSR_Correlation-Guided_Continuous_Spatial-Temporal_Video_Super-Resolution_CVPRW_2026_paper.html) | CVPR Workshops 2026 | Convolutional multi-frame reconstruction | [PDF](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/papers/Park_C2-STVSR_Correlation-Guided_Continuous_Spatial-Temporal_Video_Super-Resolution_CVPRW_2026_paper.pdf) |
-| [A First Exploration of Neuromorphic OT-CFM for Multi-Speaker VSR](https://eccv.ecva.net/virtual/2026/poster/3216) | ECCV 2026 | Video super-resolution | — |
 | [Small Clips, Big Gains: Learning Long-Range Refocused Temporal Information for Video Super-Resolution](https://arxiv.org/abs/2505.02159) | arXiv 2025 · 预印本 | Long-range refocused temporal information learned from short training clips<br>alignment | [PDF](https://arxiv.org/pdf/2505.02159) |
 | [Learning Truncated Causal History Model for Video Restoration](https://proceedings.neurips.cc/paper_files/paper/2024/hash/309fd617a4168d592e543690fbd094db-Abstract-Conference.html) | NeurIPS 2024 | Turtle; truncated causal history; includes VSR | [Code](https://github.com/Ascend-Research/Turtle) · [Project](https://kjanjua26.github.io/turtle/) · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/309fd617a4168d592e543690fbd094db-Paper-Conference.pdf) |
-| [Do VSR Models Generalize Beyond LRS3?](https://openaccess.thecvf.com/content/WACV2024/html/Djilali_Do_VSR_Models_Generalize_Beyond_LRS3_WACV_2024_paper.html) | WACV 2024 | Video super-resolution | [PDF](https://openaccess.thecvf.com/content/WACV2024/papers/Djilali_Do_VSR_Models_Generalize_Beyond_LRS3_WACV_2024_paper.pdf) |
 | [Multi-Frequency Representation Enhancement with Privilege Information for Video Super-Resolution](https://openaccess.thecvf.com/content/ICCV2023/html/Li_Multi-Frequency_Representation_Enhancement_with_Privilege_Information_for_Video_Super-Resolution_ICCV_2023_paper.html) | ICCV 2023 | Convolutional multi-frame reconstruction | [PDF](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_Multi-Frequency_Representation_Enhancement_with_Privilege_Information_for_Video_Super-Resolution_ICCV_2023_paper.pdf) |
 | [Temporal Consistency Learning of Inter-Frames for Video Super-Resolution](https://doi.org/10.1109/tcsvt.2022.3214538) | IEEE Transactions on Circuits and Systems for Video Technology 2023 | Inter-frame temporal consistency, self-alignment and recurrent fusion<br>alignment | [PDF](https://arxiv.org/pdf/2211.01639) |
 | [Joint Video Rolling Shutter Correction and Super-Resolution](https://openaccess.thecvf.com/content/WACV2023/html/Gupta_Joint_Video_Rolling_Shutter_Correction_and_Super-Resolution_WACV_2023_paper.html) | WACV 2023 | Convolutional multi-frame reconstruction | [PDF](https://openaccess.thecvf.com/content/WACV2023/papers/Gupta_Joint_Video_Rolling_Shutter_Correction_and_Super-Resolution_WACV_2023_paper.pdf) |
@@ -638,7 +636,6 @@ A categorized collection of video super-resolution papers, author implementation
 | [ClearText-Video: A Large-Scale Text-Centric Video Dataset Bridging Video Restoration and Scene-Text Enhancement](https://eccv.ecva.net/virtual/2026/poster/3992) | ECCV 2026 | Text-centric video restoration benchmark | [Code](https://github.com/jinlong17/CTVid-Bench) · [PDF](https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/4006.pdf) |
 | [How Accurate are Video Quality Models for Diffusion-Based Video Super-Resolution?](https://doi.org/10.1109/qomex69967.2026.11618341) | QoMEX 2026 | Subjective evaluation of quality models for diffusion video SR<br>benchmarks | [Code](https://github.com/Telecommunication-Telemedia-Assessment/AVT-VQDB-UHD-1-VSR) · [PDF](https://arxiv.org/pdf/2605.25940) |
 | [FANVIDv2: Evaluating Video Super-Resolution by Face and Licence-Plate Recognition Under Compound Degradation](https://arxiv.org/abs/2609.39649) | arXiv 2026 · 预印本 | Recognition-based VSR evaluation under compound degradations<br>faces, licence plates, task-based evaluation | [PDF](https://arxiv.org/pdf/2609.39649) |
-| [NTIRE 2025 Challenge on Short-form UGC Video Quality Assessment and Enhancement: Methods and Results](https://openaccess.thecvf.com/content/CVPR2025W/NTIRE/html/A_Li_NTIRE_2025_Challenge_on_Short-form_UGC_Video_Quality_Assessment_and_CVPRW_2025_paper.html) | CVPR Workshops 2025 | Video super-resolution | [Code](https://github.com/lixinustc/KVQE-Challenge-CVPR-NTIRE2025) · [PDF](https://openaccess.thecvf.com/content/CVPR2025W/NTIRE/papers/A_Li_NTIRE_2025_Challenge_on_Short-form_UGC_Video_Quality_Assessment_and_CVPRW_2025_paper.pdf) |
 | [AIM 2025 Challenge on Robust Offline Video Super-Resolution: Dataset, Methods and Results](https://openaccess.thecvf.com/content/ICCV2025W/AIM/html/Karetin_AIM_2025_Challenge_on_Robust_Offline_Video_Super-Resolution_Dataset_Methods_ICCVW_2025_paper.html) | ICCV Workshops 2025 | Video super-resolution datasets and evaluation | [PDF](https://openaccess.thecvf.com/content/ICCV2025W/AIM/papers/Karetin_AIM_2025_Challenge_on_Robust_Offline_Video_Super-Resolution_Dataset_Methods_ICCVW_2025_paper.pdf) |
 | [360-degree video super resolution and quality enhancement challenge: Methods and results](https://doi.org/10.1016/j.image.2025.117376) | Signal Processing: Image Communication 2025 | 360-degree VSR and quality enhancement challenge<br>benchmarks | [PDF](https://arxiv.org/pdf/2411.06738) |
 | [ICME 2025 Grand Challenge on Video Super-Resolution for Video Conferencing](https://arxiv.org/abs/2506.12269) | arXiv 2025 · 预印本 | Video conferencing SR challenge and evaluated approaches<br>benchmarks | [PDF](https://arxiv.org/pdf/2506.12269) |
