@@ -4,7 +4,7 @@
 
 正式版本使用经核验的发表年份；尚未核验正式发表的预印本使用首次提交年份。
 
-[2026](#2026) (69) · [2025](#2025) (67) · [2024](#2024) (50) · [2023](#2023) (34) · [2022](#2022) (38) · [2021](#2021) (68) · [2020](#2020) (36) · [2019](#2019) (26) · [2018](#2018) (14) · [2017](#2017) (11) · [2016](#2016) (5) · [2015](#2015) (8) · [2014](#2014) (5) · [2013](#2013) (1) · [2011](#2011) (2) · [2009](#2009) (4) · [2008](#2008) (1) · [2007](#2007) (1) · [2006](#2006) (3) · [2005](#2005) (1) · [2004](#2004) (1) · [2003](#2003) (3) · [2002](#2002) (1) · [2001](#2001) (2) · [1999](#1999) (3) · [1997](#1997) (2) · [1993](#1993) (1) · [1991](#1991) (1)
+[2026](#2026) (70) · [2025](#2025) (69) · [2024](#2024) (51) · [2023](#2023) (34) · [2022](#2022) (38) · [2021](#2021) (68) · [2020](#2020) (36) · [2019](#2019) (26) · [2018](#2018) (14) · [2017](#2017) (11) · [2016](#2016) (5) · [2015](#2015) (8) · [2014](#2014) (5) · [2013](#2013) (1) · [2011](#2011) (2) · [2009](#2009) (4) · [2008](#2008) (1) · [2007](#2007) (1) · [2006](#2006) (3) · [2005](#2005) (1) · [2004](#2004) (1) · [2003](#2003) (3) · [2002](#2002) (1) · [2001](#2001) (2) · [1999](#1999) (3) · [1997](#1997) (2) · [1993](#1993) (1) · [1991](#1991) (1)
 
 ## 2026
 
@@ -75,6 +75,7 @@
 - [Taming Real-World Space-Time Video Super-Resolution with One-Step Diffusion](https://arxiv.org/abs/2601.20308) — arXiv · 预印本
 - [An Adaptive Spectral Upsampling Framework for Underwater Degraded Video Super-Resolution Benchmark](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Murthy_An_Adaptive_Spectral_Upsampling_Framework_for_Underwater_Degraded_Video_Super-Resolution_CVPRW_2026_paper.html) — CVPR Workshops
 - [C2-STVSR: Correlation-Guided Continuous Spatial-Temporal Video Super-Resolution](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Park_C2-STVSR_Correlation-Guided_Continuous_Spatial-Temporal_Video_Super-Resolution_CVPRW_2026_paper.html) — CVPR Workshops
+- [DiTVR: Zero-Shot Diffusion Transformer for Video Restoration](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Gao_DiTVR_Zero-Shot_Diffusion_Transformer_for_Video_Restoration_CVPRW_2026_paper.html) — CVPR Workshops
 - [Re-Anime600: A Curated Benchmark Dataset for Anime Video Quality Assessment and Super-Resolution Evaluation](https://openaccess.thecvf.com/content/CVPR2026W/AIGENS/html/Fargetta_Re-Anime600_A_Curated_Benchmark_Dataset_for_Anime_Video_Quality_Assessment_CVPRW_2026_paper.html) — CVPR Workshops
 - [S3-CLIP: Video Super Resolution for Person-ReID](https://arxiv.org/abs/2601.08807) — WACV Workshops
 
@@ -145,6 +146,8 @@
 - [Towards Redundancy Reduction in Diffusion Models for Efficient Video Super-Resolution](https://arxiv.org/abs/2509.23980) — arXiv · 预印本
 - [Towards Robust and Generalizable Continuous Space-Time Video Super-Resolution with Events](https://arxiv.org/abs/2510.03833) — arXiv · 预印本
 - [UniMMVSR: A Unified Multi-Modal Framework for Cascaded Video Super-Resolution](https://arxiv.org/abs/2510.08143) — arXiv · 预印本
+- [NTIRE 2025 Challenge on Short-form UGC Video Quality Assessment and Enhancement: KwaiSR Dataset and Study](https://openaccess.thecvf.com/content/CVPR2025W/NTIRE/html/Li_NTIRE_2025_Challenge_on_Short-form_UGC_Video_Quality_Assessment_and_CVPRW_2025_paper.html) — CVPR Workshops
+- [NTIRE 2025 Challenge on Short-form UGC Video Quality Assessment and Enhancement: Methods and Results](https://openaccess.thecvf.com/content/CVPR2025W/NTIRE/html/A_Li_NTIRE_2025_Challenge_on_Short-form_UGC_Video_Quality_Assessment_and_CVPRW_2025_paper.html) — CVPR Workshops
 - [Rethinking Compressive Sensing: A Compression Framework for Video Super-Resolution](https://openaccess.thecvf.com/content/CVPR2025W/NTIRE/html/Katz_Rethinking_Compressive_Sensing_A_Compression_Framework_for_Video_Super-Resolution_CVPRW_2025_paper.html) — CVPR Workshops
 - [AIM 2025 Challenge on Robust Offline Video Super-Resolution: Dataset, Methods and Results](https://openaccess.thecvf.com/content/ICCV2025W/AIM/html/Karetin_AIM_2025_Challenge_on_Robust_Offline_Video_Super-Resolution_Dataset_Methods_ICCVW_2025_paper.html) — ICCV Workshops
 
@@ -174,6 +177,7 @@
 - [Warped Diffusion: Solving Video Inverse Problems with Image Diffusion Models](https://proceedings.neurips.cc/paper_files/paper/2024/hash/b736c4b0b38876c9249db9bd900c1a86-Abstract-Conference.html) — NeurIPS
 - [Video Super-Resolution for Optimized Bitrate and Green Online Streaming](https://ieeexplore.ieee.org/abstract/document/10566336) — PCS
 - [Scale-Adaptive Feature Aggregation for Efficient Space-Time Video Super-Resolution](https://doi.org/10.1109/wacv57701.2024.00418) — WACV
+- [VCISR: Blind Single Image Super-Resolution With Video Compression Synthetic Data](https://openaccess.thecvf.com/content/WACV2024/html/Wang_VCISR_Blind_Single_Image_Super-Resolution_With_Video_Compression_Synthetic_Data_WACV_2024_paper.html) — WACV
 - [Enhanced Video Super-Resolution Network towards Compressed Data](https://doi.org/10.1145/3651309) — ACM Transactions on Multimedia Computing, Communications, and Applications
 - [A Database and Model for the Visual Quality Assessment of Super-Resolution Videos](https://ieeexplore.ieee.org/document/10497116/) — IEEE Transactions on Broadcasting
 - [Local-Global Temporal Difference Learning for Satellite Video Super-Resolution](https://doi.org/10.1109/tcsvt.2023.3312321) — IEEE Transactions on Circuits and Systems for Video Technology
