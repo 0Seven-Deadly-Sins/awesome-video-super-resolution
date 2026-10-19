@@ -6,6 +6,8 @@
 
 每篇指定一个主方向，通过 `tags` 表达交叉特征。是否公开代码、权重和输出是否达到 4K 均不影响收录资格；已发表论文与预印本依据实际来源标注。代码链接优先使用原文或作者项目页指向的官方仓库；不得将第三方复现标为作者代码。未找到代码也可以收录，使用 `resource_status: not-found`。明确承诺发布可标为 `promised`，不要把空仓库当成可运行实现。
 
-字段定义与可用分类见 `scripts/catalog.py`。运行 `python scripts/catalog.py` 生成 README，再运行 `python scripts/catalog.py --check` 和 `python -m unittest discover -s tests -v` 检查一致性。`data/sources.json` 保存官方索引入口，可为新会议年份补充入口。
+`publication_type` 分为 `conference`、`journal`、`workshop` 和 `preprint`；期刊、主会和 Workshop 使用各自的真实出处。正式发表信息需要官方论文集、出版社或出版社登记的 DOI 元数据支持；未经核验的录用声明保持预印本标注。预印本年份使用首次提交年份。
 
-修订论文沿用同一条目，避免同时列出同一工作的预印本和正式会议版本。链接应使用 HTTPS。欢迎提交更完整的作者链接、遗漏文献或分类依据。
+字段定义与可用分类见 `scripts/catalog.py`。运行 `python scripts/catalog.py` 同时生成 README 和年份索引，再运行 `python scripts/catalog.py --check` 和 `python -m unittest discover -s tests -v` 检查一致性。`data/sources.json` 保存定期检查的官方索引入口，可为新会议年份补充入口。
+
+修订论文沿用同一条目，避免同时列出同一工作的预印本和正式版本。除题名外也检查 arXiv ID 与改题情况。确有新增方法和实验的独立期刊扩展可以保留，并添加 `extended version` 标签；不要把方法名中的 `+`、`++` 当成无意义标点删除。链接应使用 HTTPS。欢迎提交更完整的作者链接、遗漏文献或分类依据。

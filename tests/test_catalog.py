@@ -33,6 +33,31 @@ class BibliographyIntegrity(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             catalog.validate(self.papers + [duplicate])
 
+    def test_arxiv_identity_deduplicates_renamed_versions(self):
+        paper = next(p for p in self.papers if p['arxiv_id'])
+        renamed = dict(paper, id='renamed-record', title='A Completely Renamed Video Super-Resolution Paper')
+        with self.assertRaisesRegex(ValueError, 'arXiv identity'):
+            catalog.validate([paper, renamed])
+
+    def test_plus_method_extension_is_not_erased_by_title_normalization(self):
+        self.assertNotEqual(catalog.normalized_title('EvTexture: Video Super-Resolution'), catalog.normalized_title('EvTexture++: Video Super-Resolution'))
+
+    def test_publication_types_do_not_mislabel_journals_as_conferences(self):
+        rendered = catalog.render(self.papers)
+        overview = next(line for line in rendered.splitlines() if line.startswith('目前收录'))
+        for kind, label in [('conference', '会议论文'), ('journal', '期刊论文'), ('workshop', ' Workshop 论文'), ('preprint', '预印本')]:
+            count = sum(p['publication_type'] == kind for p in self.papers)
+            self.assertIn('**%d 篇%s**' % (count, label), overview)
+        wrong = dict(self.papers[0], venue_status='preprint', venue='arXiv', publication_type='journal')
+        with self.assertRaisesRegex(ValueError, 'disagree'):
+            catalog.validate([wrong])
+
+    def test_year_index_contains_each_paper_once(self):
+        rendered = catalog.render_years(self.papers)
+        self.assertEqual((ROOT / 'docs/BY_YEAR.md').read_text(encoding='utf-8'), rendered)
+        for p in self.papers:
+            self.assertEqual(1, rendered.count('](' + p['paper_url'] + ')'))
+
     def test_unverified_acceptance_cannot_be_labeled_as_conference(self):
         papers = copy.deepcopy(self.papers)
         papers[0]["venue_status"] = "preprint"
@@ -83,6 +108,18 @@ class BibliographyIntegrity(unittest.TestCase):
         self.assertEqual({2026, 2027, 2028}, {s["year"] for s in sources})
         self.assertTrue(any(s["venue"] == "ICCV" and s["year"] == 2027 for s in sources))
         self.assertFalse(any(s["venue"] == "ICCV" and s["year"] == 2028 for s in sources))
+
+    def test_renamed_official_paper_upgrades_the_same_arxiv_record(self):
+        preprint = dict(self.papers[0], id='stable-id', title='Early Video Super-Resolution Title', venue='arXiv', venue_status='preprint', publication_type='preprint', arxiv_id='2501.12345')
+        source = {'venue': 'CVPR', 'year': 2026, 'kind': 'links', 'url': 'https://example.org/index'}
+        accepted = dict(preprint, title='Renamed Video Super-Resolution Title', venue='CVPR', venue_status='verified', publication_type='conference', paper_url='https://example.org/accepted')
+        with patch.object(refresh, 'new_record', return_value=accepted):
+            papers, additions, _ = refresh.refresh([preprint], [source], loader=lambda url: '<a href="/accepted">' + accepted['title'] + '</a>')
+        self.assertEqual(1, len(papers))
+        self.assertEqual(0, additions)
+        self.assertEqual('stable-id', papers[0]['id'])
+        self.assertEqual('verified', papers[0]['venue_status'])
+        self.assertEqual(accepted['title'], papers[0]['title'])
 
     def test_broad_inverse_problem_title_requires_super_resolution_evidence(self):
         source = {"venue": "CVPR", "year": 2026}

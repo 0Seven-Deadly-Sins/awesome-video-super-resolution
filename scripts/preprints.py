@@ -52,7 +52,7 @@ def collect(papers, loader=refresh.fetch, today=None):
                            'venue': 'arXiv', 'year': year, 'category': category, 'tags': [],
                            'summary': 'Video super-resolution preprint', 'paper_url': 'https://arxiv.org/abs/' + aid,
                            'pdf_url': 'https://arxiv.org/pdf/' + aid, 'code_url': '', 'project_url': '',
-                           'arxiv_id': aid, 'venue_status': 'preprint', 'resource_status': 'promised' if promise else 'not-found'})
+                           'arxiv_id': aid, 'venue_status': 'preprint', 'resource_status': 'promised' if promise else 'not-found', 'publication_type': 'preprint'})
             titles.add(key)
             ids.add(aid)
         start += len(entries)
@@ -77,7 +77,7 @@ def main():
         return
     if not args.dry_run:
         path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-        (catalog.ROOT / 'README.md').write_text(catalog.render(result), encoding='utf-8')
+        catalog.write_indexes(result)
     print('arXiv preprints: %d additions, %d total; dry_run=%s' % (len(result) - len(papers), len(result), args.dry_run))
 
 

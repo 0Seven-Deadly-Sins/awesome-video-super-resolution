@@ -7,6 +7,9 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 TOPICS = [
+    ("surveys", "综述与阅读指南 / Surveys", "视频超分的技术综述、分类与研究进展。"),
+    ("classical", "传统重建与优化 / Classical Reconstruction", "运动估计、贝叶斯建模、稀疏表示与多帧优化。"),
+    ("cnn", "卷积重建与时空融合 / CNN Reconstruction", "卷积网络、时空特征融合与多帧重建。"),
     ("alignment", "时序对齐与特征传播 / Alignment and Propagation", "帧间对齐、长距离传播与时序状态。"),
     ("architecture", "Transformer 与状态空间架构 / Sequence Architectures", "面向视频重建的序列建模架构。"),
     ("generative", "扩散先验与生成式超分 / Diffusion-based VSR", "多步扩散、视频生成先验与细节合成。"),
@@ -23,15 +26,15 @@ TOPICS = [
     ("domains", "专用场景与模态 / Domain-specific VSR", "医学、卫星、全景、实时渲染、深度及显微视频。"),
     ("benchmarks", "数据集与评测 / Datasets and Benchmarks", "支持视频超分研究的数据集和评测基准。"),
 ]
-FIELDS = {"id", "title", "venue", "year", "category", "tags", "summary", "paper_url", "pdf_url", "code_url", "project_url", "arxiv_id", "venue_status", "resource_status"}
+FIELDS = {"id", "title", "venue", "year", "category", "tags", "summary", "paper_url", "pdf_url", "code_url", "project_url", "arxiv_id", "venue_status", "resource_status", "publication_type"}
 
 
 def normalized_title(title):
-    return re.sub(r"[^a-z0-9]", "", title.lower())
+    return re.sub(r"[^a-z0-9]", "", title.lower().replace("+", "plus"))
 
 
 def validate(papers):
-    ids, titles = set(), set()
+    ids, titles, arxiv_ids = set(), set(), set()
     for p in papers:
         if set(p) != FIELDS:
             raise ValueError("Catalog contains unexpected or missing bibliographic fields")
@@ -39,14 +42,22 @@ def validate(papers):
             raise ValueError("Duplicate paper")
         ids.add(p["id"])
         titles.add(normalized_title(p["title"]))
+        if p["arxiv_id"]:
+            if p["arxiv_id"] in arxiv_ids:
+                raise ValueError("Duplicate arXiv identity")
+            arxiv_ids.add(p["arxiv_id"])
         if p["category"] not in {key for key, _, _ in TOPICS}:
             raise ValueError("Unknown topic")
-        if not isinstance(p["year"], int) or p["year"] < 2000:
+        if not isinstance(p["year"], int) or p["year"] < 1900:
             raise ValueError("Invalid year")
         if p["venue_status"] not in {"verified", "preprint"}:
             raise ValueError("Invalid publication status")
         if p["venue_status"] == "preprint" and p["venue"] != "arXiv":
             raise ValueError("Unverified venue attribution")
+        if p["publication_type"] not in {"conference", "workshop", "journal", "preprint"}:
+            raise ValueError("Invalid publication type")
+        if (p["venue_status"] == "preprint") != (p["publication_type"] == "preprint"):
+            raise ValueError("Publication type and verification status disagree")
         if p["resource_status"] not in {"author-linked", "promised", "not-found"}:
             raise ValueError("Invalid resource status")
         for key in ["paper_url", "pdf_url", "code_url", "project_url"]:
@@ -60,18 +71,19 @@ def validate(papers):
 def render(papers):
     validate(papers)
     counts = Counter(p["category"] for p in papers)
-    accepted = sum(p["venue_status"] == "verified" for p in papers)
+    kinds = Counter(p["publication_type"] for p in papers)
     text = """# Awesome Video Super-Resolution
 
 A categorized collection of video super-resolution papers, author implementations, datasets and benchmarks.
 
 视频超分辨率文献合集，涵盖传统重建、生成式超分、真实退化、时空联合超分、流式部署与专用场景。所有视频超分方向均可收录，不限制输出分辨率，也不要求公开代码或权重。
 
-集中整理 **2024 年至今**的相关顶会工作；正式录用以官方论文集或会议页面为依据，近期预印本另行标注。范围与检索入口见 [收录说明](docs/COVERAGE.md)。
+整理视频超分的发展脉络，包括经典方法、深度学习重建、生成式超分与专用场景。会议、期刊、Workshop 和预印本分别标注；来源以官方论文集、出版社和作者原文为依据。范围与检索入口见 [收录说明](docs/COVERAGE.md)。
 
 """
-    text += "目前收录 **%d 篇**：**%d 篇会议论文**、**%d 篇预印本**，按 **%d 个方向**编排。每篇只出现一次，交叉特征列为补充标签。\n\n" % (len(papers), accepted, len(papers) - accepted, sum(bool(counts[key]) for key, _, _ in TOPICS))
-    text += "`Code` 表示作者提供的仓库链接，资源是否完整请以作者说明为准；`待发布` 表示明确的发布计划；`—` 表示尚未找到作者公开代码链接，不等同于确定闭源。\n\n## Contents\n\n"
+    text += "目前收录 **%d 篇**，覆盖 **%d–%d 年**：**%d 篇会议论文**、**%d 篇期刊论文**、**%d 篇 Workshop 论文**、**%d 篇预印本**，按 **%d 个方向**编排。每篇只出现一次，交叉特征列为补充标签。\n\n" % (len(papers), min(p["year"] for p in papers), max(p["year"] for p in papers), kinds["conference"], kinds["journal"], kinds["workshop"], kinds["preprint"], sum(bool(counts[key]) for key, _, _ in TOPICS))
+    text += "也可按 [发表年份](docs/BY_YEAR.md) 浏览全部条目。\n\n"
+    text += "`Code` 表示作者提供的实现或代码入口，资源完整性、许可证及可用形式以作者说明为准；`待发布` 表示明确的发布计划；`—` 表示尚未找到作者公开实现，不等同于确定闭源。\n\n## Contents\n\n"
     for key, label, _ in TOPICS:
         if counts[key]:
             text += "- [%s](#%s) · %d\n" % (label, key, counts[key])
@@ -94,10 +106,34 @@ A categorized collection of video super-resolution papers, author implementation
                 links.append("[PDF](%s)" % p["pdf_url"])
             focus = p["summary"] + ("<br>" + ", ".join(p["tags"]) if p["tags"] else "")
             venue = p["venue"] + " " + str(p["year"]) + (" · 预印本" if p["venue_status"] == "preprint" else "")
+            if p["publication_type"] == "workshop" and not re.search(r'workshop', p["venue"], re.I):
+                venue += " · Workshop"
             text += "| [%s](%s) | %s | %s | %s |\n" % (p["title"].replace("|", "\\|"), p["paper_url"], venue, focus.replace("|", "\\|"), " · ".join(links) if links else "—")
         text += "\n"
     text += "## Contributing\n\n欢迎补充遗漏论文、作者资源链接和分类修正。请提供原始来源，并按 [贡献说明](CONTRIBUTING.md) 更新文献数据。\n"
     return text
+
+
+def render_years(papers):
+    validate(papers)
+    counts = Counter(p["year"] for p in papers)
+    text = "# 按发表年份浏览\n\n[按研究方向浏览](../README.md) · [收录说明](COVERAGE.md)\n\n"
+    text += "正式版本使用经核验的发表年份；尚未核验正式发表的预印本使用首次提交年份。\n\n"
+    text += " · ".join("[%d](#%d) (%d)" % (year, year, counts[year]) for year in sorted(counts, reverse=True)) + "\n\n"
+    for year in sorted(counts, reverse=True):
+        text += "## %d\n\n" % year
+        for p in sorted((p for p in papers if p["year"] == year), key=lambda p: (p["publication_type"], p["venue"], p["title"])):
+            label = p["venue"] + (" · 预印本" if p["publication_type"] == "preprint" else "")
+            if p["publication_type"] == "workshop" and not re.search(r'workshop', p["venue"], re.I):
+                label += " · Workshop"
+            text += "- [%s](%s) — %s\n" % (p["title"], p["paper_url"], label)
+        text += "\n"
+    return text
+
+
+def write_indexes(papers):
+    (ROOT / "README.md").write_text(render(papers), encoding="utf-8")
+    (ROOT / "docs/BY_YEAR.md").write_text(render_years(papers), encoding="utf-8")
 
 
 def main():
@@ -110,9 +146,11 @@ def main():
     if args.check:
         if target.read_text(encoding="utf-8") != text:
             raise SystemExit("README is out of sync with the catalog")
+        if (ROOT / "docs/BY_YEAR.md").read_text(encoding="utf-8") != render_years(papers):
+            raise SystemExit("Year index is out of sync with the catalog")
         print("Catalog and rendered bibliography are consistent (%d papers)" % len(papers))
     else:
-        target.write_text(text, encoding="utf-8")
+        write_indexes(papers)
 
 
 if __name__ == "__main__":

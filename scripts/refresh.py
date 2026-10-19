@@ -55,12 +55,13 @@ def parse_index(raw, source):
 
 
 def topic(title):
-    patterns = [("events", r"event"), ("faces", r"face"), ("joint", r"deblur|low.light|infrared|thermal|turbulen"),
+    patterns = [("surveys", r"survey|review"), ("benchmarks", r"challenge|benchmark|dataset|quality.assess"),
+                ("events", r"event"), ("faces", r"face"), ("joint", r"deblur|low.light|infrared|thermal|turbulen"),
                 ("domains", r"medical|satellite|panoram|omnidirect|depth|render|cell"), ("spacetime", r"space.time|spatio.temporal|spatial.temporal|arbitrary.scale"),
                 ("compression", r"compress|delivery|packet"), ("guided", r"text.guid|prompt|interactive|reference|keyframe"),
                 ("efficiency", r"stream|online|efficient|lightweight|quantiz|edge|real.time|routing|high.throughput"), ("onestep", r"one.step|single.step|distill|speculative"),
                 ("generative", r"diffusion|generative"), ("gan", r"GAN"), ("architecture", r"transformer|mamba|state.space")]
-    return next((key for key, pattern in patterns if re.search(pattern, title, re.I)), "alignment")
+    return next((key for key, pattern in patterns if re.search(pattern, title, re.I)), "cnn")
 
 
 def new_record(title, url, source):
@@ -89,7 +90,8 @@ def new_record(title, url, source):
             "venue": source["venue"], "year": source["year"], "category": topic(title), "tags": [],
             "summary": "Video super-resolution", "paper_url": url, "pdf_url": html.unescape(pdf.group(1)) if pdf else "",
             "code_url": "https://github.com/" + repo if repo else "", "project_url": "", "arxiv_id": aid.group(1) if aid else "",
-            "venue_status": "verified", "resource_status": "author-linked" if repo else "not-found"}
+            "venue_status": "verified", "resource_status": "author-linked" if repo else "not-found",
+            "publication_type": "workshop" if re.search(r'workshop', source["venue"], re.I) else "conference"}
 
 
 def current_sources(sources, year=None):
@@ -99,6 +101,8 @@ def current_sources(sources, year=None):
     result = list(sources)
     for y in range(latest + 1, year + 1):
         annual = [("CVPR", "https://openaccess.thecvf.com/CVPR%d?day=all" % y),
+                  ("WACV", "https://openaccess.thecvf.com/WACV%d?day=all" % y),
+                  ("CVPR Workshops", "https://openaccess.thecvf.com/CVPR%d_workshops/NTIRE" % y),
                   ("ICLR", "https://iclr.cc/virtual/%d/papers.html" % y),
                   ("ICML", "https://icml.cc/virtual/%d/papers.html" % y),
                   ("NeurIPS", "https://neurips.cc/Downloads/%d" % y)]
@@ -129,7 +133,7 @@ def refresh(papers, sources, loader=fetch):
         for title, url in rows:
             existing = known.get(catalog.normalized_title(title))
             if existing and existing["venue_status"] == "preprint":
-                existing.update(venue=source["venue"], year=source["year"], paper_url=url, venue_status="verified")
+                existing.update(venue=source["venue"], year=source["year"], paper_url=url, venue_status="verified", publication_type="workshop" if re.search(r'workshop', source["venue"], re.I) else "conference")
             elif existing is None:
                 candidates.append((title, url, source))
     if not successful:
@@ -153,6 +157,18 @@ def refresh(papers, sources, loader=fetch):
             if error:
                 warnings.append("Paper metadata unavailable: %s (%s)" % (title, error))
             elif record is not None:
+                prior = next((p for p in known.values() if record['arxiv_id'] and p['arxiv_id'] == record['arxiv_id']), None)
+                if prior is not None:
+                    if prior['venue_status'] == 'preprint':
+                        old_key = catalog.normalized_title(prior['title'])
+                        merged = dict(record, id=prior['id'], category=prior['category'], summary=prior['summary'], tags=prior['tags'])
+                        for field in ['code_url', 'project_url', 'pdf_url']:
+                            merged[field] = prior.get(field) or record.get(field) or ''
+                        if prior.get('code_url'):
+                            merged['resource_status'] = prior['resource_status']
+                        known.pop(old_key)
+                        known[catalog.normalized_title(title)] = merged
+                    continue
                 known[catalog.normalized_title(title)] = record
                 additions += 1
                 print("Indexed addition: %s %d — %s" % (record["venue"], record["year"], title))
@@ -173,7 +189,7 @@ def main():
         print("::warning::" + warning)
     if not args.dry_run:
         path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        (catalog.ROOT / "README.md").write_text(catalog.render(result), encoding="utf-8")
+        catalog.write_indexes(result)
     print("Bibliography refresh: %d additions, %d total; dry_run=%s" % (count, len(result), args.dry_run))
 
 
