@@ -1,6 +1,7 @@
 import copy
 import json
 from pathlib import Path
+import re
 import sys
 import unittest
 from unittest.mock import patch
@@ -20,6 +21,31 @@ class BibliographyIntegrity(unittest.TestCase):
         self.assertEqual((ROOT / "README.md").read_text(encoding="utf-8"), rendered)
         for p in self.papers:
             self.assertEqual(1, rendered.count("](" + p["paper_url"] + ")"))
+
+    def test_navigation_counts_and_numbering_match_the_body(self):
+        rendered = catalog.render(self.papers)
+        navigation = re.findall(r'^- \[(\d+)\. .+?\]\(#([^)]+)\)（(\d+) 篇）$', rendered, re.M)
+        sections = re.findall(r'<a id="([a-z]+)"></a>\n\n## (\d+)\.', rendered)
+        self.assertEqual(list(range(1, len(sections) + 1)), [int(number) for number, _, _ in navigation])
+        self.assertEqual([(key, number) for number, key, _ in navigation], sections)
+        self.assertEqual(len(self.papers), sum(int(count) for _, _, count in navigation))
+        for _, key, count in navigation:
+            self.assertEqual(int(count), sum(p['category'] == key for p in self.papers))
+
+    def test_papers_sort_by_year_then_title_in_both_indexes(self):
+        papers = []
+        for i, (title, year, venue) in enumerate([
+            ('Zebra Video Super-Resolution', 2026, 'AAA'),
+            ('Beta Video Super-Resolution', 2025, 'BBB'),
+            ('“alpha” Video Super-Resolution', 2026, 'ZZZ'),
+        ]):
+            papers.append(dict(self.papers[0], id='sort-%d' % i, title=title, year=year, venue=venue,
+                               venue_status='verified', publication_type='conference', arxiv_id='',
+                               paper_url='https://example.org/sort-%d' % i))
+        for render in [catalog.render, catalog.render_years]:
+            rendered = render(papers)
+            positions = [rendered.index('](https://example.org/sort-%d)' % i) for i in [2, 0, 1]]
+            self.assertEqual(sorted(positions), positions)
 
     def test_unexpected_personal_state_is_rejected(self):
         for key in ["unrelated_metadata", "personal_state"]:
