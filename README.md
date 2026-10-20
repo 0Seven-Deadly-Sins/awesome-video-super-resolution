@@ -1,38 +1,34 @@
+![Abstract banner showing video frames and temporal fusion](assets/hero.svg)
+
 # Awesome Video Super-Resolution
 
-A categorized collection of video super-resolution papers, author implementations, datasets and benchmarks.
+**A curated map of video super-resolution research.** Browse methods, architectures, generative approaches, datasets and benchmarks in one place.
 
-视频超分辨率文献合集，涵盖传统重建、生成式超分、真实退化、时空联合超分、流式部署与专用场景。所有视频超分方向均可收录，不限制输出分辨率，也不要求公开代码或权重。
+视频超分辨率论文地图，覆盖经典重建、深度网络、生成式方法、真实退化、时空联合、效率优化与专用场景。收录范围不限输出分辨率，也不要求代码或权重公开。
 
-整理视频超分的发展脉络，包括经典方法、深度学习重建、生成式超分与专用场景。会议、期刊、Workshop 和预印本分别标注；来源以官方论文集、出版社和作者原文为依据。范围与检索入口见 [收录说明](docs/COVERAGE.md)。
+按 [研究方向](#browse-by-research-direction) 或 [发表年份](docs/BY_YEAR.md) 浏览。会议、期刊、Workshop 与预印本分别标注；来源以官方论文集、出版社和作者原文为依据。详见 [收录范围与整理方式](docs/COVERAGE.md)。
 
 目前收录 **459 篇**，覆盖 **1991–2026 年**：**209 篇会议论文**、**153 篇期刊论文**、**25 篇 Workshop 论文**、**72 篇预印本**，按 **18 个方向**编排。每篇只出现一次，交叉特征列为补充标签。
 
-也可按 [发表年份](docs/BY_YEAR.md) 浏览全部条目。
+## Browse by research direction
 
-`Code` 表示作者提供的代码或实现；`Repo` 表示已核实的作者仓库，但当前未找到可用实现；`待发布` 仅用于作者明确承诺发布代码的工作。论文全文优先链接可访问的出版社 PDF 或作者预印本。
+### Foundations & architectures
 
-## Contents
+[综述与阅读指南 · Surveys · 8](#surveys) · [传统重建与优化 · Classical Reconstruction · 33](#classical) · [卷积重建与时空融合 · CNN Reconstruction · 45](#cnn) · [时序对齐与特征传播 · Alignment and Propagation · 55](#alignment) · [Transformer 与状态空间架构 · Sequence Architectures · 9](#architecture)
 
-- [综述与阅读指南 / Surveys](#surveys) · 8
-- [传统重建与优化 / Classical Reconstruction](#classical) · 33
-- [卷积重建与时空融合 / CNN Reconstruction](#cnn) · 45
-- [时序对齐与特征传播 / Alignment and Propagation](#alignment) · 55
-- [Transformer 与状态空间架构 / Sequence Architectures](#architecture) · 9
-- [扩散先验与生成式超分 / Diffusion-based VSR](#generative) · 28
-- [单步扩散与蒸馏 / One-step Diffusion and Distillation](#onestep) · 17
-- [对抗生成式超分 / GAN-based VSR](#gan) · 15
-- [真实退化、盲超分与自监督 / Real-world and Blind VSR](#realworld) · 21
-- [时空联合与任意倍率 / Space-time and Arbitrary-scale SR](#spacetime) · 39
-- [高效、流式与模型压缩 / Efficient and Streaming VSR](#efficiency) · 50
-- [压缩域与传输鲁棒性 / Compression and Delivery](#compression) · 24
-- [参考、文本引导与交互 / Guided and Interactive VSR](#guided) · 15
-- [事件相机视频超分 / Event-guided VSR](#events) · 16
-- [人脸视频超分与修复 / Face Video SR](#faces) · 12
-- [联合去模糊、弱光与物理退化 / Joint Restoration](#joint) · 12
-- [专用场景与模态 / Domain-specific VSR](#domains) · 36
-- [数据集与评测 / Datasets and Benchmarks](#benchmarks) · 24
-- [Contributing](CONTRIBUTING.md)
+### Generative & degradation-aware
+
+[扩散先验与生成式超分 · Diffusion-based VSR · 28](#generative) · [单步扩散与蒸馏 · One-step Diffusion and Distillation · 17](#onestep) · [对抗生成式超分 · GAN-based VSR · 15](#gan) · [真实退化、盲超分与自监督 · Real-world and Blind VSR · 21](#realworld) · [时空联合与任意倍率 · Space-time and Arbitrary-scale SR · 39](#spacetime) · [参考、文本引导与交互 · Guided and Interactive VSR · 15](#guided)
+
+### Systems & applications
+
+[高效、流式与模型压缩 · Efficient and Streaming VSR · 50](#efficiency) · [压缩域与传输鲁棒性 · Compression and Delivery · 24](#compression) · [事件相机视频超分 · Event-guided VSR · 16](#events) · [人脸视频超分与修复 · Face Video SR · 12](#faces) · [联合去模糊、弱光与物理退化 · Joint Restoration · 12](#joint) · [专用场景与模态 · Domain-specific VSR · 36](#domains) · [数据集与评测 · Datasets and Benchmarks · 24](#benchmarks)
+
+[Contribution guide](CONTRIBUTING.md) · [Collection scope](docs/COVERAGE.md) · [Browse by year](docs/BY_YEAR.md)
+
+`Code` links to an author-provided implementation; `Repo` identifies a verified author repository where a usable implementation was not found; `待发布` is used only when release was explicitly promised. Full-text links point to an accessible publisher PDF or author preprint when available.
+
+## Papers
 
 <a id="surveys"></a>
 

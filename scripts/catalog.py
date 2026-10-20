@@ -74,22 +74,30 @@ def render(papers):
     validate(papers)
     counts = Counter(p["category"] for p in papers)
     kinds = Counter(p["publication_type"] for p in papers)
-    text = """# Awesome Video Super-Resolution
+    text = """![Abstract banner showing video frames and temporal fusion](assets/hero.svg)
 
-A categorized collection of video super-resolution papers, author implementations, datasets and benchmarks.
+# Awesome Video Super-Resolution
 
-视频超分辨率文献合集，涵盖传统重建、生成式超分、真实退化、时空联合超分、流式部署与专用场景。所有视频超分方向均可收录，不限制输出分辨率，也不要求公开代码或权重。
+**A curated map of video super-resolution research.** Browse methods, architectures, generative approaches, datasets and benchmarks in one place.
 
-整理视频超分的发展脉络，包括经典方法、深度学习重建、生成式超分与专用场景。会议、期刊、Workshop 和预印本分别标注；来源以官方论文集、出版社和作者原文为依据。范围与检索入口见 [收录说明](docs/COVERAGE.md)。
+视频超分辨率论文地图，覆盖经典重建、深度网络、生成式方法、真实退化、时空联合、效率优化与专用场景。收录范围不限输出分辨率，也不要求代码或权重公开。
+
+按 [研究方向](#browse-by-research-direction) 或 [发表年份](docs/BY_YEAR.md) 浏览。会议、期刊、Workshop 与预印本分别标注；来源以官方论文集、出版社和作者原文为依据。详见 [收录范围与整理方式](docs/COVERAGE.md)。
 
 """
     text += "目前收录 **%d 篇**，覆盖 **%d–%d 年**：**%d 篇会议论文**、**%d 篇期刊论文**、**%d 篇 Workshop 论文**、**%d 篇预印本**，按 **%d 个方向**编排。每篇只出现一次，交叉特征列为补充标签。\n\n" % (len(papers), min(p["year"] for p in papers), max(p["year"] for p in papers), kinds["conference"], kinds["journal"], kinds["workshop"], kinds["preprint"], sum(bool(counts[key]) for key, _, _ in TOPICS))
-    text += "也可按 [发表年份](docs/BY_YEAR.md) 浏览全部条目。\n\n"
-    text += "`Code` 表示作者提供的代码或实现；`Repo` 表示已核实的作者仓库，但当前未找到可用实现；`待发布` 仅用于作者明确承诺发布代码的工作。论文全文优先链接可访问的出版社 PDF 或作者预印本。\n\n## Contents\n\n"
-    for key, label, _ in TOPICS:
-        if counts[key]:
-            text += "- [%s](#%s) · %d\n" % (label, key, counts[key])
-    text += "- [Contributing](CONTRIBUTING.md)\n\n"
+    text += "## Browse by research direction\n\n"
+    groups = [
+        ("Foundations & architectures", ["surveys", "classical", "cnn", "alignment", "architecture"]),
+        ("Generative & degradation-aware", ["generative", "onestep", "gan", "realworld", "spacetime", "guided"]),
+        ("Systems & applications", ["efficiency", "compression", "events", "faces", "joint", "domains", "benchmarks"]),
+    ]
+    labels = {key: label for key, label, _ in TOPICS}
+    for heading, keys in groups:
+        text += "### %s\n\n" % heading
+        text += " · ".join("[%s · %d](#%s)" % (labels[key].replace(" / ", " · "), counts[key], key) for key in keys if counts[key]) + "\n\n"
+    text += "[Contribution guide](CONTRIBUTING.md) · [Collection scope](docs/COVERAGE.md) · [Browse by year](docs/BY_YEAR.md)\n\n"
+    text += "`Code` links to an author-provided implementation; `Repo` identifies a verified author repository where a usable implementation was not found; `待发布` is used only when release was explicitly promised. Full-text links point to an accessible publisher PDF or author preprint when available.\n\n## Papers\n\n"
     for key, label, description in TOPICS:
         rows = [p for p in papers if p["category"] == key]
         if not rows:

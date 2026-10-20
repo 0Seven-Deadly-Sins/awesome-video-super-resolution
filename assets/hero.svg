@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-labelledby="title desc">
+  <title id="title">Awesome Video Super-Resolution</title>
+  <desc id="desc">An open research map of video super-resolution methods, architectures, datasets and benchmarks.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071725"/><stop offset="1" stop-color="#102d49"/></linearGradient>
+    <linearGradient id="beam" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#2fd4bd"/><stop offset="1" stop-color="#4aaeff"/></linearGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#204565"/><stop offset="1" stop-color="#15334e"/></linearGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#9ac8e5" stroke-opacity=".07"/></pattern>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="10" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1280" height="420" rx="24" fill="url(#background)"/>
+  <rect width="1280" height="420" rx="24" fill="url(#grid)"/>
+  <circle cx="1000" cy="180" r="210" fill="#27688b" opacity=".14"/>
+  <path d="M0 350 C280 285 430 430 705 335 S1070 240 1280 295" fill="none" stroke="#46b9e5" stroke-opacity=".13" stroke-width="2"/>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <rect x="64" y="58" width="218" height="30" rx="15" fill="#173852" stroke="#3a7394"/>
+    <circle cx="82" cy="73" r="4" fill="#54dfc4"/>
+    <text x="96" y="78" fill="#b9dbea" font-size="12" font-weight="700" letter-spacing="1.5">OPEN RESEARCH INDEX</text>
+    <text x="62" y="162" fill="#f2f8fc" font-size="43" font-weight="750" letter-spacing="-1.1">Video Super-Resolution</text>
+    <text x="65" y="202" fill="#b8d1df" font-size="18">A curated map of methods, models, datasets and benchmarks.</text>
+    <text x="65" y="231" fill="#84adbf" font-size="16">视频超分辨率研究地图 · 从经典重建到生成式方法</text>
+    <path d="M65 280h74" stroke="url(#beam)" stroke-width="3" stroke-linecap="round"/>
+    <text x="65" y="319" fill="#cce2ed" font-size="15" font-weight="600">Research directions</text>
+    <text x="65" y="344" fill="#84adbf" font-size="13">Reconstruction · Generation · Efficiency · Applications</text>
+  </g>
+  <g transform="translate(785 82)">
+    <rect x="18" y="32" width="149" height="105" rx="14" fill="url(#frame)" stroke="#42728d" stroke-width="1.5"/>
+    <rect x="35" y="49" width="115" height="71" rx="8" fill="#0b2032"/>
+    <path d="M39 104 69 78l18 14 23-25 36 40v7H39Z" fill="#247f91" opacity=".9"/>
+    <circle cx="120" cy="66" r="8" fill="#e7c17d"/>
+    <text x="44" y="158" fill="#9fbcc9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" letter-spacing="1">FRAME 01</text>
+    <rect x="205" y="2" width="186" height="132" rx="16" fill="url(#frame)" stroke="#6dbec3" stroke-width="2"/>
+    <rect x="222" y="19" width="152" height="98" rx="9" fill="#0a1d2e"/>
+    <path d="M226 98 265 62l25 20 27-34 53 58v7H226Z" fill="url(#beam)" opacity=".88"/>
+    <circle cx="343" cy="38" r="11" fill="#ffd18a" filter="url(#glow)"/>
+    <path d="M240 94h117" stroke="#d5fbf3" stroke-opacity=".45" stroke-width="1.2"/>
+    <text x="242" y="155" fill="#d3e8ee" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" letter-spacing="1">DETAILS RECONSTRUCTED</text>
+    <rect x="38" y="192" width="163" height="86" rx="13" fill="url(#frame)" stroke="#42728d" stroke-width="1.5"/>
+    <rect x="55" y="208" width="129" height="54" rx="8" fill="#0b2032"/>
+    <path d="M59 247 91 222l23 17 20-13 46 32v4H59Z" fill="#3c8f9a" opacity=".8"/>
+    <circle cx="157" cy="220" r="6" fill="#e7c17d"/>
+    <text x="61" y="298" fill="#9fbcc9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" letter-spacing="1">FRAME 02</text>
+    <path d="M177 168h68" stroke="url(#beam)" stroke-width="2" stroke-dasharray="4 7"/>
+    <circle cx="177" cy="168" r="4" fill="#4fd5c5"/><circle cx="245" cy="168" r="4" fill="#55b6fc"/>
+    <text x="197" y="195" fill="#78a7b9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" letter-spacing="1">TEMPORAL FUSION</text>
+  </g>
+  <rect x="1" y="1" width="1278" height="418" rx="24" fill="none" stroke="#6aa6c1" stroke-opacity=".3"/>
+</svg>
