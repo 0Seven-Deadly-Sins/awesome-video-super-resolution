@@ -4,7 +4,7 @@
 
 按年份从新到旧排列，同年按论文标题的字母顺序排列，忽略大小写与标点。正式版本使用经核验的发表年份，预印本使用首次提交年份；括号内为该年文献篇数。
 
-- [2026](#2026)（70 篇）
+- [2026](#2026)（71 篇）
 - [2025](#2025)（67 篇）
 - [2024](#2024)（50 篇）
 - [2023](#2023)（34 篇）
@@ -81,6 +81,7 @@
 - [RelayVSR: Large-Small Model Collaboration for Efficient Real-World Video Super-Resolution](https://arxiv.org/abs/2609.37850) — arXiv · 预印本
 - [Rethinking Diffusion Model-Based Video Super-Resolution: Leveraging Dense Guidance from Aligned Features](https://openaccess.thecvf.com/content/CVPR2026/html/Xu_Rethinking_Diffusion_Model-Based_Video_Super-Resolution_Leveraging_Dense_Guidance_from_Aligned_CVPR_2026_paper.html) — CVPR
 - [S3-CLIP: Video Super Resolution for Person-ReID](https://arxiv.org/abs/2601.08807) — WACV Workshops
+- [SCOPE-VSR: A Broad-Coverage Training Dataset for Video Super-Resolution](https://arxiv.org/abs/2610.24604) — arXiv · 预印本
 - [SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](https://iclr.cc/virtual/2026/poster/10006682) — ICLR
 - [Seeing the Unseen: Zooming in the Dark with Event Cameras](https://ojs.aaai.org/index.php/AAAI/article/view/37478) — AAAI
 - [SimpleGVR: A Simple Baseline for Latent-Cascaded Generative Video Super-Resolution](https://iclr.cc/virtual/2026/poster/10008775) — ICLR

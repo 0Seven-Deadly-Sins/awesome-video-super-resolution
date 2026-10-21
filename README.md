@@ -4,7 +4,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 
 视频超分辨率文献合集，按研究方向整理综述、方法、数据集与评测工作，涵盖经典重建、深度学习、生成式超分及专用场景。收录正式发表论文与预印本，不限输出分辨率；代码或权重是否公开不影响收录。
 
-目前收录 **459 篇**文献，年份跨度为 **1991–2026 年**，涵盖 **18 个研究方向**。其中包括 **209 篇会议论文**、**153 篇期刊论文**、**25 篇 Workshop 论文**、**72 篇预印本**。
+目前收录 **460 篇**文献，年份跨度为 **1991–2026 年**，涵盖 **18 个研究方向**。其中包括 **209 篇会议论文**、**153 篇期刊论文**、**25 篇 Workshop 论文**、**73 篇预印本**。
 
 [研究方向 / Topics](#contents) · [发表年份 / By year](docs/BY_YEAR.md) · [收录范围 / Scope](docs/COVERAGE.md) · [参与贡献 / Contributing](CONTRIBUTING.md)
 
@@ -18,7 +18,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 ### 阅读与评测 / Reading and evaluation
 
 - [01. 综述与阅读指南 / Surveys](#surveys)（8 篇）
-- [02. 数据集与评测 / Datasets and Benchmarks](#benchmarks)（24 篇）
+- [02. 数据集与评测 / Datasets and Benchmarks](#benchmarks)（25 篇）
 
 ### 重建方法与架构 / Reconstruction methods and architectures
 
@@ -101,6 +101,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 | 2026 | [FANVIDv2: Evaluating Video Super-Resolution by Face and Licence-Plate Recognition Under Compound Degradation](https://arxiv.org/abs/2609.39649) | arXiv · Preprint | Recognition-based VSR evaluation under compound degradations<br>Tags: faces, licence plates, task-based evaluation | [PDF](https://arxiv.org/pdf/2609.39649) |
 | 2026 | [How Accurate are Video Quality Models for Diffusion-Based Video Super-Resolution?](https://doi.org/10.1109/qomex69967.2026.11618341) | QoMEX | Subjective evaluation of quality models for diffusion video SR | [PDF](https://arxiv.org/pdf/2605.25940) · [Code](https://github.com/Telecommunication-Telemedia-Assessment/AVT-VQDB-UHD-1-VSR) |
 | 2026 | [Re-Anime600: A Curated Benchmark Dataset for Anime Video Quality Assessment and Super-Resolution Evaluation](https://openaccess.thecvf.com/content/CVPR2026W/AIGENS/html/Fargetta_Re-Anime600_A_Curated_Benchmark_Dataset_for_Anime_Video_Quality_Assessment_CVPRW_2026_paper.html) | CVPR Workshops | Video super-resolution datasets and evaluation | [PDF](https://openaccess.thecvf.com/content/CVPR2026W/AIGENS/papers/Fargetta_Re-Anime600_A_Curated_Benchmark_Dataset_for_Anime_Video_Quality_Assessment_CVPRW_2026_paper.pdf) |
+| 2026 | [SCOPE-VSR: A Broad-Coverage Training Dataset for Video Super-Resolution](https://arxiv.org/abs/2610.24604) | arXiv · Preprint | Video super-resolution preprint | [PDF](https://arxiv.org/pdf/2610.24604) |
 | 2026 | [Temporal Inconsistency Guidance for Super-resolution Video Quality Assessment](https://ojs.aaai.org/index.php/AAAI/article/view/37599) | AAAI | Perceptual temporal inconsistency guides spatial and temporal SR quality assessment | [PDF](https://arxiv.org/pdf/2412.18933) · [Code](https://github.com/Lighting-YXLI/TIG-SVQA-main) |
 | 2025 | [360-degree video super resolution and quality enhancement challenge: Methods and results](https://doi.org/10.1016/j.image.2025.117376) | Signal Processing: Image Communication | 360-degree VSR and quality enhancement challenge | [PDF](https://arxiv.org/pdf/2411.06738) |
 | 2025 | [AIM 2025 Challenge on Robust Offline Video Super-Resolution: Dataset, Methods and Results](https://openaccess.thecvf.com/content/ICCV2025W/AIM/html/Karetin_AIM_2025_Challenge_on_Robust_Offline_Video_Super-Resolution_Dataset_Methods_ICCVW_2025_paper.html) | ICCV Workshops | Video super-resolution datasets and evaluation | [PDF](https://openaccess.thecvf.com/content/ICCV2025W/AIM/papers/Karetin_AIM_2025_Challenge_on_Robust_Offline_Video_Super-Resolution_Dataset_Methods_ICCVW_2025_paper.pdf) |
