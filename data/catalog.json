@@ -1318,6 +1318,24 @@
     "repository_url": ""
   },
   {
+    "id": "7dd0e8a9222e",
+    "title": "SCOPE-VSR: A Broad-Coverage Training Dataset for Video Super-Resolution",
+    "venue": "arXiv",
+    "year": 2026,
+    "category": "benchmarks",
+    "tags": [],
+    "summary": "Video super-resolution preprint",
+    "paper_url": "https://arxiv.org/abs/2610.24604",
+    "pdf_url": "https://arxiv.org/pdf/2610.24604",
+    "code_url": "",
+    "repository_url": "",
+    "project_url": "",
+    "arxiv_id": "2610.24604",
+    "venue_status": "preprint",
+    "resource_status": "not-found",
+    "publication_type": "preprint"
+  },
+  {
     "id": "bf78c5911438",
     "title": "SoL-Refiner: Speed-of-Light One-Step Refinement for High-Resolution Video",
     "venue": "arXiv",
@@ -8898,23 +8916,5 @@
     "resource_status": "not-found",
     "publication_type": "journal",
     "repository_url": ""
-  },
-  {
-    "id": "7dd0e8a9222e",
-    "title": "SCOPE-VSR: A Broad-Coverage Training Dataset for Video Super-Resolution",
-    "venue": "arXiv",
-    "year": 2026,
-    "category": "benchmarks",
-    "tags": [],
-    "summary": "Video super-resolution preprint",
-    "paper_url": "https://arxiv.org/abs/2610.24604",
-    "pdf_url": "https://arxiv.org/pdf/2610.24604",
-    "code_url": "",
-    "repository_url": "",
-    "project_url": "",
-    "arxiv_id": "2610.24604",
-    "venue_status": "preprint",
-    "resource_status": "not-found",
-    "publication_type": "preprint"
   }
 ]
