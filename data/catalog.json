@@ -8916,5 +8916,41 @@
     "resource_status": "not-found",
     "publication_type": "journal",
     "repository_url": ""
+  },
+  {
+    "id": "f6793349ae42",
+    "title": "AlbumVSR: Identity-Preserving Face Video Super-Resolution from a Personal Photo Album",
+    "venue": "arXiv",
+    "year": 2026,
+    "category": "faces",
+    "tags": [],
+    "summary": "Video super-resolution preprint",
+    "paper_url": "https://arxiv.org/abs/2610.39001",
+    "pdf_url": "https://arxiv.org/pdf/2610.39001",
+    "code_url": "",
+    "repository_url": "",
+    "project_url": "",
+    "arxiv_id": "2610.39001",
+    "venue_status": "preprint",
+    "resource_status": "not-found",
+    "publication_type": "preprint"
+  },
+  {
+    "id": "08d375640172",
+    "title": "Residual Motion Splatting for Continuous Space-Time Video Super-Resolution",
+    "venue": "arXiv",
+    "year": 2026,
+    "category": "spacetime",
+    "tags": [],
+    "summary": "Video super-resolution preprint",
+    "paper_url": "https://arxiv.org/abs/2610.38499",
+    "pdf_url": "https://arxiv.org/pdf/2610.38499",
+    "code_url": "",
+    "repository_url": "",
+    "project_url": "",
+    "arxiv_id": "2610.38499",
+    "venue_status": "preprint",
+    "resource_status": "not-found",
+    "publication_type": "preprint"
   }
 ]

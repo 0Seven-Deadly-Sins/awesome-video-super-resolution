@@ -4,7 +4,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 
 视频超分辨率文献合集，按研究方向整理综述、方法、数据集与评测工作，涵盖经典重建、深度学习、生成式超分及专用场景。收录正式发表论文与预印本，不限输出分辨率；代码或权重是否公开不影响收录。
 
-目前收录 **460 篇**文献，年份跨度为 **1991–2026 年**，涵盖 **18 个研究方向**。其中包括 **209 篇会议论文**、**153 篇期刊论文**、**25 篇 Workshop 论文**、**73 篇预印本**。
+目前收录 **462 篇**文献，年份跨度为 **1991–2026 年**，涵盖 **18 个研究方向**。其中包括 **209 篇会议论文**、**153 篇期刊论文**、**25 篇 Workshop 论文**、**75 篇预印本**。
 
 [研究方向 / Topics](#contents) · [发表年份 / By year](docs/BY_YEAR.md) · [收录范围 / Scope](docs/COVERAGE.md) · [参与贡献 / Contributing](CONTRIBUTING.md)
 
@@ -36,7 +36,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 ### 退化建模与任务扩展 / Degradations and task extensions
 
 - [10. 真实退化、盲超分与自监督 / Real-world and Blind VSR](#realworld)（21 篇）
-- [11. 时空联合与任意倍率 / Space-time and Arbitrary-scale SR](#spacetime)（39 篇）
+- [11. 时空联合与任意倍率 / Space-time and Arbitrary-scale SR](#spacetime)（40 篇）
 - [12. 参考、文本引导与交互 / Guided and Interactive VSR](#guided)（15 篇）
 - [13. 联合视频修复 / Joint Video Restoration](#joint)（12 篇）
 
@@ -48,7 +48,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 ### 专用场景与模态 / Applications and modalities
 
 - [16. 事件相机视频超分 / Event-guided VSR](#events)（16 篇）
-- [17. 人脸视频超分与修复 / Face Video SR](#faces)（12 篇）
+- [17. 人脸视频超分与修复 / Face Video SR](#faces)（13 篇）
 - [18. 其他专用场景与模态 / Other Domains and Modalities](#domains)（36 篇）
 
 <a id="reading-notes"></a>
@@ -447,6 +447,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 | 2026 | [Continuous Space-Time Video Super-Resolution with 3D Fourier Fields](https://iclr.cc/virtual/2026/poster/10008618) | ICLR | 3D Fourier fields; continuous space-time SR<br>Tags: arbitrary-scale, spatiotemporal | [PDF](https://arxiv.org/pdf/2509.26325) · [Code](https://github.com/prs-eth/v3) · [Project](https://v3vsr.github.io/) |
 | 2026 | [DiffST: Spatiotemporal-Aware Diffusion for Real-World Space-Time Video Super-Resolution](https://arxiv.org/abs/2605.13182) | arXiv · Preprint | One-step diffusion with cross-frame context and video-level guidance | [PDF](https://arxiv.org/pdf/2605.13182) · [Code](https://github.com/zhengchen1999/DiffST) |
 | 2026 | [GS-STVSR: Ultra-Efficient Continuous Spatio-Temporal Video Super-Resolution via 2D Gaussian Splatting](https://arxiv.org/abs/2604.18047) | arXiv · Preprint | Motion-driven 2D Gaussian splatting for continuous space-time SR | [PDF](https://arxiv.org/pdf/2604.18047) |
+| 2026 | [Residual Motion Splatting for Continuous Space-Time Video Super-Resolution](https://arxiv.org/abs/2610.38499) | arXiv · Preprint | Video super-resolution preprint | [PDF](https://arxiv.org/pdf/2610.38499) |
 | 2026 | [Taming Real-World Space-Time Video Super-Resolution with One-Step Diffusion](https://arxiv.org/abs/2601.20308) | arXiv · Preprint | One-step diffusion with separate temporal and texture LoRAs for STVSR | [PDF](https://arxiv.org/pdf/2601.20308) · [Code](https://github.com/W-Shuoyan/OSDEnhancer) |
 | 2026 | [Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution](https://openaccess.thecvf.com/content/CVPR2026/html/Choi_Time_Without_Time_Pseudo-Temporal_Representation_for_Space-Time_Super-Resolution_CVPR_2026_paper.html) | CVPR | Pseudo-temporal pretraining<br>Tags: spatiotemporal | [PDF](https://openaccess.thecvf.com/content/CVPR2026/papers/Choi_Time_Without_Time_Pseudo-Temporal_Representation_for_Space-Time_Super-Resolution_CVPR_2026_paper.pdf) |
 | 2025 | [BasicAVSR: Arbitrary-Scale Video Super-Resolution via Image Priors and Enhanced Motion Compensation](https://arxiv.org/abs/2510.26149) | arXiv · Preprint | Arbitrary-scale VSR with image frequency priors and motion compensation | [PDF](https://arxiv.org/pdf/2510.26149) · [Code](https://github.com/shangwei5/BasicAVSR) |
@@ -665,6 +666,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 
 | 年份 / Year | 论文 / Paper | 出处 / Venue | 研究要点 / Focus | 资源 / Links |
 | --- | --- | --- | --- | --- |
+| 2026 | [AlbumVSR: Identity-Preserving Face Video Super-Resolution from a Personal Photo Album](https://arxiv.org/abs/2610.39001) | arXiv · Preprint | Video super-resolution preprint | [PDF](https://arxiv.org/pdf/2610.39001) |
 | 2026 | [DTI: Dynamic Trajectory Initialization for Generative Face Video Super-Resolution](https://eccv.ecva.net/virtual/2026/poster/5665) | ECCV | Face video; trajectory initialization | [PDF](https://media.eventhosts.cc/Conferences/ECCV2026/pdfs/12117.pdf) · [Code](https://github.com/MediaX-SJTU/DTI) |
 | 2026 | [TIGER: Taming Identity, Geometry, and Generative Priors for High-Quality Face Video Restoration](https://eccv.ecva.net/virtual/2026/poster/3384) | ECCV | Identity and geometry priors for face restoration | [PDF](https://arxiv.org/pdf/2606.24336) · [Code](https://github.com/PixCtrol/Tiger) · [Project](https://yzhoulv.github.io/Tiger/) |
 | 2025 | [Dirichlet-Constrained Variational Codebook Learning for Temporally Coherent Video Face Restoration](https://openaccess.thecvf.com/content/ICCV2025/html/Chen_Dirichlet-Constrained_Variational_Codebook_Learning_for_Temporally_Coherent_Video_Face_Restoration_ICCV_2025_paper.html) | ICCV | DicFace; variational face codebooks | [PDF](https://openaccess.thecvf.com/content/ICCV2025/papers/Chen_Dirichlet-Constrained_Variational_Codebook_Learning_for_Temporally_Coherent_Video_Face_Restoration_ICCV_2025_paper.pdf) · [Code](https://github.com/fudan-generative-vision/DicFace) |

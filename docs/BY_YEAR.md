@@ -4,7 +4,7 @@
 
 按年份从新到旧排列，同年按论文标题的字母顺序排列，忽略大小写与标点。正式版本使用经核验的发表年份，预印本使用首次提交年份；括号内为该年文献篇数。
 
-- [2026](#2026)（71 篇）
+- [2026](#2026)（73 篇）
 - [2025](#2025)（67 篇）
 - [2024](#2024)（50 篇）
 - [2023](#2023)（34 篇）
@@ -36,6 +36,7 @@
 ## 2026
 
 - [Accelerating Video Inverse Problem Solvers with Autoregressive Diffusion Models](https://neurips.cc/virtual/2026/poster/151472) — NeurIPS
+- [AlbumVSR: Identity-Preserving Face Video Super-Resolution from a Personal Photo Album](https://arxiv.org/abs/2610.39001) — arXiv · 预印本
 - [An Adaptive Spectral Upsampling Framework for Underwater Degraded Video Super-Resolution Benchmark](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Murthy_An_Adaptive_Spectral_Upsampling_Framework_for_Underwater_Degraded_Video_Super-Resolution_CVPRW_2026_paper.html) — CVPR Workshops
 - [ART-VSR: Adaptive Rectified Trajectories for One-Step Video Super-Resolution](https://eccv.ecva.net/virtual/2026/poster/4653) — ECCV
 - [AVSR-Diff: Scale-Agnostic Diffusion Priors for Temporally Consistent Arbitrary-Scale Video Super-Resolution](https://eccv.ecva.net/virtual/2026/poster/5371) — ECCV
@@ -79,6 +80,7 @@
 - [Re-Anime600: A Curated Benchmark Dataset for Anime Video Quality Assessment and Super-Resolution Evaluation](https://openaccess.thecvf.com/content/CVPR2026W/AIGENS/html/Fargetta_Re-Anime600_A_Curated_Benchmark_Dataset_for_Anime_Video_Quality_Assessment_CVPRW_2026_paper.html) — CVPR Workshops
 - [ReCaVSR: One-Step Streaming Diffusion Video Super-Resolution with Recycled Latents and Learned Cache Routing](https://arxiv.org/abs/2609.37831) — arXiv · 预印本
 - [RelayVSR: Large-Small Model Collaboration for Efficient Real-World Video Super-Resolution](https://arxiv.org/abs/2609.37850) — arXiv · 预印本
+- [Residual Motion Splatting for Continuous Space-Time Video Super-Resolution](https://arxiv.org/abs/2610.38499) — arXiv · 预印本
 - [Rethinking Diffusion Model-Based Video Super-Resolution: Leveraging Dense Guidance from Aligned Features](https://openaccess.thecvf.com/content/CVPR2026/html/Xu_Rethinking_Diffusion_Model-Based_Video_Super-Resolution_Leveraging_Dense_Guidance_from_Aligned_CVPR_2026_paper.html) — CVPR
 - [S3-CLIP: Video Super Resolution for Person-ReID](https://arxiv.org/abs/2601.08807) — WACV Workshops
 - [SCOPE-VSR: A Broad-Coverage Training Dataset for Video Super-Resolution](https://arxiv.org/abs/2610.24604) — arXiv · 预印本
