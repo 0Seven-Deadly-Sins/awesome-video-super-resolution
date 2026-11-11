@@ -4,7 +4,7 @@
 
 按年份从新到旧排列，同年按论文标题的字母顺序排列，忽略大小写与标点。正式版本使用经核验的发表年份，预印本使用首次提交年份；括号内为该年文献篇数。
 
-- [2026](#2026)（73 篇）
+- [2026](#2026)（74 篇）
 - [2025](#2025)（67 篇）
 - [2024](#2024)（50 篇）
 - [2023](#2023)（34 篇）
@@ -74,6 +74,7 @@
 - [LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](https://iclr.cc/virtual/2026/poster/10011196) — ICLR
 - [MambaOVSR: Multiscale Fusion with Global Motion Modeling for Chinese Opera Video Super-Resolution](https://ojs.aaai.org/index.php/AAAI/article/view/37261) — AAAI
 - [NanoVSR: Towards Real-Time Video Super-Resolution on Edge Devices](https://eccv.ecva.net/virtual/2026/poster/5988) — ECCV
+- [PixelSpline: Continuous Space-Time Video Super-Resolution via Endpoint-Anchored Shared Pixel Trajectories](https://arxiv.org/abs/2611.06870) — arXiv · 预印本
 - [PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](https://openaccess.thecvf.com/content/CVPR2026/html/Wu_PS-SR_Pseudo-Single-Step_Video_Super-Resolution_via_Speculative_Diffusion_CVPR_2026_paper.html) — CVPR
 - [QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](https://ojs.aaai.org/index.php/AAAI/article/view/37257) — AAAI
 - [Rate-Constrained Edge Metadata for Sender–Receiver Generative Video Super-Resolution](https://neurips.cc/virtual/2026/poster/150084) — NeurIPS
