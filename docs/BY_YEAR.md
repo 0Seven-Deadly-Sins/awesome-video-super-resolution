@@ -4,7 +4,7 @@
 
 按年份从新到旧排列，同年按论文标题的字母顺序排列，忽略大小写与标点。正式版本使用经核验的发表年份，预印本使用首次提交年份；括号内为该年文献篇数。
 
-- [2026](#2026)（74 篇）
+- [2026](#2026)（76 篇）
 - [2025](#2025)（67 篇）
 - [2024](#2024)（50 篇）
 - [2023](#2023)（34 篇）
@@ -46,11 +46,13 @@
 - [Compressed-Domain-Aware Online Video Super-Resolution](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Compressed-Domain-Aware_Online_Video_Super-Resolution_CVPR_2026_paper.html) — CVPR
 - [Continuous Space-Time Video Super-Resolution with 3D Fourier Fields](https://iclr.cc/virtual/2026/poster/10008618) — ICLR
 - [DiffST: Spatiotemporal-Aware Diffusion for Real-World Space-Time Video Super-Resolution](https://arxiv.org/abs/2605.13182) — arXiv · 预印本
+- [Diffusion Plug-in Priors for Self-Supervised Ultrasound Video Restoration](https://arxiv.org/abs/2611.05206) — arXiv · 预印本
 - [DiTVR: Zero-Shot Diffusion Transformer for Video Restoration](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Gao_DiTVR_Zero-Shot_Diffusion_Transformer_for_Video_Restoration_CVPRW_2026_paper.html) — CVPR Workshops
 - [DTG-Restore: Training-Free Diffusion Refinement for Generative Video Super-Resolution](https://openaccess.thecvf.com/content/CVPR2026/html/Yesiltepe_DTG-Restore_Training-Free_Diffusion_Refinement_for_Generative_Video_Super-Resolution_CVPR_2026_paper.html) — CVPR
 - [DTI: Dynamic Trajectory Initialization for Generative Face Video Super-Resolution](https://eccv.ecva.net/virtual/2026/poster/5665) — ECCV
 - [DUO-VSR: Dual-Stream Distillation for One-Step Video Super-Resolution](https://openaccess.thecvf.com/content/CVPR2026/html/Lv_DUO-VSR_Dual-Stream_Distillation_for_One-Step_Video_Super-Resolution_CVPR_2026_paper.html) — CVPR
 - [Enhancing video smoothness and clarity: A unified survey of frame interpolation, super-resolution, and space–time super-resolution](https://www.sciencedirect.com/science/article/pii/S0141938226001368) — Displays
+- [Event-Guided Stereo Video Super-Resolution](https://arxiv.org/abs/2611.20629) — arXiv · 预印本
 - [EvTexture++: Event-Driven Texture Enhancement for Video Super-Resolution](https://doi.org/10.1109/tpami.2026.3660020) — IEEE Transactions on Pattern Analysis and Machine Intelligence
 - [Exploiting Blurry Representations for Event-guided Video Super-Resolution](https://ojs.aaai.org/index.php/AAAI/article/view/38081) — AAAI
 - [FANVIDv2: Evaluating Video Super-Resolution by Face and Licence-Plate Recognition Under Compound Degradation](https://arxiv.org/abs/2609.39649) — arXiv · 预印本

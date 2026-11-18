@@ -4,7 +4,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 
 视频超分辨率文献合集，按研究方向整理综述、方法、数据集与评测工作，涵盖经典重建、深度学习、生成式超分及专用场景。收录正式发表论文与预印本，不限输出分辨率；代码或权重是否公开不影响收录。
 
-目前收录 **463 篇**文献，年份跨度为 **1991–2026 年**，涵盖 **18 个研究方向**。其中包括 **209 篇会议论文**、**153 篇期刊论文**、**25 篇 Workshop 论文**、**76 篇预印本**。
+目前收录 **465 篇**文献，年份跨度为 **1991–2026 年**，涵盖 **18 个研究方向**。其中包括 **209 篇会议论文**、**153 篇期刊论文**、**25 篇 Workshop 论文**、**78 篇预印本**。
 
 [研究方向 / Topics](#contents) · [发表年份 / By year](docs/BY_YEAR.md) · [收录范围 / Scope](docs/COVERAGE.md) · [参与贡献 / Contributing](CONTRIBUTING.md)
 
@@ -30,7 +30,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 ### 生成式方法 / Generative methods
 
 - [07. 对抗生成式超分 / GAN-based VSR](#gan)（15 篇）
-- [08. 扩散先验与生成式超分 / Diffusion-based VSR](#generative)（28 篇）
+- [08. 扩散先验与生成式超分 / Diffusion-based VSR](#generative)（29 篇）
 - [09. 单步扩散与蒸馏 / One-step Diffusion and Distillation](#onestep)（17 篇）
 
 ### 退化建模与任务扩展 / Degradations and task extensions
@@ -47,7 +47,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 
 ### 专用场景与模态 / Applications and modalities
 
-- [16. 事件相机视频超分 / Event-guided VSR](#events)（16 篇）
+- [16. 事件相机视频超分 / Event-guided VSR](#events)（17 篇）
 - [17. 人脸视频超分与修复 / Face Video SR](#faces)（13 篇）
 - [18. 其他专用场景与模态 / Other Domains and Modalities](#domains)（36 篇）
 
@@ -344,6 +344,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 
 | 年份 / Year | 论文 / Paper | 出处 / Venue | 研究要点 / Focus | 资源 / Links |
 | --- | --- | --- | --- | --- |
+| 2026 | [Diffusion Plug-in Priors for Self-Supervised Ultrasound Video Restoration](https://arxiv.org/abs/2611.05206) | arXiv · Preprint | Video super-resolution preprint | [PDF](https://arxiv.org/pdf/2611.05206) |
 | 2026 | [DiTVR: Zero-Shot Diffusion Transformer for Video Restoration](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Gao_DiTVR_Zero-Shot_Diffusion_Transformer_for_Video_Restoration_CVPRW_2026_paper.html) | CVPR Workshops | Trajectory-aware attention and flow-guided wavelet sampling for zero-shot VSR<br>Tags: diffusion, zero-shot, trajectory attention | [PDF](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/papers/Gao_DiTVR_Zero-Shot_Diffusion_Transformer_for_Video_Restoration_CVPRW_2026_paper.pdf) |
 | 2026 | [DTG-Restore: Training-Free Diffusion Refinement for Generative Video Super-Resolution](https://openaccess.thecvf.com/content/CVPR2026/html/Yesiltepe_DTG-Restore_Training-Free_Diffusion_Refinement_for_Generative_Video_Super-Resolution_CVPR_2026_paper.html) | CVPR | Training-free diffusion refinement<br>Tags: diffusion, self/zero-shot | [PDF](https://openaccess.thecvf.com/content/CVPR2026/papers/Yesiltepe_DTG-Restore_Training-Free_Diffusion_Refinement_for_Generative_Video_Super-Resolution_CVPR_2026_paper.pdf) |
 | 2026 | [LoCoVSR: Local Context Diffusion Posterior Sampling for Video Super-Resolution](https://arxiv.org/abs/2609.32742) | arXiv · Preprint | Local temporal context and shared noise for pixel-space diffusion VSR<br>Tags: pixel-space, faces, posterior sampling | [PDF](https://arxiv.org/pdf/2609.32742) |
@@ -640,6 +641,7 @@ A categorized collection of video super-resolution (VSR) papers, covering classi
 
 | 年份 / Year | 论文 / Paper | 出处 / Venue | 研究要点 / Focus | 资源 / Links |
 | --- | --- | --- | --- | --- |
+| 2026 | [Event-Guided Stereo Video Super-Resolution](https://arxiv.org/abs/2611.20629) | arXiv · Preprint | Video super-resolution preprint | [PDF](https://arxiv.org/pdf/2611.20629) |
 | 2026 | [EvTexture++: Event-Driven Texture Enhancement for Video Super-Resolution](https://doi.org/10.1109/tpami.2026.3660020) | IEEE Transactions on Pattern Analysis and Machine Intelligence | Extends event-guided texture reconstruction and temporal consistency for video SR<br>Tags: journal-extension, extended version | [PDF](https://arxiv.org/pdf/2606.13580) · 待发布 · [Repo](https://github.com/DachunKai/EvTexture) · [Project](https://dachunkai.github.io/evtexture-project-page/) |
 | 2026 | [Exploiting Blurry Representations for Event-guided Video Super-Resolution](https://ojs.aaai.org/index.php/AAAI/article/view/38081) | AAAI | BluR-EVSR; degradation-aware RGB-event fusion | — |
 | 2026 | [HR-INR: Continuous Space-Time Video Super-Resolution via Event Camera](https://link.springer.com/article/10.1007/s11263-026-03034-4) | International Journal of Computer Vision | Event-guided implicit high-resolution space-time reconstruction | [PDF](https://arxiv.org/pdf/2405.13389) · [Code](https://github.com/yunfanLu/HR-INR) |
